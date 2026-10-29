@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="maroon">#5b1f24</color>
+    <color name="maroon_dark">#421519</color>
+    <color name="gold">#c9a227</color>
+    <color name="gold_dark">#a8871d</color>
+    <color name="cream">#fdf8ec</color>
+    <color name="cream_dark">#f3ead2</color>
+    <color name="ink">#2b1d16</color>
+    <color name="muted">#6f5f52</color>
+    <color name="white">#ffffff</color>
+    <color name="star_gold">#e0a92e</color>
+</resources>
