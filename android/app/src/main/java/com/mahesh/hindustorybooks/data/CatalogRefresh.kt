@@ -53,21 +53,46 @@ object CatalogRefresh {
         for (book in candidate.pool) {
             book.paintingUrl()?.let { urls.add(it) }
         }
-        for (url in urls) {
-            if (!urlReachable(url)) failures.add(url)
+        // Validate in parallel (8 concurrent) instead of 39 sequential
+        // HEADs: on a phone the sequential version took so long the refresh
+        // looked dead. Same rule as before — every URL must pass, or the
+        // whole refresh is rejected and the cached catalog stays untouched.
+        val pool = java.util.concurrent.Executors.newFixedThreadPool(8)
+        try {
+            val futures = urls.map { url -> pool.submit<Boolean> { urlReachable(url) } }
+            for ((url, future) in urls.zip(futures)) {
+                val ok = try {
+                    future.get()
+                } catch (e: Exception) {
+                    false
+                }
+                if (!ok) failures.add(url)
+            }
+        } finally {
+            pool.shutdown()
         }
         if (failures.isNotEmpty()) return RefreshResult.Failure(failures)
-        val arrivals = computeArrivals(oldCatalog, candidate)
-        CatalogStore.saveAtomically(context, json)
-        Prefs(context).setArrivals(arrivals.mapNotNull { it.pdfUrl() }.toSet())
-        return RefreshResult.Success(arrivals.size, arrivals.mapNotNull { it.pdfUrl() })
+        return try {
+            val arrivals = computeArrivals(oldCatalog, candidate)
+            CatalogStore.saveAtomically(context, json)
+            Prefs(context).setArrivals(arrivals.mapNotNull { it.pdfUrl() }.toSet())
+            RefreshResult.Success(arrivals.size, arrivals.mapNotNull { it.pdfUrl() })
+        } catch (e: Exception) {
+            RefreshResult.Failure(listOf("save failed: ${e.message}"))
+        }
     }
 
     /** Async version for UI callers; the result arrives on the main thread. */
     fun refreshAsync(context: Context, onResult: (RefreshResult) -> Unit) {
         val main = Handler(Looper.getMainLooper())
         Thread {
-            val result = refreshBlocking(context)
+            // Never let an exception kill this thread without posting: a
+            // missing result used to leave the refresh button disabled.
+            val result = try {
+                refreshBlocking(context)
+            } catch (e: Exception) {
+                RefreshResult.Failure(listOf("refresh failed: ${e.message}"))
+            }
             main.post { onResult(result) }
         }.start()
     }

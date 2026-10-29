@@ -40,7 +40,12 @@ object CatalogStore {
         }
     }
 
-    /** Atomic replace: write to a temp file, then rename over the cache. */
+    /**
+     * Atomic replace: write to a temp file, then rename over the cache.
+     * Synchronized so a concurrent launch refresh and manual refresh can
+     * never interleave temp-file writes and lose the cache.
+     */
+    @Synchronized
     fun saveAtomically(context: Context, json: String) {
         val tmp = File(context.filesDir, TEMP_NAME)
         val dst = File(context.filesDir, CACHED_NAME)

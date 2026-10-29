@@ -32,10 +32,22 @@ class Prefs(context: Context) {
         prefs.edit().putStringSet(KEY_ARRIVALS, pdfUrls).apply()
     }
 
-    /** Default reader zoom: 1.0 = fit to width, else 1.25 / 1.5 / 2.0 / 3.0. */
-    var zoomDefault: Float
-        get() = prefs.getFloat(KEY_ZOOM, 1.0f)
-        set(value) = prefs.edit().putFloat(KEY_ZOOM, value).apply()
+    /** One persisted reader zoom, shared across ALL books (default 1.0 = fit to width).
+     * Changing zoom in any book saves it here; every book opens at this zoom.
+     * Migrates the old Settings book-zoom default once, if present. */
+    var bookZoom: Float
+        get() = if (prefs.contains(KEY_BOOK_ZOOM)) prefs.getFloat(KEY_BOOK_ZOOM, 1.0f)
+        else prefs.getFloat(KEY_ZOOM_OLD, 1.0f)
+        set(value) = prefs.edit().putFloat(KEY_BOOK_ZOOM, value).apply()
+
+    /**
+     * App text-size choice: 0 = system default (no override), else a font
+     * scale (1.15 Medium / 1.3 Large / 1.5 Extra large), applied app-wide.
+     * This is the APP zoom — it never touches book zoom.
+     */
+    var appFontScale: Float
+        get() = prefs.getFloat(KEY_APP_FONT_SCALE, 0f)
+        set(value) = prefs.edit().putFloat(KEY_APP_FONT_SCALE, value).apply()
 
     /**
      * Last-read page per book, as a JSON map: pdfUrl -> {page, time}.
@@ -95,7 +107,9 @@ class Prefs(context: Context) {
         private const val KEY_LANG = "language"
         private const val KEY_SAVED = "saved_pdf_urls"
         private const val KEY_ARRIVALS = "arrival_pdf_urls"
-        private const val KEY_ZOOM = "zoom_default"
+        private const val KEY_BOOK_ZOOM = "book_zoom"
+        private const val KEY_ZOOM_OLD = "zoom_default"
+        private const val KEY_APP_FONT_SCALE = "app_font_scale"
         private const val KEY_RESUME = "resume_pages"
     }
 }
