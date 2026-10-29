@@ -4,7 +4,7 @@
 <title>चंड-मुण्ड और रक्तबीज · Reflowable संस्करण</title>
 <style>
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;overflow-x:hidden;background:#fdf8ec;color:#2b1d12;
+html,body{margin:0;padding:64px 0 0;overflow-x:hidden;background:#fdf8ec;color:#2b1d12;
  font-family:'Noto Sans Devanagari','Noto Serif Devanagari',sans-serif}
 #booktext{max-width:680px;margin:0 auto;padding:16px 20px 48px;font-size:17px;line-height:1.85;
  overflow-wrap:break-word;word-wrap:break-word}
@@ -28,7 +28,7 @@ figcaption{text-align:center;color:#6b543a;font-style:italic;margin-top:.5em;fon
 .big{font-size:1.15em;text-align:center;color:#5b1f24;font-weight:600}
 .small{font-size:.88em;color:#6b543a}
 ul{padding-left:1.4em} li{margin-bottom:.6em}
-.toolbar{position:sticky;top:0;z-index:10;background:#5b1f24;color:#fff;display:flex;gap:8px;align-items:center;justify-content:center;padding:10px}
+.toolbar{position:fixed;top:0;left:0;right:0;z-index:100;background:#5b1f24;color:#fff;display:flex;gap:8px;align-items:center;justify-content:space-between;padding:10px 14px;box-sizing:border-box}.htitle{font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.hbtns{display:flex;gap:8px;flex:none}
 .toolbar button{background:#c9a227;color:#2b1d12;border:none;border-radius:8px;padding:8px 14px;font-size:16px;cursor:pointer}
 .toolbar .lbl{min-width:56px;text-align:center}
 .note{background:#fff3c4;border-bottom:2px solid #c9a227;padding:10px 16px;text-align:center;color:#5b1f24}
@@ -42,8 +42,8 @@ ul{padding-left:1.4em} li{margin-bottom:.6em}
 .socho p{margin:0 0 .5em}.socho p:last-child{margin:0}
 </style></head>
 <body>
-<div class="toolbar"><button onclick="fsDown()">A−</button><span class="lbl" id="fslabel">100%</span><button onclick="fsUp()">A+</button><button onclick="fsReset()">Reset</button></div>
-<div class="note">यह इस किताब का reflowable संस्करण है — PDF संस्करण नहीं। अक्षर का आकार बदलकर देखें: बड़ा अक्षर भी बिना sideways scroll के पूरी चौड़ाई में समा जाता है।</div>
+<header class="toolbar"><span class="htitle">चंड-मुण्ड और रक्तबीज</span><span class="hbtns"><button onclick="fsDown()">A−</button><button onclick="fsUp()">A+</button></span></header>
+
 <article id="booktext">
 
 <p class="kicker">दुर्गा कथा - भाग १ - कथा २</p>
@@ -221,12 +221,9 @@ var steps=[15,17,19,22,25,28,32], idx=1;
 function applyFs(){
   var el=document.getElementById('booktext');
   if(el){ el.style.fontSize=steps[idx]+'px'; }
-  var lab=document.getElementById('fslabel');
-  if(lab){ lab.textContent=Math.round(steps[idx]/steps[1]*100)+'%'; }
 }
 function fsDown(){ if(idx>0){ idx--; applyFs(); } }
 function fsUp(){ if(idx<steps.length-1){ idx++; applyFs(); } }
-function fsReset(){ idx=1; applyFs(); }
 document.addEventListener('DOMContentLoaded', applyFs);
 </script>
 
