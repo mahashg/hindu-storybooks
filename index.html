@@ -114,6 +114,7 @@ function shuffleStory() {
 }
 function setLang(lang, btn) {
   curLang = lang;
+  try { localStorage.setItem('site-lang', lang); } catch (e) {}
   document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('active', b === btn); });
   document.documentElement.lang = lang;
   document.querySelectorAll('.t').forEach(function(el){
@@ -136,6 +137,12 @@ try {
     var s = document.getElementById(id);
     if (s) s.classList.add('collapsed');
   });
+} catch (e) {}
+try {
+  var savedLang = localStorage.getItem('site-lang');
+  if (savedLang === 'en') {
+    setLang('en', document.querySelectorAll('.lang button')[1]);
+  }
 } catch (e) {}
 render(fnv(todayStr()) % BOOKS.length);
 </script>
