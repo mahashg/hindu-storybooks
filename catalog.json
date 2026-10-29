@@ -1,0 +1,491 @@
+{
+ "ui": {
+  "title": {
+   "hi": "देवों की कहानियाँ",
+   "en": "Stories of the Gods"
+  },
+  "kicker": {
+   "hi": "आज रात की कहानी",
+   "en": "Tonight's story"
+  },
+  "read": {
+   "hi": "किताब पढ़ें",
+   "en": "Read the book"
+  },
+  "shuffle": {
+   "hi": "एक और कहानी",
+   "en": "Another story"
+  },
+  "footer": {
+   "hi": "आगे: बाक़ी कार्तिक त्योहार, अग्नि, गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ।",
+   "en": "Also ahead: the remaining Kartik festivals, Agni, Ganesha, Kartikeya, the Rama and Krishna arcs."
+  },
+  "planned": {
+   "hi": "जल्द आ रहा है",
+   "en": "Planned"
+  }
+ },
+ "sections": [
+  {
+   "id": "festivals",
+   "title_hi": "त्योहार",
+   "title_en": "Festival Books",
+   "books": [
+    {
+     "title_hi": "शरद पूर्णिमा — चाँद की सबसे बड़ी रात",
+     "title_en": "Sharad Purnima — the Moon's Greatest Night",
+     "desc_hi": "सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।",
+     "desc_en": "The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.",
+     "meta_hi": "22 पृष्ठ · प्रकाशित 25 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "22 pages · Published 25 Oct 2026 · Version 1",
+     "pdf": "books/sharad-purnima-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/sharad.jpg"
+    },
+    {
+     "title_hi": "करवा चौथ — चाँद का इंतज़ार",
+     "title_en": "Karva Chauth — Waiting for the Moon",
+     "desc_hi": "वीरवती का पति के साथ बिताया वर्ष, अलग घर, और सच्चा चंद्रोदय।",
+     "desc_en": "Veervati's year beside her husband, the separate house, and the true moonrise.",
+     "meta_hi": "27 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2",
+     "meta_en": "27 pages · Published 28 Oct 2026 · Version 2",
+     "pdf": "books/karva-chauth-everyday-hindi-v2.pdf",
+     "status": "published",
+     "painting": "images/paintings/karva.jpg"
+    },
+    {
+     "title_hi": "अहोई अष्टमी",
+     "title_en": "Ahoi Ashtami",
+     "desc_hi": "कार्तिक त्योहार-पुस्तक से: माँ का व्रत, एक छोटी भूल, सेवा का वर्ष, क्षमा।",
+     "desc_en": "From the Kartik festival book: a mother’s fast, a small harm, a year of service, forgiveness.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    },
+    {
+     "title_hi": "धनतेरस की रात — दिवाली की सोने की कहानियाँ · किताब १",
+     "title_en": "Dhanteras Night — Diwali Bedtime Stories · Book 1",
+     "desc_hi": "धन्वंतरि समुद्र से उठते हैं; हिमा के पुत्र और यम को मात देने वाले दीप; कुबेर की समृद्धि-धारा। जिस रात दीयों ने अँधेरे से भी बड़ी बात कह दी।",
+     "desc_en": "Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread. The night the lamps spoke louder than the dark.",
+     "meta_hi": "20 पृष्ठ · प्रकाशित 29 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "20 pages · Published 29 Oct 2026 · Version 1",
+     "pdf": "books/dhanteras-night-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/dhanteras.jpg",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "रात २ — नरकासुर का अंत",
+     "title_en": "Night 2 — Narakasura's end",
+     "desc_hi": "कृष्ण और सत्यभामा बंदियों को मुक्त करते हैं; दक्षिण की भोर वाली कथा, जहाँ यही सुबह दिवाली है।",
+     "desc_en": "Krishna and Satyabhama free the captives; the South's dawn telling, where this morning is Diwali.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "रात ३ — अयोध्या के दीये",
+     "title_en": "Night 3 — Ayodhya's diyas",
+     "desc_hi": "चौदह वर्ष बाद राम, सीता और लक्ष्मण लौटते हैं, और नगर हर द्वार पर दीप जलाता है। केंद्र-बिंदु।",
+     "desc_en": "Ram, Sita and Lakshman return after fourteen years, and the city lights every doorway. The centerpiece.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "रात ३ — लक्ष्मी घर आती हैं",
+     "title_en": "Night 3 — Lakshmi comes home",
+     "desc_hi": "समुद्र, स्वागत, सफ़ाई के साथ अलक्ष्मी का विदा होना, और पूजा-रात की व्रत कथा।",
+     "desc_en": "The ocean, the welcome, Alakshmi driven out with the cleaning, and the puja-night vrat katha.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "रात ४ — गोवर्धन",
+     "title_en": "Night 4 — Govardhan",
+     "desc_hi": "कृष्ण सात दिन तक पहाड़ उठाते हैं, और इंद्र का अभिमान वर्षा में धुल जाता है।",
+     "desc_en": "Krishna lifts the hill for seven days, and Indra's pride is washed away in the rain.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "रात ४ — बलि का आगमन",
+     "title_en": "Night 4 — Bali visits",
+     "desc_hi": "वचन निभाने वाला राजा अपनी प्रजा के पास लौटता है, अंत में नववर्ष की परंपराएँ: बलि पाड्यमी, बेस्तु वरस, चोपड़ा पूजन।",
+     "desc_en": "The king who kept his word returns to his people, closing with the new-year customs: Bali Padyami, Bestu Varas, Chopda Pujan.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "रात ५ — भाई दूज",
+     "title_en": "Night 5 — Bhai Dooj",
+     "desc_hi": "यम यमुना से मिलने आते हैं — तिलक, भोजन, वचन — साथ में चित्रगुप्त और उनकी बही की धारा।",
+     "desc_en": "Yama visits Yamuna — tilak, a meal, a promise — with Chitragupta and his book of accounts as companion thread.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "क्षेत्रीय शेल्फ़ — काली पूजा की रात (बंगाल)",
+     "title_en": "Regional shelf — Kali Puja night (Bengal)",
+     "desc_hi": "बंगाल की दिवाली: नृत्य करती काली, उनके पैरों तले शिव, अंधकार और प्रकाश में बदली रात।",
+     "desc_en": "Bengal's Diwali: Kali dancing, Shiva beneath her feet, the night turned to her darkness-and-light.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    },
+    {
+     "title_hi": "क्षेत्रीय शेल्फ़ — तिहार के पशु-मित्र (नेपाल)",
+     "title_en": "Regional shelf — Tihar's animal friends (Nepal)",
+     "desc_hi": "नेपाल के पाँच दिन कौए, कुत्ते और गाय के माध्यम से — दीपों से पहले यम के दूतों का सम्मान।",
+     "desc_en": "Nepal's five days through the crow, the dog and the cow — Yama's messengers honoured before the lamps.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned",
+     "group": "diwali"
+    }
+   ],
+   "groups": {
+    "diwali": {
+     "title_hi": "दिवाली",
+     "title_en": "Diwali"
+    }
+   }
+  },
+  {
+   "id": "durga",
+   "title_hi": "दुर्गा कथा और देवी",
+   "title_en": "Durga Katha &amp; the Devi",
+   "books": [
+    {
+     "title_hi": "महिषासुर — देवी दुर्गा और भैंसा असुर",
+     "title_en": "Mahishasura — Devi Durga and the Buffalo Demon",
+     "desc_hi": "पहली कहानी: भैंसा असुर के सामने देवी।",
+     "desc_en": "The first story: Devi against the buffalo demon.",
+     "meta_hi": "18 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 3",
+     "meta_en": "18 pages · Published 19 Oct 2026 · Version 3",
+     "pdf": "books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf",
+     "status": "published",
+     "painting": "images/paintings/mahishasura.jpg"
+    },
+    {
+     "title_hi": "चंड-मुण्ड और रक्तबीज",
+     "title_en": "Chanda-Munda and Raktabeej",
+     "desc_hi": "चंड-मुण्ड गिरते हैं, और रक्तबीज की हर बूँद से नया असुर उठता है — जब तक काली उत्तर नहीं देतीं।",
+     "desc_en": "Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.",
+     "meta_hi": "15 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "15 pages · Published 19 Oct 2026 · Version 1",
+     "pdf": "books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/chanda.jpg"
+    },
+    {
+     "title_hi": "शुम्भ और निशुम्भ",
+     "title_en": "Shumbha and Nishumbha",
+     "desc_hi": "कौशिकी का प्रकट होना, धूम्रलोचन, मातृकाएँ, शिवदूती, और देवी का वचन।",
+     "desc_en": "Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.",
+     "meta_hi": "32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 2",
+     "meta_en": "32 pages · Published 22 Oct 2026 · Version 2",
+     "pdf": "books/shumbha-nishumbha-everyday-hindi-v2.pdf",
+     "status": "published",
+     "painting": "images/paintings/shumbha.jpg"
+    },
+    {
+     "title_hi": "मधु-कैटभ",
+     "title_en": "Madhu-Kaitabha",
+     "desc_hi": "विष्णु के कान से दो असुर वेद चुरा लेते हैं — और महामाया प्रभु को जगाती हैं।",
+     "desc_en": "From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.",
+     "meta_hi": "16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "16 pages · Published 20 Oct 2026 · Version 1",
+     "pdf": "books/durga-katha-madhu-kaitabha-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/madhu.jpg"
+    },
+    {
+     "title_hi": "शताक्षी–शाकंभरी",
+     "title_en": "Shatakshi–Shakambhari",
+     "desc_hi": "देवी का किया हुआ वादा — सौ आँखों वाली देवी, फिर शाक की देवी, जो सूखा मिटाती हैं।",
+     "desc_en": "Devi’s promised form — the hundred-eyed goddess, then the goddess of greens, ending the great drought.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    },
+    {
+     "title_hi": "भीमा",
+     "title_en": "Bhima",
+     "desc_hi": "देवी का किया हुआ वादा — उनका उग्र रूप।",
+     "desc_en": "Devi’s promised fierce form.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    },
+    {
+     "title_hi": "भ्रामरी",
+     "title_en": "Bhramari",
+     "desc_hi": "मधुमक्खियों की देवी, अरुण असुर के सामने।",
+     "desc_en": "Devi as Bhramari, goddess of bees, against the demon Aruna.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    },
+    {
+     "title_hi": "दुर्गम",
+     "title_en": "Durgam",
+     "desc_hi": "देवी दुर्गम असुर का सामना करती हैं।",
+     "desc_en": "Devi faces the demon Durgam.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    }
+   ]
+  },
+  {
+   "id": "shiva",
+   "title_hi": "शिव",
+   "title_en": "Shiva",
+   "books": [
+    {
+     "title_hi": "शिव — नीलकंठ की कथा",
+     "title_en": "Shiva — the Neelkanth Story",
+     "desc_hi": "शिव संसार को बचाने के लिए हलाहल विष पीते हैं, और उनका गला नीला हो जाता है।",
+     "desc_en": "Shiva drinks the halahala poison to save the worlds, and his throat turns blue.",
+     "meta_hi": "16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "16 pages · Published 20 Oct 2026 · Version 1",
+     "pdf": "books/shiva-neelkanth-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/neelkanth.jpg"
+    },
+    {
+     "title_hi": "शिव–पार्वती",
+     "title_en": "Shiva–Parvati",
+     "desc_hi": "सती, अग्नि, वह शोक जो तभी थमा जब कुछ भी नहीं बचा — और पार्वती, जिनकी तपस्या, ज़िद और विवाह शिव को घर ले आए। कामदेव, सप्तर्षि, और कार्तिकेय का तारकासुर-वध सहित।",
+     "desc_en": "Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.",
+     "meta_hi": "36 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 3",
+     "meta_en": "36 pages · Published 28 Oct 2026 · Version 3",
+     "pdf": "books/shiva-parvati-everyday-hindi-v3.pdf",
+     "status": "published",
+     "painting": "images/paintings/shivaparvati.jpg"
+    }
+   ]
+  },
+  {
+   "id": "vishnu",
+   "title_hi": "विष्णु और अवतार",
+   "title_en": "Vishnu &amp; the Avatars",
+   "books": [
+    {
+     "title_hi": "मत्स्य अवतार — बाढ़ में बची दुनिया",
+     "title_en": "Matsya Avatar — the World Saved in the Flood",
+     "desc_hi": "मनु की हथेलियों की छोटी-सी मछली दुनिया की नाव बन जाती है।",
+     "desc_en": "The tiny fish in Manu's palms grows into the world's boat.",
+     "meta_hi": "23 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "23 pages · Published 22 Oct 2026 · Version 1",
+     "pdf": "books/matsya-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/matsya.jpg"
+    },
+    {
+     "title_hi": "समुद्र मंथन",
+     "title_en": "Samudra Manthan",
+     "desc_hi": "समुद्र का मंथन: विष, अमृत, लक्ष्मी, मोहिनी, और राहु-केतु।",
+     "desc_en": "The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.",
+     "meta_hi": "23 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "23 pages · Published 20 Oct 2026 · Version 1",
+     "pdf": "books/samudra-manthan-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/samudra.jpg"
+    },
+    {
+     "title_hi": "वराह अवतार — धरती को उठाने वाले",
+     "title_en": "Varaha Avatar — the One Who Lifted the Earth",
+     "desc_hi": "वराह जो डूबी हुई धरती को अपने दाँतों पर उठा लेते हैं।",
+     "desc_en": "The boar who lifts the drowned earth on his tusks.",
+     "meta_hi": "21 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "21 pages · Published 22 Oct 2026 · Version 1",
+     "pdf": "books/varaha-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/varaha.jpg"
+    },
+    {
+     "title_hi": "नृसिंह अवतार — भक्त प्रह्लाद की कथा",
+     "title_en": "Narasimha Avatar — the Story of Bhakt Prahlada",
+     "desc_hi": "संध्या के समय खंभे से, न मनुष्य न पशु — और एक पुत्र जो अपने पिता को क्षमा करता है।",
+     "desc_en": "From the pillar at dusk, neither man nor beast — and a son who forgives his father.",
+     "meta_hi": "24 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "24 pages · Published 22 Oct 2026 · Version 1",
+     "pdf": "books/narasimha-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/narasimha.jpg"
+    },
+    {
+     "title_hi": "वामन अवतार और राजा बलि",
+     "title_en": "Vamana Avatar and King Bali",
+     "desc_hi": "तीन पग भूमि — और एक राजा जो अपना वचन निभाता है। बलि सम्मानित हैं, खलनायक नहीं।",
+     "desc_en": "Three steps of land — and a king who keeps his word. Bali honoured, not villainised.",
+     "meta_hi": "19 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "19 pages · Published 20 Oct 2026 · Version 1",
+     "pdf": "books/vishnu-vamana-bali-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/vamana.jpg"
+    },
+    {
+     "title_hi": "परशुराम — क्रोध और प्रतिज्ञा की कथा",
+     "title_en": "Parashurama — a Story of Anger and Vows",
+     "desc_hi": "राजाओं को जन्म ने नहीं, शक्ति और अहंकार ने भ्रष्ट किया — और योद्धा युवा राम के सामने झुकता है।",
+     "desc_en": "Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.",
+     "meta_hi": "28 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "28 pages · Published 22 Oct 2026 · Version 1",
+     "pdf": "books/parashurama-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/parashurama.jpg"
+    },
+    {
+     "title_hi": "राम",
+     "title_en": "Rama",
+     "desc_hi": "सातवाँ अवतार — रामायण की कथा, बड़े विस्तार में; रूपरेखा अभी बननी है।",
+     "desc_en": "The seventh avatar — the Ramayana, told at full length; the arc still needs scoping.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    },
+    {
+     "title_hi": "कृष्ण",
+     "title_en": "Krishna",
+     "desc_hi": "आठवाँ अवतार — कृष्ण की कथा, बड़े विस्तार में; रूपरेखा अभी बननी है।",
+     "desc_en": "The eighth avatar — Krishna’s story, told at full length; the arc still needs scoping.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    },
+    {
+     "title_hi": "कल्कि",
+     "title_en": "Kalki",
+     "desc_hi": "दसवाँ अवतार — कल्कि, जो अभी आना बाकी है।",
+     "desc_en": "The tenth avatar — Kalki, who is yet to come.",
+     "meta_hi": "जल्द आ रहा है",
+     "meta_en": "Planned",
+     "pdf": null,
+     "status": "planned"
+    }
+   ]
+  },
+  {
+   "id": "gods",
+   "title_hi": "देवों से पहले के भी देव",
+   "title_en": "Gods Before Gods",
+   "books": [
+    {
+     "title_hi": "इंद्र — स्वर्ग के राजा की कहानी",
+     "title_en": "Indra — Story of the King of Svarga",
+     "desc_hi": "पहली पुस्तक: पुराण-युग से पहले के देवता। इंद्र की उत्पत्ति, ख़ज़ाने, कर्म, दोष, महाकाव्य — और आज के इंद्र। कॉमिक-शैली का आवरण, अंदर श्रृंखला-पृष्ठ।",
+     "desc_en": "Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.",
+     "meta_hi": "52 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2",
+     "meta_en": "52 pages · Published 28 Oct 2026 · Version 2",
+     "pdf": "books/indra-v2.pdf",
+     "status": "published",
+     "painting": "images/paintings/indra.jpg"
+    }
+   ]
+  },
+  {
+   "id": "gurus",
+   "title_hi": "गुरु और मोड़",
+   "title_en": "Gurus &amp; Turning Points",
+   "books": [
+    {
+     "title_hi": "शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता",
+     "title_en": "Shukracharya — Guru of the Asuras, Knower of Sanjivani",
+     "desc_hi": "वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।",
+     "desc_en": "The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.",
+     "meta_hi": "32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "32 pages · Published 22 Oct 2026 · Version 1",
+     "pdf": "books/shukracharya-everyday-hindi.pdf",
+     "status": "published",
+     "painting": "images/paintings/shukracharya.jpg"
+    }
+   ]
+  },
+  {
+   "id": "archives",
+   "title_hi": "अभिलेखागार",
+   "title_en": "Archives",
+   "books": [
+    {
+     "title_hi": "दुर्गा कथा खंड १ — कहानी-पुस्तक (अंग्रेज़ी, v2)",
+     "title_en": "Durga Katha Vol. 1 — Storybook (English, v2)",
+     "desc_hi": "महिषासुर, चंड-मुण्ड और रक्तबीज, शुम्भ-निशुम्भ — कथावाचक-टिप्पणियों और ज़ोर से पढ़ने की सुविधाओं सहित।",
+     "desc_en": "Mahishasura, Chanda-Munda &amp; Raktabeej, Shumbha-Nishumbha — with Storyteller's Notes and read-aloud features.",
+     "meta_hi": "23 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2",
+     "meta_en": "23 pages · Published 18 Oct 2026 · Version 2",
+     "pdf": "books/durga-katha-story-book-vol1-v2.pdf",
+     "status": "published"
+    },
+    {
+     "title_hi": "दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)",
+     "title_en": "Durga Katha Vol. 1 — Storybook (Hindi)",
+     "desc_hi": "वही तीन कहानियाँ, हिंदी में।",
+     "desc_en": "The same three stories in Hindi.",
+     "meta_hi": "20 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "20 pages · Published 18 Oct 2026 · Version 1",
+     "pdf": "books/durga-katha-story-book-vol1-hindi.pdf",
+     "status": "published"
+    },
+    {
+     "title_hi": "दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)",
+     "title_en": "Durga Katha Vol. 1 — Comic (English, v2)",
+     "desc_hi": "तीन कहानियाँ कॉमिक के रूप में, अनूठी पैनल-कला के साथ।",
+     "desc_en": "The three stories as a comic, with unique panel art.",
+     "meta_hi": "34 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2",
+     "meta_en": "34 pages · Published 18 Oct 2026 · Version 2",
+     "pdf": "books/durga-katha-comic-vol1-v2.pdf",
+     "status": "published"
+    },
+    {
+     "title_hi": "दुर्गा कथा खंड १ — कॉमिक (हिंदी)",
+     "title_en": "Durga Katha Vol. 1 — Comic (Hindi)",
+     "desc_hi": "तीन कहानियाँ हिंदी में कॉमिक के रूप में।",
+     "desc_en": "The three stories as a comic in Hindi.",
+     "meta_hi": "28 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "28 pages · Published 18 Oct 2026 · Version 1",
+     "pdf": "books/durga-katha-comic-vol1-hindi.pdf",
+     "status": "published"
+    },
+    {
+     "title_hi": "देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए",
+     "title_en": "Devi Durga and the Buffalo Demon — For Little Readers",
+     "desc_hi": "महिषासुर, अकेले पढ़ने वाले बच्चे के लिए: छोटी पंक्तियाँ, दृष्टि-शब्द, हर रूप-बदल पर टेक, खेल और रंग भरने के पृष्ठ।",
+     "desc_en": "Mahishasura retold for a child reading alone: tiny lines, sight words, a refrain at each shape-change, play and colouring pages.",
+     "meta_hi": "26 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "26 pages · Published 19 Oct 2026 · Version 1",
+     "pdf": "books/mahishasura-for-little-readers-hindi.pdf",
+     "status": "published"
+    }
+   ]
+  }
+ ]
+}

@@ -55,40 +55,23 @@
 </style></head>
 <body>
 
-<header><div class="brand"><img class="logo" src="images/logo-devi-seal.png" alt="देवी"><h1 class="t" data-hi="देवों की कहानियाँ" data-en="Stories of the Gods">देवों की कहानियाँ</h1></div>
+<header><div class="brand"><img class="logo" src="images/logo-devi-seal.png" alt="देवी"><h1 class="t" id="siteTitle"></h1></div>
 <div class="lang"><button class="active" onclick="setLang('hi', this)">हिंदी</button><button onclick="setLang('en', this)">English</button></div></header>
-<section class="tonight"><a id="tLink" href="books/sharad-purnima-everyday-hindi.pdf" target="_blank"><img id="tImg" src="images/paintings/sharad.jpg" alt=""></a>
+<section class="tonight" id="tonightSec" style="visibility:hidden"><a id="tLink" target="_blank"><img id="tImg" alt=""></a>
 <div>
-<div class="kicker t" data-hi="आज रात की कहानी" data-en="Tonight's story">आज रात की कहानी</div>
-<h2 class="t" id="tTitle" data-hi="शरद पूर्णिमा — चाँद की सबसे बड़ी रात" data-en="Sharad Purnima — the Moon's Greatest Night">शरद पूर्णिमा — चाँद की सबसे बड़ी रात</h2>
-<p class="t" id="tDesc" data-hi="सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।" data-en="The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.">सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।</p>
-<p class="meta t" id="tMeta" data-hi="22 पृष्ठ · प्रकाशित 25 अक्तूबर 2026 · संस्करण 1" data-en="22 pages · Published 25 Oct 2026 · Version 1">22 पृष्ठ · प्रकाशित 25 अक्तूबर 2026 · संस्करण 1</p>
-<a class="btn t" id="tRead" data-hi="किताब पढ़ें" data-en="Read the book" href="books/sharad-purnima-everyday-hindi.pdf" target="_blank">किताब पढ़ें</a>
-<button class="shuffle" onclick="shuffleStory()">&#8635; <span class="t" data-hi="एक और कहानी" data-en="Another story">एक और कहानी</span></button>
+<div class="kicker t" id="tKicker"></div>
+<h2 class="t" id="tTitle"></h2>
+<p class="t" id="tDesc"></p>
+<p class="meta t" id="tMeta"></p>
+<a class="btn t" id="tRead" target="_blank"></a>
+<button class="shuffle" onclick="shuffleStory()">&#8635; <span class="t" id="tShuffle"></span></button>
 </div></section>
-<section class="seclist" id="sec-festivals"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="त्योहार" data-en="Festival Books">त्योहार</span> <span class="cnt">3 books, 9 planned</span></h3><ul><li><a href="books/sharad-purnima-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="शरद पूर्णिमा — चाँद की सबसे बड़ी रात" data-en="Sharad Purnima — the Moon's Greatest Night">शरद पूर्णिमा — चाँद की सबसे बड़ी रात</b></a> <span class="desc t" data-hi="सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।" data-en="The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.">सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।</span> <span class="meta t" data-hi="22 पृष्ठ · प्रकाशित 25 अक्तूबर 2026 · संस्करण 1" data-en="22 pages · Published 25 Oct 2026 · Version 1">22 पृष्ठ · प्रकाशित 25 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/karva-chauth-everyday-hindi-v2.pdf" target="_blank"><b class="t" data-hi="करवा चौथ — चाँद का इंतज़ार" data-en="Karva Chauth — Waiting for the Moon">करवा चौथ — चाँद का इंतज़ार</b></a> <span class="desc t" data-hi="वीरवती का पति के साथ बिताया वर्ष, अलग घर, और सच्चा चंद्रोदय।" data-en="Veervati's year beside her husband, the separate house, and the true moonrise.">वीरवती का पति के साथ बिताया वर्ष, अलग घर, और सच्चा चंद्रोदय।</span> <span class="meta t" data-hi="27 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2" data-en="27 pages · Published 28 Oct 2026 · Version 2">27 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2</span></li><li class="planned"><b class="t" data-hi="अहोई अष्टमी" data-en="Ahoi Ashtami">अहोई अष्टमी</b> <span class="desc t" data-hi="कार्तिक त्योहार-पुस्तक से: माँ का व्रत, एक छोटी भूल, सेवा का वर्ष, क्षमा।" data-en="From the Kartik festival book: a mother’s fast, a small harm, a year of service, forgiveness.">कार्तिक त्योहार-पुस्तक से: माँ का व्रत, एक छोटी भूल, सेवा का वर्ष, क्षमा।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li></ul><h4 class="t" data-hi="दिवाली" data-en="Diwali">दिवाली</h4><ul><li><a href="books/dhanteras-night-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="धनतेरस की रात — दिवाली की सोने की कहानियाँ · किताब १" data-en="Dhanteras Night — Diwali Bedtime Stories · Book 1">धनतेरस की रात — दिवाली की सोने की कहानियाँ · किताब १</b></a> <span class="desc t" data-hi="धन्वंतरि समुद्र से उठते हैं; हिमा के पुत्र और यम को मात देने वाले दीप; कुबेर की समृद्धि-धारा। जिस रात दीयों ने अँधेरे से भी बड़ी बात कह दी।" data-en="Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread. The night the lamps spoke louder than the dark.">धन्वंतरि समुद्र से उठते हैं; हिमा के पुत्र और यम को मात देने वाले दीप; कुबेर की समृद्धि-धारा। जिस रात दीयों ने अँधेरे से भी बड़ी बात कह दी।</span> <span class="meta t" data-hi="20 पृष्ठ · प्रकाशित 29 अक्तूबर 2026 · संस्करण 1" data-en="20 pages · Published 29 Oct 2026 · Version 1">20 पृष्ठ · प्रकाशित 29 अक्तूबर 2026 · संस्करण 1</span></li><li class="planned"><b class="t" data-hi="रात २ — नरकासुर का अंत" data-en="Night 2 — Narakasura's end">रात २ — नरकासुर का अंत</b> <span class="desc t" data-hi="कृष्ण और सत्यभामा बंदियों को मुक्त करते हैं; दक्षिण की भोर वाली कथा, जहाँ यही सुबह दिवाली है।" data-en="Krishna and Satyabhama free the captives; the South's dawn telling, where this morning is Diwali.">कृष्ण और सत्यभामा बंदियों को मुक्त करते हैं; दक्षिण की भोर वाली कथा, जहाँ यही सुबह दिवाली है।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="रात ३ — अयोध्या के दीये" data-en="Night 3 — Ayodhya's diyas">रात ३ — अयोध्या के दीये</b> <span class="desc t" data-hi="चौदह वर्ष बाद राम, सीता और लक्ष्मण लौटते हैं, और नगर हर द्वार पर दीप जलाता है। केंद्र-बिंदु।" data-en="Ram, Sita and Lakshman return after fourteen years, and the city lights every doorway. The centerpiece.">चौदह वर्ष बाद राम, सीता और लक्ष्मण लौटते हैं, और नगर हर द्वार पर दीप जलाता है। केंद्र-बिंदु।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="रात ३ — लक्ष्मी घर आती हैं" data-en="Night 3 — Lakshmi comes home">रात ३ — लक्ष्मी घर आती हैं</b> <span class="desc t" data-hi="समुद्र, स्वागत, सफ़ाई के साथ अलक्ष्मी का विदा होना, और पूजा-रात की व्रत कथा।" data-en="The ocean, the welcome, Alakshmi driven out with the cleaning, and the puja-night vrat katha.">समुद्र, स्वागत, सफ़ाई के साथ अलक्ष्मी का विदा होना, और पूजा-रात की व्रत कथा।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="रात ४ — गोवर्धन" data-en="Night 4 — Govardhan">रात ४ — गोवर्धन</b> <span class="desc t" data-hi="कृष्ण सात दिन तक पहाड़ उठाते हैं, और इंद्र का अभिमान वर्षा में धुल जाता है।" data-en="Krishna lifts the hill for seven days, and Indra's pride is washed away in the rain.">कृष्ण सात दिन तक पहाड़ उठाते हैं, और इंद्र का अभिमान वर्षा में धुल जाता है।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="रात ४ — बलि का आगमन" data-en="Night 4 — Bali visits">रात ४ — बलि का आगमन</b> <span class="desc t" data-hi="वचन निभाने वाला राजा अपनी प्रजा के पास लौटता है, अंत में नववर्ष की परंपराएँ: बलि पाड्यमी, बेस्तु वरस, चोपड़ा पूजन।" data-en="The king who kept his word returns to his people, closing with the new-year customs: Bali Padyami, Bestu Varas, Chopda Pujan.">वचन निभाने वाला राजा अपनी प्रजा के पास लौटता है, अंत में नववर्ष की परंपराएँ: बलि पाड्यमी, बेस्तु वरस, चोपड़ा पूजन।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="रात ५ — भाई दूज" data-en="Night 5 — Bhai Dooj">रात ५ — भाई दूज</b> <span class="desc t" data-hi="यम यमुना से मिलने आते हैं — तिलक, भोजन, वचन — साथ में चित्रगुप्त और उनकी बही की धारा।" data-en="Yama visits Yamuna — tilak, a meal, a promise — with Chitragupta and his book of accounts as companion thread.">यम यमुना से मिलने आते हैं — तिलक, भोजन, वचन — साथ में चित्रगुप्त और उनकी बही की धारा।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="क्षेत्रीय शेल्फ़ — काली पूजा की रात (बंगाल)" data-en="Regional shelf — Kali Puja night (Bengal)">क्षेत्रीय शेल्फ़ — काली पूजा की रात (बंगाल)</b> <span class="desc t" data-hi="बंगाल की दिवाली: नृत्य करती काली, उनके पैरों तले शिव, अंधकार और प्रकाश में बदली रात।" data-en="Bengal's Diwali: Kali dancing, Shiva beneath her feet, the night turned to her darkness-and-light.">बंगाल की दिवाली: नृत्य करती काली, उनके पैरों तले शिव, अंधकार और प्रकाश में बदली रात।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="क्षेत्रीय शेल्फ़ — तिहार के पशु-मित्र (नेपाल)" data-en="Regional shelf — Tihar's animal friends (Nepal)">क्षेत्रीय शेल्फ़ — तिहार के पशु-मित्र (नेपाल)</b> <span class="desc t" data-hi="नेपाल के पाँच दिन कौए, कुत्ते और गाय के माध्यम से — दीपों से पहले यम के दूतों का सम्मान।" data-en="Nepal's five days through the crow, the dog and the cow — Yama's messengers honoured before the lamps.">नेपाल के पाँच दिन कौए, कुत्ते और गाय के माध्यम से — दीपों से पहले यम के दूतों का सम्मान।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li></ul></section><section class="seclist" id="sec-durga"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="दुर्गा कथा और देवी" data-en="Durga Katha &amp;amp; the Devi">दुर्गा कथा और देवी</span> <span class="cnt">4 books, 4 planned</span></h3><ul><li><a href="books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf" target="_blank"><b class="t" data-hi="महिषासुर — देवी दुर्गा और भैंसा असुर" data-en="Mahishasura — Devi Durga and the Buffalo Demon">महिषासुर — देवी दुर्गा और भैंसा असुर</b></a> <span class="desc t" data-hi="पहली कहानी: भैंसा असुर के सामने देवी।" data-en="The first story: Devi against the buffalo demon.">पहली कहानी: भैंसा असुर के सामने देवी।</span> <span class="meta t" data-hi="18 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 3" data-en="18 pages · Published 19 Oct 2026 · Version 3">18 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 3</span></li><li><a href="books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="चंड-मुण्ड और रक्तबीज" data-en="Chanda-Munda and Raktabeej">चंड-मुण्ड और रक्तबीज</b></a> <span class="desc t" data-hi="चंड-मुण्ड गिरते हैं, और रक्तबीज की हर बूँद से नया असुर उठता है — जब तक काली उत्तर नहीं देतीं।" data-en="Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.">चंड-मुण्ड गिरते हैं, और रक्तबीज की हर बूँद से नया असुर उठता है — जब तक काली उत्तर नहीं देतीं।</span> <span class="meta t" data-hi="15 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1" data-en="15 pages · Published 19 Oct 2026 · Version 1">15 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/shumbha-nishumbha-everyday-hindi-v2.pdf" target="_blank"><b class="t" data-hi="शुम्भ और निशुम्भ" data-en="Shumbha and Nishumbha">शुम्भ और निशुम्भ</b></a> <span class="desc t" data-hi="कौशिकी का प्रकट होना, धूम्रलोचन, मातृकाएँ, शिवदूती, और देवी का वचन।" data-en="Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.">कौशिकी का प्रकट होना, धूम्रलोचन, मातृकाएँ, शिवदूती, और देवी का वचन।</span> <span class="meta t" data-hi="32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 2" data-en="32 pages · Published 22 Oct 2026 · Version 2">32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 2</span></li><li><a href="books/durga-katha-madhu-kaitabha-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="मधु-कैटभ" data-en="Madhu-Kaitabha">मधु-कैटभ</b></a> <span class="desc t" data-hi="विष्णु के कान से दो असुर वेद चुरा लेते हैं — और महामाया प्रभु को जगाती हैं।" data-en="From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.">विष्णु के कान से दो असुर वेद चुरा लेते हैं — और महामाया प्रभु को जगाती हैं।</span> <span class="meta t" data-hi="16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1" data-en="16 pages · Published 20 Oct 2026 · Version 1">16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1</span></li><li class="planned"><b class="t" data-hi="शताक्षी–शाकंभरी" data-en="Shatakshi–Shakambhari">शताक्षी–शाकंभरी</b> <span class="desc t" data-hi="देवी का किया हुआ वादा — सौ आँखों वाली देवी, फिर शाक की देवी, जो सूखा मिटाती हैं।" data-en="Devi’s promised form — the hundred-eyed goddess, then the goddess of greens, ending the great drought.">देवी का किया हुआ वादा — सौ आँखों वाली देवी, फिर शाक की देवी, जो सूखा मिटाती हैं।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="भीमा" data-en="Bhima">भीमा</b> <span class="desc t" data-hi="देवी का किया हुआ वादा — उनका उग्र रूप।" data-en="Devi’s promised fierce form.">देवी का किया हुआ वादा — उनका उग्र रूप।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="भ्रामरी" data-en="Bhramari">भ्रामरी</b> <span class="desc t" data-hi="मधुमक्खियों की देवी, अरुण असुर के सामने।" data-en="Devi as Bhramari, goddess of bees, against the demon Aruna.">मधुमक्खियों की देवी, अरुण असुर के सामने।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="दुर्गम" data-en="Durgam">दुर्गम</b> <span class="desc t" data-hi="देवी दुर्गम असुर का सामना करती हैं।" data-en="Devi faces the demon Durgam.">देवी दुर्गम असुर का सामना करती हैं।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li></ul></section><section class="seclist" id="sec-shiva"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="शिव" data-en="Shiva">शिव</span> <span class="cnt">2 books</span></h3><ul><li><a href="books/shiva-neelkanth-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="शिव — नीलकंठ की कथा" data-en="Shiva — the Neelkanth Story">शिव — नीलकंठ की कथा</b></a> <span class="desc t" data-hi="शिव संसार को बचाने के लिए हलाहल विष पीते हैं, और उनका गला नीला हो जाता है।" data-en="Shiva drinks the halahala poison to save the worlds, and his throat turns blue.">शिव संसार को बचाने के लिए हलाहल विष पीते हैं, और उनका गला नीला हो जाता है।</span> <span class="meta t" data-hi="16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1" data-en="16 pages · Published 20 Oct 2026 · Version 1">16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/shiva-parvati-everyday-hindi-v3.pdf" target="_blank"><b class="t" data-hi="शिव–पार्वती" data-en="Shiva–Parvati">शिव–पार्वती</b></a> <span class="desc t" data-hi="सती, अग्नि, वह शोक जो तभी थमा जब कुछ भी नहीं बचा — और पार्वती, जिनकी तपस्या, ज़िद और विवाह शिव को घर ले आए। कामदेव, सप्तर्षि, और कार्तिकेय का तारकासुर-वध सहित।" data-en="Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.">सती, अग्नि, वह शोक जो तभी थमा जब कुछ भी नहीं बचा — और पार्वती, जिनकी तपस्या, ज़िद और विवाह शिव को घर ले आए। कामदेव, सप्तर्षि, और कार्तिकेय का तारकासुर-वध सहित।</span> <span class="meta t" data-hi="36 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 3" data-en="36 pages · Published 28 Oct 2026 · Version 3">36 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 3</span></li></ul></section><section class="seclist" id="sec-vishnu"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="विष्णु और अवतार" data-en="Vishnu &amp;amp; the Avatars">विष्णु और अवतार</span> <span class="cnt">6 books, 3 planned</span></h3><ul><li><a href="books/matsya-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="मत्स्य अवतार — बाढ़ में बची दुनिया" data-en="Matsya Avatar — the World Saved in the Flood">मत्स्य अवतार — बाढ़ में बची दुनिया</b></a> <span class="desc t" data-hi="मनु की हथेलियों की छोटी-सी मछली दुनिया की नाव बन जाती है।" data-en="The tiny fish in Manu's palms grows into the world's boat.">मनु की हथेलियों की छोटी-सी मछली दुनिया की नाव बन जाती है।</span> <span class="meta t" data-hi="23 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1" data-en="23 pages · Published 22 Oct 2026 · Version 1">23 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/samudra-manthan-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="समुद्र मंथन" data-en="Samudra Manthan">समुद्र मंथन</b></a> <span class="desc t" data-hi="समुद्र का मंथन: विष, अमृत, लक्ष्मी, मोहिनी, और राहु-केतु।" data-en="The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.">समुद्र का मंथन: विष, अमृत, लक्ष्मी, मोहिनी, और राहु-केतु।</span> <span class="meta t" data-hi="23 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1" data-en="23 pages · Published 20 Oct 2026 · Version 1">23 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/varaha-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="वराह अवतार — धरती को उठाने वाले" data-en="Varaha Avatar — the One Who Lifted the Earth">वराह अवतार — धरती को उठाने वाले</b></a> <span class="desc t" data-hi="वराह जो डूबी हुई धरती को अपने दाँतों पर उठा लेते हैं।" data-en="The boar who lifts the drowned earth on his tusks.">वराह जो डूबी हुई धरती को अपने दाँतों पर उठा लेते हैं।</span> <span class="meta t" data-hi="21 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1" data-en="21 pages · Published 22 Oct 2026 · Version 1">21 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/narasimha-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="नृसिंह अवतार — भक्त प्रह्लाद की कथा" data-en="Narasimha Avatar — the Story of Bhakt Prahlada">नृसिंह अवतार — भक्त प्रह्लाद की कथा</b></a> <span class="desc t" data-hi="संध्या के समय खंभे से, न मनुष्य न पशु — और एक पुत्र जो अपने पिता को क्षमा करता है।" data-en="From the pillar at dusk, neither man nor beast — and a son who forgives his father.">संध्या के समय खंभे से, न मनुष्य न पशु — और एक पुत्र जो अपने पिता को क्षमा करता है।</span> <span class="meta t" data-hi="24 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1" data-en="24 pages · Published 22 Oct 2026 · Version 1">24 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/vishnu-vamana-bali-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="वामन अवतार और राजा बलि" data-en="Vamana Avatar and King Bali">वामन अवतार और राजा बलि</b></a> <span class="desc t" data-hi="तीन पग भूमि — और एक राजा जो अपना वचन निभाता है। बलि सम्मानित हैं, खलनायक नहीं।" data-en="Three steps of land — and a king who keeps his word. Bali honoured, not villainised.">तीन पग भूमि — और एक राजा जो अपना वचन निभाता है। बलि सम्मानित हैं, खलनायक नहीं।</span> <span class="meta t" data-hi="19 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1" data-en="19 pages · Published 20 Oct 2026 · Version 1">19 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/parashurama-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="परशुराम — क्रोध और प्रतिज्ञा की कथा" data-en="Parashurama — a Story of Anger and Vows">परशुराम — क्रोध और प्रतिज्ञा की कथा</b></a> <span class="desc t" data-hi="राजाओं को जन्म ने नहीं, शक्ति और अहंकार ने भ्रष्ट किया — और योद्धा युवा राम के सामने झुकता है।" data-en="Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.">राजाओं को जन्म ने नहीं, शक्ति और अहंकार ने भ्रष्ट किया — और योद्धा युवा राम के सामने झुकता है।</span> <span class="meta t" data-hi="28 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1" data-en="28 pages · Published 22 Oct 2026 · Version 1">28 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1</span></li><li class="planned"><b class="t" data-hi="राम" data-en="Rama">राम</b> <span class="desc t" data-hi="सातवाँ अवतार — रामायण की कथा, बड़े विस्तार में; रूपरेखा अभी बननी है।" data-en="The seventh avatar — the Ramayana, told at full length; the arc still needs scoping.">सातवाँ अवतार — रामायण की कथा, बड़े विस्तार में; रूपरेखा अभी बननी है।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="कृष्ण" data-en="Krishna">कृष्ण</b> <span class="desc t" data-hi="आठवाँ अवतार — कृष्ण की कथा, बड़े विस्तार में; रूपरेखा अभी बननी है।" data-en="The eighth avatar — Krishna’s story, told at full length; the arc still needs scoping.">आठवाँ अवतार — कृष्ण की कथा, बड़े विस्तार में; रूपरेखा अभी बननी है।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li><li class="planned"><b class="t" data-hi="कल्कि" data-en="Kalki">कल्कि</b> <span class="desc t" data-hi="दसवाँ अवतार — कल्कि, जो अभी आना बाकी है।" data-en="The tenth avatar — Kalki, who is yet to come.">दसवाँ अवतार — कल्कि, जो अभी आना बाकी है।</span> <span class="meta t" data-hi="जल्द आ रहा है" data-en="Planned">जल्द आ रहा है</span></li></ul></section><section class="seclist" id="sec-gods"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="देवों से पहले के भी देव" data-en="Gods Before Gods">देवों से पहले के भी देव</span> <span class="cnt">1 books</span></h3><ul><li><a href="books/indra-v2.pdf" target="_blank"><b class="t" data-hi="इंद्र — स्वर्ग के राजा की कहानी" data-en="Indra — Story of the King of Svarga">इंद्र — स्वर्ग के राजा की कहानी</b></a> <span class="desc t" data-hi="पहली पुस्तक: पुराण-युग से पहले के देवता। इंद्र की उत्पत्ति, ख़ज़ाने, कर्म, दोष, महाकाव्य — और आज के इंद्र। कॉमिक-शैली का आवरण, अंदर श्रृंखला-पृष्ठ।" data-en="Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.">पहली पुस्तक: पुराण-युग से पहले के देवता। इंद्र की उत्पत्ति, ख़ज़ाने, कर्म, दोष, महाकाव्य — और आज के इंद्र। कॉमिक-शैली का आवरण, अंदर श्रृंखला-पृष्ठ।</span> <span class="meta t" data-hi="52 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2" data-en="52 pages · Published 28 Oct 2026 · Version 2">52 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2</span></li></ul></section><section class="seclist" id="sec-gurus"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="गुरु और मोड़" data-en="Gurus &amp;amp; Turning Points">गुरु और मोड़</span> <span class="cnt">1 books</span></h3><ul><li><a href="books/shukracharya-everyday-hindi.pdf" target="_blank"><b class="t" data-hi="शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता" data-en="Shukracharya — Guru of the Asuras, Knower of Sanjivani">शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता</b></a> <span class="desc t" data-hi="वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।" data-en="The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.">वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।</span> <span class="meta t" data-hi="32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1" data-en="32 pages · Published 22 Oct 2026 · Version 1">32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1</span></li></ul></section><section class="seclist" id="sec-archives"><h3 onclick="toggleSec(this)" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();toggleSec(this)}" tabindex="0" role="button"><span class="t" data-hi="अभिलेखागार" data-en="Archives">अभिलेखागार</span> <span class="cnt">5 books</span></h3><ul><li><a href="books/durga-katha-story-book-vol1-v2.pdf" target="_blank"><b class="t" data-hi="दुर्गा कथा खंड १ — कहानी-पुस्तक (अंग्रेज़ी, v2)" data-en="Durga Katha Vol. 1 — Storybook (English, v2)">दुर्गा कथा खंड १ — कहानी-पुस्तक (अंग्रेज़ी, v2)</b></a> <span class="desc t" data-hi="महिषासुर, चंड-मुण्ड और रक्तबीज, शुम्भ-निशुम्भ — कथावाचक-टिप्पणियों और ज़ोर से पढ़ने की सुविधाओं सहित।" data-en="Mahishasura, Chanda-Munda &amp;amp; Raktabeej, Shumbha-Nishumbha — with Storyteller's Notes and read-aloud features.">महिषासुर, चंड-मुण्ड और रक्तबीज, शुम्भ-निशुम्भ — कथावाचक-टिप्पणियों और ज़ोर से पढ़ने की सुविधाओं सहित।</span> <span class="meta t" data-hi="23 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2" data-en="23 pages · Published 18 Oct 2026 · Version 2">23 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2</span></li><li><a href="books/durga-katha-story-book-vol1-hindi.pdf" target="_blank"><b class="t" data-hi="दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)" data-en="Durga Katha Vol. 1 — Storybook (Hindi)">दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)</b></a> <span class="desc t" data-hi="वही तीन कहानियाँ, हिंदी में।" data-en="The same three stories in Hindi.">वही तीन कहानियाँ, हिंदी में।</span> <span class="meta t" data-hi="20 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1" data-en="20 pages · Published 18 Oct 2026 · Version 1">20 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/durga-katha-comic-vol1-v2.pdf" target="_blank"><b class="t" data-hi="दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)" data-en="Durga Katha Vol. 1 — Comic (English, v2)">दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)</b></a> <span class="desc t" data-hi="तीन कहानियाँ कॉमिक के रूप में, अनूठी पैनल-कला के साथ।" data-en="The three stories as a comic, with unique panel art.">तीन कहानियाँ कॉमिक के रूप में, अनूठी पैनल-कला के साथ।</span> <span class="meta t" data-hi="34 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2" data-en="34 pages · Published 18 Oct 2026 · Version 2">34 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2</span></li><li><a href="books/durga-katha-comic-vol1-hindi.pdf" target="_blank"><b class="t" data-hi="दुर्गा कथा खंड १ — कॉमिक (हिंदी)" data-en="Durga Katha Vol. 1 — Comic (Hindi)">दुर्गा कथा खंड १ — कॉमिक (हिंदी)</b></a> <span class="desc t" data-hi="तीन कहानियाँ हिंदी में कॉमिक के रूप में।" data-en="The three stories as a comic in Hindi.">तीन कहानियाँ हिंदी में कॉमिक के रूप में।</span> <span class="meta t" data-hi="28 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1" data-en="28 pages · Published 18 Oct 2026 · Version 1">28 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1</span></li><li><a href="books/mahishasura-for-little-readers-hindi.pdf" target="_blank"><b class="t" data-hi="देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए" data-en="Devi Durga and the Buffalo Demon — For Little Readers">देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए</b></a> <span class="desc t" data-hi="महिषासुर, अकेले पढ़ने वाले बच्चे के लिए: छोटी पंक्तियाँ, दृष्टि-शब्द, हर रूप-बदल पर टेक, खेल और रंग भरने के पृष्ठ।" data-en="Mahishasura retold for a child reading alone: tiny lines, sight words, a refrain at each shape-change, play and colouring pages.">महिषासुर, अकेले पढ़ने वाले बच्चे के लिए: छोटी पंक्तियाँ, दृष्टि-शब्द, हर रूप-बदल पर टेक, खेल और रंग भरने के पृष्ठ।</span> <span class="meta t" data-hi="26 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1" data-en="26 pages · Published 19 Oct 2026 · Version 1">26 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1</span></li></ul></section>
-<footer><p class="t" data-hi="आगे: बाक़ी कार्तिक त्योहार, अग्नि, गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ।" data-en="Also ahead: the remaining Kartik festivals, Agni, Ganesha, Kartikeya, the Rama and Krishna arcs.">आगे: बाक़ी कार्तिक त्योहार, अग्नि, गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ।</p></footer>
+<main id="lists"></main>
+<footer><p class="t" id="footT"></p></footer>
+
 <script>
-var BOOKS = [
-{thi:"शरद पूर्णिमा — चाँद की सबसे बड़ी रात",ten:"Sharad Purnima — the Moon's Greatest Night",dhi:"सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।",den:"The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.",mhi:"22 पृष्ठ · प्रकाशित 25 अक्तूबर 2026 · संस्करण 1",men:"22 pages · Published 25 Oct 2026 · Version 1",img:"images/paintings/sharad.jpg",pdf:"books/sharad-purnima-everyday-hindi.pdf"},
-{thi:"करवा चौथ — चाँद का इंतज़ार",ten:"Karva Chauth — Waiting for the Moon",dhi:"वीरवती का पति के साथ बिताया वर्ष, अलग घर, और सच्चा चंद्रोदय।",den:"Veervati's year beside her husband, the separate house, and the true moonrise.",mhi:"27 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2",men:"27 pages · Published 28 Oct 2026 · Version 2",img:"images/paintings/karva.jpg",pdf:"books/karva-chauth-everyday-hindi-v2.pdf"},
-{thi:"धनतेरस की रात — दिवाली की सोने की कहानियाँ · किताब १",ten:"Dhanteras Night — Diwali Bedtime Stories · Book 1",dhi:"धन्वंतरि समुद्र से उठते हैं; हिमा के पुत्र और यम को मात देने वाले दीप; कुबेर की समृद्धि-धारा। जिस रात दीयों ने अँधेरे से भी बड़ी बात कह दी।",den:"Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread. The night the lamps spoke louder than the dark.",mhi:"20 पृष्ठ · प्रकाशित 29 अक्तूबर 2026 · संस्करण 1",men:"20 pages · Published 29 Oct 2026 · Version 1",img:"images/paintings/dhanteras.jpg",pdf:"books/dhanteras-night-everyday-hindi.pdf"},
-{thi:"महिषासुर — देवी दुर्गा और भैंसा असुर",ten:"Mahishasura — Devi Durga and the Buffalo Demon",dhi:"पहली कहानी: भैंसा असुर के सामने देवी।",den:"The first story: Devi against the buffalo demon.",mhi:"18 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 3",men:"18 pages · Published 19 Oct 2026 · Version 3",img:"images/paintings/mahishasura.jpg",pdf:"books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf"},
-{thi:"चंड-मुण्ड और रक्तबीज",ten:"Chanda-Munda and Raktabeej",dhi:"चंड-मुण्ड गिरते हैं, और रक्तबीज की हर बूँद से नया असुर उठता है — जब तक काली उत्तर नहीं देतीं।",den:"Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.",mhi:"15 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1",men:"15 pages · Published 19 Oct 2026 · Version 1",img:"images/paintings/chanda.jpg",pdf:"books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf"},
-{thi:"शुम्भ और निशुम्भ",ten:"Shumbha and Nishumbha",dhi:"कौशिकी का प्रकट होना, धूम्रलोचन, मातृकाएँ, शिवदूती, और देवी का वचन।",den:"Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.",mhi:"32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 2",men:"32 pages · Published 22 Oct 2026 · Version 2",img:"images/paintings/shumbha.jpg",pdf:"books/shumbha-nishumbha-everyday-hindi-v2.pdf"},
-{thi:"मधु-कैटभ",ten:"Madhu-Kaitabha",dhi:"विष्णु के कान से दो असुर वेद चुरा लेते हैं — और महामाया प्रभु को जगाती हैं।",den:"From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.",mhi:"16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",men:"16 pages · Published 20 Oct 2026 · Version 1",img:"images/paintings/madhu.jpg",pdf:"books/durga-katha-madhu-kaitabha-everyday-hindi.pdf"},
-{thi:"शिव — नीलकंठ की कथा",ten:"Shiva — the Neelkanth Story",dhi:"शिव संसार को बचाने के लिए हलाहल विष पीते हैं, और उनका गला नीला हो जाता है।",den:"Shiva drinks the halahala poison to save the worlds, and his throat turns blue.",mhi:"16 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",men:"16 pages · Published 20 Oct 2026 · Version 1",img:"images/paintings/neelkanth.jpg",pdf:"books/shiva-neelkanth-everyday-hindi.pdf"},
-{thi:"शिव–पार्वती",ten:"Shiva–Parvati",dhi:"सती, अग्नि, वह शोक जो तभी थमा जब कुछ भी नहीं बचा — और पार्वती, जिनकी तपस्या, ज़िद और विवाह शिव को घर ले आए। कामदेव, सप्तर्षि, और कार्तिकेय का तारकासुर-वध सहित।",den:"Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.",mhi:"36 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 3",men:"36 pages · Published 28 Oct 2026 · Version 3",img:"images/paintings/shivaparvati.jpg",pdf:"books/shiva-parvati-everyday-hindi-v3.pdf"},
-{thi:"मत्स्य अवतार — बाढ़ में बची दुनिया",ten:"Matsya Avatar — the World Saved in the Flood",dhi:"मनु की हथेलियों की छोटी-सी मछली दुनिया की नाव बन जाती है।",den:"The tiny fish in Manu's palms grows into the world's boat.",mhi:"23 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",men:"23 pages · Published 22 Oct 2026 · Version 1",img:"images/paintings/matsya.jpg",pdf:"books/matsya-everyday-hindi.pdf"},
-{thi:"समुद्र मंथन",ten:"Samudra Manthan",dhi:"समुद्र का मंथन: विष, अमृत, लक्ष्मी, मोहिनी, और राहु-केतु।",den:"The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.",mhi:"23 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",men:"23 pages · Published 20 Oct 2026 · Version 1",img:"images/paintings/samudra.jpg",pdf:"books/samudra-manthan-everyday-hindi.pdf"},
-{thi:"वराह अवतार — धरती को उठाने वाले",ten:"Varaha Avatar — the One Who Lifted the Earth",dhi:"वराह जो डूबी हुई धरती को अपने दाँतों पर उठा लेते हैं।",den:"The boar who lifts the drowned earth on his tusks.",mhi:"21 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",men:"21 pages · Published 22 Oct 2026 · Version 1",img:"images/paintings/varaha.jpg",pdf:"books/varaha-everyday-hindi.pdf"},
-{thi:"नृसिंह अवतार — भक्त प्रह्लाद की कथा",ten:"Narasimha Avatar — the Story of Bhakt Prahlada",dhi:"संध्या के समय खंभे से, न मनुष्य न पशु — और एक पुत्र जो अपने पिता को क्षमा करता है।",den:"From the pillar at dusk, neither man nor beast — and a son who forgives his father.",mhi:"24 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",men:"24 pages · Published 22 Oct 2026 · Version 1",img:"images/paintings/narasimha.jpg",pdf:"books/narasimha-everyday-hindi.pdf"},
-{thi:"वामन अवतार और राजा बलि",ten:"Vamana Avatar and King Bali",dhi:"तीन पग भूमि — और एक राजा जो अपना वचन निभाता है। बलि सम्मानित हैं, खलनायक नहीं।",den:"Three steps of land — and a king who keeps his word. Bali honoured, not villainised.",mhi:"19 पृष्ठ · प्रकाशित 20 अक्तूबर 2026 · संस्करण 1",men:"19 pages · Published 20 Oct 2026 · Version 1",img:"images/paintings/vamana.jpg",pdf:"books/vishnu-vamana-bali-everyday-hindi.pdf"},
-{thi:"परशुराम — क्रोध और प्रतिज्ञा की कथा",ten:"Parashurama — a Story of Anger and Vows",dhi:"राजाओं को जन्म ने नहीं, शक्ति और अहंकार ने भ्रष्ट किया — और योद्धा युवा राम के सामने झुकता है।",den:"Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.",mhi:"28 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",men:"28 pages · Published 22 Oct 2026 · Version 1",img:"images/paintings/parashurama.jpg",pdf:"books/parashurama-everyday-hindi.pdf"},
-{thi:"इंद्र — स्वर्ग के राजा की कहानी",ten:"Indra — Story of the King of Svarga",dhi:"पहली पुस्तक: पुराण-युग से पहले के देवता। इंद्र की उत्पत्ति, ख़ज़ाने, कर्म, दोष, महाकाव्य — और आज के इंद्र। कॉमिक-शैली का आवरण, अंदर श्रृंखला-पृष्ठ।",den:"Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.",mhi:"52 पृष्ठ · प्रकाशित 28 अक्तूबर 2026 · संस्करण 2",men:"52 pages · Published 28 Oct 2026 · Version 2",img:"images/paintings/indra.jpg",pdf:"books/indra-v2.pdf"},
-{thi:"शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता",ten:"Shukracharya — Guru of the Asuras, Knower of Sanjivani",dhi:"वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।",den:"The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.",mhi:"32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",men:"32 pages · Published 22 Oct 2026 · Version 1",img:"images/paintings/shukracharya.jpg",pdf:"books/shukracharya-everyday-hindi.pdf"}
-];
-var SITE = "";
+var UI = null;
+var BOOKS = [];
 var curLang = 'hi';
 var curIdx = -1;
 function mulberry32(a) {
@@ -102,59 +85,170 @@ function mulberry32(a) {
 function randomIdx() {
   return Math.floor(mulberry32(Date.now())() * BOOKS.length);
 }
+function tEl(tag, hi, en, cls) {
+  var el = document.createElement(tag);
+  el.className = cls;
+  el.setAttribute('data-hi', hi);
+  el.setAttribute('data-en', en);
+  el.textContent = curLang === 'hi' ? hi : en;
+  return el;
+}
+function applyLang() {
+  document.querySelectorAll('.t').forEach(function(el) {
+    var v = el.getAttribute('data-' + curLang);
+    if (v !== null) el.textContent = v;
+  });
+}
+function setLang(lang, btn) {
+  curLang = lang;
+  try { localStorage.setItem('site-lang', lang); } catch (e) {}
+  document.querySelectorAll('.lang button').forEach(function(b) { b.classList.toggle('active', b === btn); });
+  document.documentElement.lang = lang;
+  applyLang();
+}
 function render(idx) {
   curIdx = idx;
   var b = BOOKS[idx];
-  var t = document.getElementById('tTitle');
-  var d = document.getElementById('tDesc');
-  var m = document.getElementById('tMeta');
-  t.setAttribute('data-hi', b.thi); t.setAttribute('data-en', b.ten);
-  d.setAttribute('data-hi', b.dhi); d.setAttribute('data-en', b.den);
-  m.setAttribute('data-hi', b.mhi); m.setAttribute('data-en', b.men);
-  t.textContent = curLang === 'hi' ? b.thi : b.ten;
-  d.textContent = curLang === 'hi' ? b.dhi : b.den;
-  m.textContent = curLang === 'hi' ? b.mhi : b.men;
+  var set = function(id, hi, en) {
+    var el = document.getElementById(id);
+    el.setAttribute('data-hi', hi);
+    el.setAttribute('data-en', en);
+    el.textContent = curLang === 'hi' ? hi : en;
+  };
+  set('tTitle', b.thi, b.ten);
+  set('tDesc', b.dhi, b.den);
+  set('tMeta', b.mhi, b.men);
   document.getElementById('tImg').src = b.img;
-  document.getElementById('tRead').href = SITE + b.pdf;
-  document.getElementById('tLink').href = SITE + b.pdf;
+  document.getElementById('tRead').href = b.pdf;
+  document.getElementById('tLink').href = b.pdf;
 }
 function shuffleStory() {
   var idx;
   do { idx = randomIdx(); } while (idx === curIdx);
   render(idx);
 }
-function setLang(lang, btn) {
-  curLang = lang;
-  try { localStorage.setItem('site-lang', lang); } catch (e) {}
-  document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('active', b === btn); });
-  document.documentElement.lang = lang;
-  document.querySelectorAll('.t').forEach(function(el){
-    var v = el.getAttribute('data-' + lang);
-    if (v !== null) el.innerHTML = v;
+function renderBook(b) {
+  var li = document.createElement('li');
+  var title = tEl('b', b.title_hi, b.title_en, 't');
+  if (b.status === 'published') {
+    var a = document.createElement('a');
+    a.href = b.pdf;
+    a.target = '_blank';
+    a.appendChild(title);
+    li.appendChild(a);
+  } else {
+    li.className = 'planned';
+    li.appendChild(title);
+  }
+  li.appendChild(tEl('span', b.desc_hi, b.desc_en, 'desc t'));
+  if (b.status === 'published') {
+    li.appendChild(tEl('span', b.meta_hi, b.meta_en, 'meta t'));
+  } else {
+    li.appendChild(tEl('span', UI.planned.hi, UI.planned.en, 'meta t'));
+  }
+  return li;
+}
+function renderLists(sections) {
+  var wrap = document.getElementById('lists');
+  sections.forEach(function(s) {
+    var sec = document.createElement('section');
+    sec.className = 'seclist';
+    sec.id = 'sec-' + s.id;
+    var h3 = document.createElement('h3');
+    h3.onclick = function() { toggleSec(h3); };
+    h3.onkeydown = function(e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleSec(h3); } };
+    h3.tabIndex = 0;
+    h3.setAttribute('role', 'button');
+    h3.appendChild(tEl('span', s.title_hi, s.title_en, 't'));
+    var nreal = s.books.filter(function(b) { return b.status === 'published'; }).length;
+    var nplan = s.books.length - nreal;
+    var cnt = document.createElement('span');
+    cnt.className = 'cnt';
+    cnt.textContent = nreal + ' books' + (nplan ? ', ' + nplan + ' planned' : '');
+    h3.appendChild(document.createTextNode(' '));
+    h3.appendChild(cnt);
+    sec.appendChild(h3);
+    var plain = s.books.filter(function(b) { return !b.group; });
+    if (plain.length) {
+      var ul = document.createElement('ul');
+      plain.forEach(function(b) { ul.appendChild(renderBook(b)); });
+      sec.appendChild(ul);
+    }
+    var gids = [];
+    s.books.forEach(function(b) { if (b.group && gids.indexOf(b.group) === -1) gids.push(b.group); });
+    gids.forEach(function(gid) {
+      var g = s.groups[gid];
+      sec.appendChild(tEl('h4', g.title_hi, g.title_en, 't'));
+      var gul = document.createElement('ul');
+      s.books.filter(function(b) { return b.group === gid; }).forEach(function(b) { gul.appendChild(renderBook(b)); });
+      sec.appendChild(gul);
+    });
+    wrap.appendChild(sec);
   });
 }
 function saveCollapsed() {
   var ids = [];
-  document.querySelectorAll('.seclist.collapsed').forEach(function(s){ ids.push(s.id); });
+  document.querySelectorAll('.seclist.collapsed').forEach(function(s) { ids.push(s.id); });
   try { localStorage.setItem('collapsed-sections', JSON.stringify(ids)); } catch (e) {}
 }
 function toggleSec(h) {
   h.parentElement.classList.toggle('collapsed');
   saveCollapsed();
 }
-try {
-  var saved = JSON.parse(localStorage.getItem('collapsed-sections') || '[]');
-  saved.forEach(function(id){
-    var s = document.getElementById(id);
-    if (s) s.classList.add('collapsed');
+function init(data) {
+  UI = data.ui;
+  var setUi = function(id, v) {
+    var el = document.getElementById(id);
+    el.setAttribute('data-hi', v.hi);
+    el.setAttribute('data-en', v.en);
+    el.textContent = curLang === 'hi' ? v.hi : v.en;
+  };
+  setUi('siteTitle', UI.title);
+  setUi('tKicker', UI.kicker);
+  setUi('tRead', UI.read);
+  setUi('tShuffle', UI.shuffle);
+  setUi('footT', UI.footer);
+  renderLists(data.sections);
+  BOOKS = [];
+  data.sections.forEach(function(s) {
+    if (s.id === 'archives') return;
+    s.books.forEach(function(b) {
+      if (b.status === 'published' && b.painting) {
+        BOOKS.push({thi: b.title_hi, ten: b.title_en, dhi: b.desc_hi, den: b.desc_en,
+                    mhi: b.meta_hi, men: b.meta_en, img: b.painting, pdf: b.pdf});
+      }
+    });
   });
-} catch (e) {}
-try {
-  var savedLang = localStorage.getItem('site-lang');
-  if (savedLang === 'en') {
-    setLang('en', document.querySelectorAll('.lang button')[1]);
-  }
-} catch (e) {}
-render(randomIdx());
+  try {
+    var saved = JSON.parse(localStorage.getItem('collapsed-sections') || '[]');
+    saved.forEach(function(id) {
+      var s = document.getElementById(id);
+      if (s) s.classList.add('collapsed');
+    });
+  } catch (e) {}
+  try {
+    var savedLang = localStorage.getItem('site-lang');
+    if (savedLang === 'en') {
+      curLang = 'en';
+      document.documentElement.lang = 'en';
+      document.querySelectorAll('.lang button')[0].classList.remove('active');
+      document.querySelectorAll('.lang button')[1].classList.add('active');
+      applyLang();
+    }
+  } catch (e) {}
+  render(randomIdx());
+  document.getElementById('tonightSec').style.visibility = 'visible';
+}
+if (window.CATALOG_DATA) {
+  init(window.CATALOG_DATA);
+} else {
+  fetch('catalog.json', {cache: 'no-store'}).then(function(r) {
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    return r.json();
+  }).then(init).catch(function() {
+    document.getElementById('tDesc').textContent = 'कैटलॉग लोड नहीं हुआ। Could not load the catalog.';
+    document.getElementById('tonightSec').style.visibility = 'visible';
+  });
+}
 </script>
 </body></html>
