@@ -44,7 +44,7 @@
      "published": "2026-10-25",
      "sha256": "b20f389def7007041b8b89d4934303cf02d514e24618ca192786deea71e59672",
      "reflowable": "reflowable/sharad-purnima.html",
-     "reflowable_sha256": "83f1d043e109a492a1f80f7f6c450593695374150bbbe297cc6c1911cab8892c",
+     "reflowable_sha256": "f2799e316faefce567e50c8be45a59b4bf3cfa63509c862593db7c64b3be0328",
      "painting": "images/paintings/sharad.jpg"
     },
     {
@@ -60,7 +60,7 @@
      "published": "2026-10-28",
      "sha256": "c1e1fd3c097e18ea1112f4b3696e6bb798af02fc8423b479c9f2e1ef76df9d13",
      "reflowable": "reflowable/karva-chauth-v2.html",
-     "reflowable_sha256": "4979dc48b6845e376a0b270a6aeb9be07a878b3b07698d64e79bcd9c9c9911e9",
+     "reflowable_sha256": "521dec4b9cbfe2654bfc92ae280bf7bab5d6548a2945ba11a0fe374f1d56fd99",
      "painting": "images/paintings/karva.jpg"
     },
     {
@@ -91,7 +91,7 @@
      "published": "2026-10-29",
      "sha256": "0078323aa51e5cda67eac8d7d3df4d4f2a5c3f8a186d6d29aefed43000a50c88",
      "reflowable": "reflowable/dhanteras-night-web.html",
-     "reflowable_sha256": "312fbb1b177d1141ed5eab5b190dd450ad0873256b4523fd33d5ad457baa3ea4",
+     "reflowable_sha256": "2931758981eb13bc2d597a236f9e9c313f1351ee66db9b684f3f3fe33dfa9520",
      "painting": "images/paintings/dhanteras.jpg",
      "group": "diwali"
     },
@@ -249,7 +249,7 @@
      "published": "2026-10-19",
      "sha256": "f931244eb65f8f0aa9bca8031989d6aee60fdcc2c460bb012ad52c67371b5da5",
      "reflowable": "reflowable/mahishasura-v3.html",
-     "reflowable_sha256": "22fb606edd58efdb4ecdc5eb432321827266aa2a13975adeb3b263ec9f9c045c",
+     "reflowable_sha256": "ddcc01084f1764f064790d69f9599619c4591eca82b09511cc976bf9b3865a8e",
      "painting": "images/paintings/mahishasura.jpg"
     },
     {
@@ -265,7 +265,7 @@
      "published": "2026-10-19",
      "sha256": "71e5741fbea62a799e20e0f9080d14f0fd5be791720cc208dbacc8d2e0b2b6bc",
      "reflowable": "reflowable/chanda-munda-raktabeej.html",
-     "reflowable_sha256": "31558653e979ac3eb7051fe8a5ce2956396991cb1739b97f13e4aa1f4fab4758",
+     "reflowable_sha256": "e54cb90ef910442ea64ef3a2dca0683e1c726b14480ea510a65a2485b70e7a07",
      "painting": "images/paintings/chanda.jpg"
     },
     {
@@ -281,7 +281,7 @@
      "published": "2026-10-22",
      "sha256": "c847c349a0c2b9cbcf8ca3355aafbdf5d10d1d484cc76c6d64cb1b11e2bd1b8a",
      "reflowable": "reflowable/shumbha-nishumbha-v2.html",
-     "reflowable_sha256": "f9ad5f393cf5621772c2f71c88b1ae707af812b963ba0cd9f3652724677431e4",
+     "reflowable_sha256": "fd28983a3761e5386138ce4785b06d2d8a5db6995d5e90b8fdd69192b5f5ebef",
      "painting": "images/paintings/shumbha.jpg"
     },
     {
@@ -297,7 +297,7 @@
      "published": "2026-10-20",
      "sha256": "3fd65498bffadfb1ef9d799dcb4418823d502bd9d130940ea0fe3b03f2a3ed83",
      "reflowable": "reflowable/madhu-kaitabha.html",
-     "reflowable_sha256": "1f7ec55ce7aeacccef4ef98664da0a38637ef16e815b0532532538433c545679",
+     "reflowable_sha256": "297badd9af04b3ed80ce95d290fa00ff5eeb70f0d71ffb0ac5f7975056c44dd2",
      "painting": "images/paintings/madhu.jpg"
     },
     {
@@ -380,7 +380,7 @@
      "published": "2026-10-20",
      "sha256": "8731c1bac9b5f3684f8d46f5bd0c7fdc72dc90cff06534acb0a36963b22a94de",
      "reflowable": "reflowable/shiva-neelkanth.html",
-     "reflowable_sha256": "cf1aec8f2b61785ed7e0a29c8b3034304c7dedbe90e59a8d810c6c99dbd0dc4b",
+     "reflowable_sha256": "96ecbfdc04b10c69d08608bf0e3519b983a1077c8cfa61ddee83e987d85b5791",
      "painting": "images/paintings/neelkanth.jpg"
     },
     {
@@ -396,7 +396,7 @@
      "published": "2026-10-28",
      "sha256": "a1370db67aa8855a539b7fbab722635d611dbb2b7428b84e8c346df28d222add",
      "reflowable": "reflowable/shiva-parvati-v3.html",
-     "reflowable_sha256": "23f84043558473c17dd162a9967ae93e6ab4bf45178903f03ec70665b3a4e947",
+     "reflowable_sha256": "177d2cfaf031471f389ff059816fb225c3fc29b381c76f753bb76d4eecccda31",
      "painting": "images/paintings/shivaparvati.jpg"
     }
    ]
@@ -419,7 +419,7 @@
      "published": "2026-10-22",
      "sha256": "79fcd5dfb636ca74d08739a846652fc55a40a295af98e225a43bf42e5b1ac730",
      "reflowable": "reflowable/matsya.html",
-     "reflowable_sha256": "2618bf5ef33ce924aa4f91b0404b74cecd44eabca33e8012e57a4790a30968d7",
+     "reflowable_sha256": "cd7c2f2e3ef21b7c4f2c3b48565613c1fd04fb0eeff4c387c873e373effb5b3f",
      "painting": "images/paintings/matsya.jpg"
     },
     {
@@ -435,7 +435,7 @@
      "published": "2026-10-20",
      "sha256": "e0f4eac7e0445a5e600aaa920e48d4130aaed58d2146d7758370d51669ba1093",
      "reflowable": "reflowable/samudra-manthan.html",
-     "reflowable_sha256": "6730389455348ddb66f4427ad378c91405a8f2e01b04b8452466597d651fec52",
+     "reflowable_sha256": "6bcd306325ef5fde873976286b6b1469a7f6f373fbd3eb757429464df2e73f0b",
      "painting": "images/paintings/samudra.jpg"
     },
     {
@@ -451,7 +451,7 @@
      "published": "2026-10-22",
      "sha256": "2bb6e02c849bdc7687325d82e0bdb9bdabdd429b47647c49317a6ab64efaa60a",
      "reflowable": "reflowable/varaha.html",
-     "reflowable_sha256": "57b24bc7ed60bfeb6fd04e1672982106e3236a81e613f87bb2412f19ab85802e",
+     "reflowable_sha256": "96cff3eab57a332c2e5acacb8ed7af4552cd792f875f77427d63cba28cdf59d5",
      "painting": "images/paintings/varaha.jpg"
     },
     {
@@ -467,7 +467,7 @@
      "published": "2026-10-22",
      "sha256": "6e7094b9f5d21ae368f56832e771c29ac88627d9c3f4d52d21bdc7175bed5ed4",
      "reflowable": "reflowable/narasimha.html",
-     "reflowable_sha256": "f425356be514316f9026ebd4bcff6cd75466c4f774a0fd1b9a6c1c780a116fdd",
+     "reflowable_sha256": "e743b49a7342cb31aa664688508f7786347ab3938ef71a5b1d34d394855e300e",
      "painting": "images/paintings/narasimha.jpg"
     },
     {
@@ -483,7 +483,7 @@
      "published": "2026-10-20",
      "sha256": "6414055e9400cb935bf23eac5452792a19be12c1f740cd955fe3fdbf3e24d2f0",
      "reflowable": "reflowable/vamana-bali.html",
-     "reflowable_sha256": "3e4a79b02ae0cd9b91d6602796e816a8de43847b81fadd38b0b40564a3aa8da7",
+     "reflowable_sha256": "6e2347e74da259d1be5dc88c4b3fcb864bd14366326e3dc0105ab5856b1937e5",
      "painting": "images/paintings/vamana.jpg"
     },
     {
@@ -499,7 +499,7 @@
      "published": "2026-10-22",
      "sha256": "24f5877e063718ddd86dabc3953ab806231d2d9555f50b90d436b88a8dbdfd26",
      "reflowable": "reflowable/parashurama.html",
-     "reflowable_sha256": "ec7dba51ac94053abc29f16ab3d237003d2697204f9ed85fe0c63e159ad29f63",
+     "reflowable_sha256": "f5ca1bd85f32608ea54da4a00a1cc179c4f8d18118d391622515d746ecea5fb9",
      "painting": "images/paintings/parashurama.jpg"
     },
     {
@@ -567,7 +567,7 @@
      "published": "2026-10-28",
      "sha256": "70d7396177a14fd300521f1803b719d06426b4ca3f2aee55940f70a93556b4cf",
      "reflowable": "reflowable/indra-v2.html",
-     "reflowable_sha256": "826e886a2893faf9f8a39acf621f256d8a66c5a4385967a71ee670f2b3a5f465",
+     "reflowable_sha256": "8a988a68c28a712826f1f474934aee92d73c0a4e1ebb38f928de4f450fe8cd96",
      "painting": "images/paintings/indra.jpg"
     }
    ]
@@ -590,7 +590,7 @@
      "published": "2026-10-22",
      "sha256": "415f909c5fcbdec6e1ebeaa0cdd82fc94f2a6d8fb15f7d61d0bc3d01409e579f",
      "reflowable": "reflowable/shukracharya.html",
-     "reflowable_sha256": "733e5ff2bf0edc3715df506aaf90f737ef3beeab7e91b851486cb83767f90d8b",
+     "reflowable_sha256": "bb1233948e1bee75b55248c148a54052b4ac9e3563126c5c28d6b28fa3ee2428",
      "painting": "images/paintings/shukracharya.jpg"
     }
    ]
