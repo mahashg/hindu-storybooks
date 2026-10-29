@@ -89,3 +89,30 @@ fun openReader(context: Context, pdfUrl: String, title: String, startPage: Int =
     }
     context.startActivity(intent)
 }
+
+/**
+ * The ONE open path for every book, used by Home, Catalog and Saved.
+ * Reflowable ONLY for books that have a reflowable edition (the 17 current
+ * books); otherwise the existing PDF reader (the 5 Archives books). There
+ * is deliberately no PDF option for reflowable books.
+ */
+fun openBook(
+    context: Context,
+    book: com.mahesh.hindustorybooks.model.Book,
+    title: String,
+    startPage: Int = -1,
+    startScroll: Int = -1
+) {
+    val reflowUrl = book.reflowableUrl()
+    if (reflowUrl != null) {
+        val intent = Intent(context, ReflowableReaderActivity::class.java).apply {
+            putExtra(ReflowableReaderActivity.EXTRA_REFLOW_URL, reflowUrl)
+            putExtra(ReflowableReaderActivity.EXTRA_TITLE, title)
+            putExtra(ReflowableReaderActivity.EXTRA_SHA256, book.reflowableSha256)
+            putExtra(ReflowableReaderActivity.EXTRA_START_SCROLL, startScroll)
+        }
+        context.startActivity(intent)
+    } else {
+        openReader(context, book.pdfUrl() ?: return, title, startPage)
+    }
+}

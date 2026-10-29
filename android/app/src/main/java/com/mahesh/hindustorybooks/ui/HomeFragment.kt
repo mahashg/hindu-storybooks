@@ -21,6 +21,9 @@ class HomeFragment : Fragment() {
     // Page the hero book should open at: the saved page for a resume hero,
     // -1 otherwise (the reader then falls back to its own saved page).
     private var currentStartPage = -1
+    // Scroll offset the hero book should open at (reflowable books only),
+    // -1 otherwise.
+    private var currentResumeScroll = -1
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,12 +49,21 @@ class HomeFragment : Fragment() {
         val prefs = Prefs(requireContext())
         val catalog = CatalogStore.load(requireContext())
         // "Continue reading" wins the hero: the most recently read
-        // UNFINISHED book, if one exists, instead of the story of the day.
-        val resume = prefs.lastUnfinished()
+        // UNFINISHED book, PDF or reflowable, instead of the story of the day.
+        val resume = prefs.lastUnfinishedAny()
         if (resume != null) {
-            val resumeBook = catalog.allBooks.firstOrNull { it.pdfUrl() == resume.first }
+            val resumeBook = when (resume.kind) {
+                com.mahesh.hindustorybooks.data.ResumeKind.PDF ->
+                    catalog.allBooks.firstOrNull { it.pdfUrl() == resume.url }
+                com.mahesh.hindustorybooks.data.ResumeKind.REFLOW ->
+                    catalog.allBooks.firstOrNull { it.reflowableUrl() == resume.url }
+            }
             if (resumeBook != null) {
-                showBook(resumeBook, resumePage = resume.second, isResume = true)
+                if (resume.kind == com.mahesh.hindustorybooks.data.ResumeKind.PDF) {
+                    showBook(resumeBook, resumePage = resume.position, isResume = true)
+                } else {
+                    showBook(resumeBook, resumeScroll = resume.position, isResume = true)
+                }
                 return
             }
         }
@@ -75,21 +87,30 @@ class HomeFragment : Fragment() {
 
     private fun openCurrent() {
         val book = current ?: return
-        val url = book.pdfUrl() ?: return
-        openReader(
+        openBook(
             requireContext(),
-            url,
+            book,
             book.title(Prefs(requireContext()).language),
-            currentStartPage
+            currentStartPage,
+            currentResumeScroll
         )
     }
 
-    private fun showBook(book: Book, resumePage: Int = -1, isResume: Boolean = false) {
+    private fun showBook(
+        book: Book,
+        resumePage: Int = -1,
+        resumeScroll: Int = -1,
+        isResume: Boolean = false
+    ) {
         current = book
         currentStartPage = resumePage
+        currentResumeScroll = resumeScroll
         val b = binding ?: return
         val lang = Prefs(requireContext()).language
-        b.homeKicker.text = if (isResume) {
+        b.homeKicker.text = if (isResume && resumeScroll >= 0) {
+            // Reflowable books have no pages: no page number in the kicker.
+            getString(R.string.kicker_resume_reflow)
+        } else if (isResume) {
             getString(R.string.kicker_resume, resumePage + 1)
         } else {
             getString(R.string.kicker_today)

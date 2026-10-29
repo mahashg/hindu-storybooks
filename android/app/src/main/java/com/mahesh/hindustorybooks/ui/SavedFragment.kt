@@ -74,8 +74,7 @@ class SavedFragment : Fragment() {
     }
 
     private fun openBook(book: Book) {
-        val url = book.pdfUrl() ?: return
-        openReader(requireContext(), url, book.title(Prefs(requireContext()).language))
+        openBook(requireContext(), book, book.title(Prefs(requireContext()).language))
     }
 
     private fun unsave(book: Book) {
