@@ -19,6 +19,8 @@ data class Book(
     val pdf: String?,
     val painting: String?,
     val group: String?,
+    val reflowable: String?,
+    val reflowableSha256: String?,
     val sectionId: String,
     val sectionTitleHi: String,
     val sectionTitleEn: String,
@@ -36,6 +38,11 @@ data class Book(
             ?.takeIf { it.isNotEmpty() }
     fun paintingUrl(): String? =
         painting?.takeIf { it.isNotBlank() && it != "null" }?.let { resolve(it) }
+            ?.takeIf { it.isNotEmpty() }
+    // Reflowable edition URL, guarded exactly like pdfUrl() (v1.3 lesson:
+    // a JSON null must never become a ".../null" URL).
+    fun reflowableUrl(): String? =
+        reflowable?.takeIf { it.isNotBlank() && it != "null" }?.let { resolve(it) }
             ?.takeIf { it.isNotEmpty() }
     fun sectionTitle(lang: String) = if (lang == "en") sectionTitleEn else sectionTitleHi
     fun groupTitle(lang: String): String? =
@@ -154,6 +161,8 @@ fun parseCatalog(json: String): Catalog {
                     pdf = optNullable(b, "pdf"),
                     painting = optNullable(b, "painting"),
                     group = groupKey,
+                    reflowable = optNullable(b, "reflowable"),
+                    reflowableSha256 = optNullable(b, "reflowable_sha256"),
                     sectionId = id,
                     sectionTitleHi = unescape(s.optString("title_hi", "")),
                     sectionTitleEn = unescape(s.optString("title_en", "")),
