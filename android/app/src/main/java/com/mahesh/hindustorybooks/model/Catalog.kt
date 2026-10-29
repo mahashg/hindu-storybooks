@@ -29,16 +29,26 @@ data class Book(
     fun title(lang: String) = if (lang == "en") titleEn else titleHi
     fun desc(lang: String) = if (lang == "en") descEn else descHi
     fun meta(lang: String) = if (lang == "en") metaEn else metaHi
-    fun pdfUrl(): String? = pdf?.let { resolve(it) }
-    fun paintingUrl(): String? = painting?.let { resolve(it) }
+    // Defensive: a blank or literal-"null" segment must never become a URL
+    // (a "null" pdf used to resolve to SITE_BASE + "null" and fail refresh).
+    fun pdfUrl(): String? =
+        pdf?.takeIf { it.isNotBlank() && it != "null" }?.let { resolve(it) }
+            ?.takeIf { it.isNotEmpty() }
+    fun paintingUrl(): String? =
+        painting?.takeIf { it.isNotBlank() && it != "null" }?.let { resolve(it) }
+            ?.takeIf { it.isNotEmpty() }
     fun sectionTitle(lang: String) = if (lang == "en") sectionTitleEn else sectionTitleHi
     fun groupTitle(lang: String): String? =
         if (lang == "en") groupTitleEn else groupTitleHi
 
     companion object {
-        fun resolve(path: String): String =
-            if (path.startsWith("http://") || path.startsWith("https://")) path
-            else SITE_BASE + path
+        fun resolve(path: String): String {
+            val clean = path.trim()
+            // Never build a URL from a blank or literal-"null" segment.
+            if (clean.isEmpty() || clean == "null") return ""
+            return if (clean.startsWith("http://") || clean.startsWith("https://")) clean
+            else SITE_BASE + clean
+        }
     }
 }
 
@@ -96,6 +106,16 @@ fun unescape(text: String): String = text
     .replace("&quot;", "\"")
     .replace("&#39;", "'")
 
+/** Nullable catalog string: a missing key, a JSON null, a blank value, or
+ * the literal string "null" (what this project's org.json optString yields
+ * for a JSON null — the live catalog carries explicit "pdf": null for all
+ * planned books) all mean "absent". */
+private fun optNullable(obj: JSONObject, key: String): String? {
+    if (obj.isNull(key)) return null
+    val v = obj.optString(key, "").trim()
+    return if (v.isEmpty() || v == "null") null else v
+}
+
 fun parseCatalog(json: String): Catalog {
     val root = JSONObject(json)
     if (!root.has("ui")) throw IllegalArgumentException("catalog has no ui block")
@@ -122,6 +142,7 @@ fun parseCatalog(json: String): Catalog {
         val books = mutableListOf<Book>()
         for (j in 0 until booksJson.length()) {
             val b = booksJson.getJSONObject(j)
+            val groupKey = optNullable(b, "group")
             books.add(
                 Book(
                     titleHi = unescape(b.optString("title_hi", "")),
@@ -130,16 +151,14 @@ fun parseCatalog(json: String): Catalog {
                     descEn = unescape(b.optString("desc_en", "")),
                     metaHi = unescape(b.optString("meta_hi", "")),
                     metaEn = unescape(b.optString("meta_en", "")),
-                    pdf = b.optString("pdf", "").ifEmpty { null },
-                    painting = b.optString("painting", "").ifEmpty { null },
-                    group = b.optString("group", "").ifEmpty { null },
+                    pdf = optNullable(b, "pdf"),
+                    painting = optNullable(b, "painting"),
+                    group = groupKey,
                     sectionId = id,
                     sectionTitleHi = unescape(s.optString("title_hi", "")),
                     sectionTitleEn = unescape(s.optString("title_en", "")),
-                    groupTitleHi = b.optString("group", "").ifEmpty { null }
-                        ?.let { groups[it]?.first },
-                    groupTitleEn = b.optString("group", "").ifEmpty { null }
-                        ?.let { groups[it]?.second }
+                    groupTitleHi = groupKey?.let { groups[it]?.first },
+                    groupTitleEn = groupKey?.let { groups[it]?.second }
                 )
             )
         }
