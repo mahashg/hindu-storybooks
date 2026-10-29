@@ -12,8 +12,15 @@
   header { background:var(--maroon); color:#fff; padding:2.2rem 1.2rem 1.8rem; text-align:center; border-bottom:5px solid var(--gold); }
   header h1 { margin:0 0 .3rem; font-size:2rem; }
   header p { margin:.2rem auto; max-width:640px; opacity:.92; }
+  nav.toc { position:sticky; top:0; z-index:10; background:var(--maroon); padding:.55rem .8rem; overflow-x:auto; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,.25); }
+  nav.toc a { display:inline-block; color:#fff; text-decoration:none; padding:.3rem .7rem; margin-right:.3rem; border:1px solid rgba(255,255,255,.35); border-radius:20px; font-size:.9rem; }
+  nav.toc a:hover { background:rgba(255,255,255,.15); }
+  .filters { background:var(--soft); border-bottom:2px solid var(--gold); padding:.8rem 1rem; text-align:center; }
+  .filters span { font-weight:700; color:var(--maroon); margin-right:.4rem; }
+  .filters button { font-family:inherit; font-size:.9rem; margin:.2rem; padding:.4rem .9rem; border:1.5px solid var(--maroon); border-radius:20px; background:#fff; color:var(--maroon); cursor:pointer; }
+  .filters button.active { background:var(--maroon); color:#fff; }
   main { max-width:900px; margin:0 auto; padding:1.2rem; }
-  h2 { color:var(--maroon); border-bottom:2px solid var(--gold); padding-bottom:.25rem; margin-top:2.2rem; }
+  h2 { color:var(--maroon); border-bottom:2px solid var(--gold); padding-bottom:.25rem; margin-top:2.2rem; scroll-margin-top:60px; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
   .card { background:#fff; border:1px solid #e5d9b8; border-radius:10px; padding:1rem 1.1rem; }
   .card h3 { margin:.1rem 0 .3rem; color:var(--maroon); font-size:1.15rem; }
@@ -31,87 +38,142 @@
   <p>Hindu storybooks by Mahesh Gupta — everyday Hindi, read aloud, in the traditional ink-and-flat-colour manner inspired by Raja Ravi Varma.</p>
   <p>रोज़ की हिंदी में, कहानी सुनाने की शैली में — बच्चों और बड़ों, दोनों के लिए।</p>
 </header>
+<nav class="toc">
+  <a href="#durga">दुर्गा कथा (5)</a>
+  <a href="#shiva">शिव (2)</a>
+  <a href="#vishnu">विष्णु अवतार (5)</a>
+  <a href="#gurus">गुरु (1)</a>
+  <a href="#festivals">त्योहार (3)</a>
+  <a href="#little">छोटे पाठक (1)</a>
+  <a href="#gods">देवों से पहले (1)</a>
+  <a href="#vol1">Vol. 1 EN + HI (4)</a>
+  <a href="#diwali">दिवाली सीरीज़ (9 planned)</a>
+</nav>
+<div class="filters">
+  <span>Browse by:</span>
+  <button class="filter active" onclick="filterCards('all', this)">All books</button>
+  <button class="filter" onclick="filterCards('hindi', this)">Hindi</button>
+  <button class="filter" onclick="filterCards('english', this)">English</button>
+  <button class="filter" onclick="filterCards('comic', this)">Comics</button>
+  <button class="filter" onclick="filterCards('storybook', this)">Storybooks</button>
+  <button class="filter" onclick="filterCards('festival', this)">Festivals</button>
+  <button class="filter" onclick="filterCards('little', this)">Little readers</button>
+  <button class="filter" onclick="filterCards('planned', this)">Coming soon</button>
+</div>
 <main>
-  <div class="note"><strong>How to read:</strong> tap <em>Read the book</em> on any card to open its PDF. Each card shows the latest version only; older versions have been retired. New stories arrive here as they are written.</div>
+  <div class="note"><strong>How to read:</strong> tap <em>Read the book</em> on any card to open its PDF. Each card shows the latest version only; older versions have been retired. New stories arrive here as they are written. Use the bar above to jump to a section, or the buttons to show only Hindi, English, comics, and so on.</div>
 
-  <h2>दुर्गा कथा और देवी — Durga Katha &amp; the Devi</h2>
+  <section class="block">
+  <h2 id="durga">दुर्गा कथा और देवी — Durga Katha &amp; the Devi</h2>
   <div class="grid">
-    <div class="card"><h3>महिषासुर — देवी दुर्गा और भैंसा असुर</h3><p>The first story: Devi against the buffalo demon.</p><p class="meta">Latest: v3 · 18 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf">Read the book</a></div>
-    <div class="card"><h3>चंड-मुण्ड और रक्तबीज</h3><p>Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.</p><p class="meta">15 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>शुम्भ और निशुम्भ — पूरी कथा (संशोधित संस्करण)</h3><p>The complete story: Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.</p><p class="meta">Revised edition · 32 pages · Everyday Hindi</p><a class="btn" href="books/shumbha-nishumbha-everyday-hindi-v2.pdf">Read the book</a></div>
-    <div class="card"><h3>मधु-कैटभ</h3><p>From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.</p><p class="meta">16 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-madhu-kaitabha-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>समुद्र मंथन — पूरी कथा</h3><p>The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.</p><p class="meta">23 pages · Everyday Hindi</p><a class="btn" href="books/samudra-manthan-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>महिषासुर — देवी दुर्गा और भैंसा असुर</h3><p>The first story: Devi against the buffalo demon.</p><p class="meta">Latest: v3 · 18 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>चंड-मुण्ड और रक्तबीज</h3><p>Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.</p><p class="meta">15 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>शुम्भ और निशुम्भ — पूरी कथा (संशोधित संस्करण)</h3><p>The complete story: Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.</p><p class="meta">Revised edition · 32 pages · Everyday Hindi</p><a class="btn" href="books/shumbha-nishumbha-everyday-hindi-v2.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>मधु-कैटभ</h3><p>From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.</p><p class="meta">16 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-madhu-kaitabha-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>समुद्र मंथन — पूरी कथा</h3><p>The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.</p><p class="meta">23 pages · Everyday Hindi</p><a class="btn" href="books/samudra-manthan-everyday-hindi.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>शिव — Shiva</h2>
+  <section class="block">
+  <h2 id="shiva">शिव — Shiva</h2>
   <div class="grid">
-    <div class="card"><h3>शिव — नीलकंठ की कथा</h3><p>Shiva drinks the halahala poison to save the worlds, and his throat turns blue.</p><p class="meta">16 pages · Everyday Hindi</p><a class="btn" href="books/shiva-neelkanth-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>शिव–पार्वती — पूरी कथा</h3><p>Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.</p><p class="meta">Latest: v3 · 36 pages · Everyday Hindi</p><a class="btn" href="books/shiva-parvati-everyday-hindi-v3.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>शिव — नीलकंठ की कथा</h3><p>Shiva drinks the halahala poison to save the worlds, and his throat turns blue.</p><p class="meta">16 pages · Everyday Hindi</p><a class="btn" href="books/shiva-neelkanth-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>शिव–पार्वती — पूरी कथा</h3><p>Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.</p><p class="meta">Latest: v3 · 36 pages · Everyday Hindi</p><a class="btn" href="books/shiva-parvati-everyday-hindi-v3.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>विष्णु और अवतार — Vishnu &amp; the Avatars</h2>
+  <section class="block">
+  <h2 id="vishnu">विष्णु और अवतार — Vishnu &amp; the Avatars</h2>
   <div class="grid">
-    <div class="card"><h3>वामन अवतार और राजा बलि</h3><p>Three steps of land — and a king who keeps his word. Bali honoured, not villainised.</p><p class="meta">19 pages · Everyday Hindi</p><a class="btn" href="books/vishnu-vamana-bali-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>मत्स्य अवतार — बाढ़ में बची दुनिया</h3><p>The tiny fish in Manu's palms grows into the world's boat.</p><p class="meta">23 pages · Everyday Hindi</p><a class="btn" href="books/matsya-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>वराह अवतार — धरती को उठाने वाले</h3><p>The boar who lifts the drowned earth on his tusks.</p><p class="meta">21 pages · Everyday Hindi</p><a class="btn" href="books/varaha-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>परशुराम — क्रोध और प्रतिज्ञा की कथा</h3><p>Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.</p><p class="meta">28 pages · Everyday Hindi</p><a class="btn" href="books/parashurama-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>नृसिंह अवतार — भक्त प्रह्लाद की कथा</h3><p>From the pillar at dusk, neither man nor beast — and a son who forgives his father.</p><p class="meta">24 pages · Everyday Hindi</p><a class="btn" href="books/narasimha-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>वामन अवतार और राजा बलि</h3><p>Three steps of land — and a king who keeps his word. Bali honoured, not villainised.</p><p class="meta">19 pages · Everyday Hindi</p><a class="btn" href="books/vishnu-vamana-bali-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>मत्स्य अवतार — बाढ़ में बची दुनिया</h3><p>The tiny fish in Manu's palms grows into the world's boat.</p><p class="meta">23 pages · Everyday Hindi</p><a class="btn" href="books/matsya-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>वराह अवतार — धरती को उठाने वाले</h3><p>The boar who lifts the drowned earth on his tusks.</p><p class="meta">21 pages · Everyday Hindi</p><a class="btn" href="books/varaha-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>परशुराम — क्रोध और प्रतिज्ञा की कथा</h3><p>Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.</p><p class="meta">28 pages · Everyday Hindi</p><a class="btn" href="books/parashurama-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>नृसिंह अवतार — भक्त प्रह्लाद की कथा</h3><p>From the pillar at dusk, neither man nor beast — and a son who forgives his father.</p><p class="meta">24 pages · Everyday Hindi</p><a class="btn" href="books/narasimha-everyday-hindi.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>गुरु और मोड़ — Gurus &amp; Turning Points</h2>
+  <section class="block">
+  <h2 id="gurus">गुरु और मोड़ — Gurus &amp; Turning Points</h2>
   <div class="grid">
-    <div class="card"><h3>शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता</h3><p>The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.</p><p class="meta">32 pages · Everyday Hindi</p><a class="btn" href="books/shukracharya-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता</h3><p>The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.</p><p class="meta">32 pages · Everyday Hindi</p><a class="btn" href="books/shukracharya-everyday-hindi.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>त्योहार — Festival Books</h2>
+  <section class="block">
+  <h2 id="festivals">त्योहार — Festival Books</h2>
   <div class="grid">
-    <div class="card"><h3>शरद पूर्णिमा — चाँद की सबसे बड़ी रात</h3><p>The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.</p><p class="meta">22 pages · Everyday Hindi</p><a class="btn" href="books/sharad-purnima-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>करवा चौथ — चाँद का इंतज़ार (संशोधित संस्करण)</h3><p>Veervati's year beside her husband, the separate house, and the true moonrise.</p><p class="meta">Revised edition · 27 pages · Everyday Hindi</p><a class="btn" href="books/karva-chauth-everyday-hindi-v2.pdf">Read the book</a></div>
-    <div class="card"><h3>अहोई अष्टमी — नमूना अध्याय</h3><p>Pilot chapter of the Kartik festival book: a mother's fast, a small harm, a year of service, forgiveness.</p><p class="meta">Pilot · 7 pages · Hindi + English nutshell</p><a class="btn" href="books/ahoi-ashtami-namuna.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi festival"><h3>शरद पूर्णिमा — चाँद की सबसे बड़ी रात</h3><p>The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.</p><p class="meta">22 pages · Everyday Hindi</p><a class="btn" href="books/sharad-purnima-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi festival"><h3>करवा चौथ — चाँद का इंतज़ार (संशोधित संस्करण)</h3><p>Veervati's year beside her husband, the separate house, and the true moonrise.</p><p class="meta">Revised edition · 27 pages · Everyday Hindi</p><a class="btn" href="books/karva-chauth-everyday-hindi-v2.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi festival"><h3>अहोई अष्टमी — नमूना अध्याय</h3><p>Pilot chapter of the Kartik festival book: a mother's fast, a small harm, a year of service, forgiveness.</p><p class="meta">Pilot · 7 pages · Hindi + English nutshell</p><a class="btn" href="books/ahoi-ashtami-namuna.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>छोटे पाठकों के लिए — For Little Readers</h2>
+  <section class="block">
+  <h2 id="little">छोटे पाठकों के लिए — For Little Readers</h2>
   <div class="grid">
-    <div class="card"><h3>देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए</h3><p>Mahishasura retold for a child reading alone: tiny lines, sight words, a refrain at each shape-change, play and colouring pages.</p><p class="meta">26 pages · Everyday Hindi</p><a class="btn" href="books/mahishasura-for-little-readers-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi little storybook"><h3>देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए</h3><p>Mahishasura retold for a child reading alone: tiny lines, sight words, a refrain at each shape-change, play and colouring pages.</p><p class="meta">26 pages · Everyday Hindi</p><a class="btn" href="books/mahishasura-for-little-readers-hindi.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>देवों से पहले के भी देव — Gods Before Gods</h2>
+  <section class="block">
+  <h2 id="gods">देवों से पहले के भी देव — Gods Before Gods</h2>
   <div class="grid">
-    <div class="card"><h3>इंद्र — स्वर्ग के राजा की कहानी</h3><p>Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.</p><p class="meta">Latest: v2 · 52 pages · Everyday Hindi</p><a class="btn" href="books/indra-v2.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>इंद्र — स्वर्ग के राजा की कहानी</h3><p>Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.</p><p class="meta">Latest: v2 · 52 pages · Everyday Hindi</p><a class="btn" href="books/indra-v2.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>Durga Katha, Volume 1 — English &amp; Hindi editions</h2>
+  <section class="block">
+  <h2 id="vol1">Durga Katha, Volume 1 — English &amp; Hindi editions</h2>
   <div class="grid">
-    <div class="card"><h3>Durga Katha Vol. 1 — Storybook (English, v2)</h3><p>Mahishasura, Chanda-Munda &amp; Raktabeej, Shumbha-Nishumbha — with Storyteller's Notes and read-aloud features.</p><p class="meta">23 pages · English</p><a class="btn" href="books/durga-katha-story-book-vol1-v2.pdf">Read the book</a></div>
-    <div class="card"><h3>Durga Katha Vol. 1 — Storybook (Hindi)</h3><p>The same three stories in Hindi.</p><p class="meta">20 pages · Hindi</p><a class="btn" href="books/durga-katha-story-book-vol1-hindi.pdf">Read the book</a></div>
-    <div class="card"><h3>Durga Katha Vol. 1 — Comic (English, v2)</h3><p>The three stories as a comic, with unique panel art.</p><p class="meta">34 pages · English</p><a class="btn" href="books/durga-katha-comic-vol1-v2.pdf">Read the book</a></div>
-    <div class="card"><h3>Durga Katha Vol. 1 — Comic (Hindi)</h3><p>The three stories as a comic in Hindi.</p><p class="meta">28 pages · Hindi</p><a class="btn" href="books/durga-katha-comic-vol1-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="english storybook"><h3>Durga Katha Vol. 1 — Storybook (English, v2)</h3><p>Mahishasura, Chanda-Munda &amp; Raktabeej, Shumbha-Nishumbha — with Storyteller's Notes and read-aloud features.</p><p class="meta">23 pages · English</p><a class="btn" href="books/durga-katha-story-book-vol1-v2.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><h3>Durga Katha Vol. 1 — Storybook (Hindi)</h3><p>The same three stories in Hindi.</p><p class="meta">20 pages · Hindi</p><a class="btn" href="books/durga-katha-story-book-vol1-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="english comic"><h3>Durga Katha Vol. 1 — Comic (English, v2)</h3><p>The three stories as a comic, with unique panel art.</p><p class="meta">34 pages · English</p><a class="btn" href="books/durga-katha-comic-vol1-v2.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi comic"><h3>Durga Katha Vol. 1 — Comic (Hindi)</h3><p>The three stories as a comic in Hindi.</p><p class="meta">28 pages · Hindi</p><a class="btn" href="books/durga-katha-comic-vol1-hindi.pdf">Read the book</a></div>
   </div>
+  </section>
 
-  <h2>What comes next — the Diwali bedtime series</h2>
+  <section class="block">
+  <h2 id="diwali">What comes next — the Diwali bedtime series</h2>
   <div class="note">
     <p>One story per night, in everyday Hindi, each ending calm — a lamp lit, a homecoming, a promise kept. Hindu festival only: the mainstream five nights plus the regional shelf, built one by one.</p>
   </div>
   <div class="grid">
-    <div class="card"><h3>Night 1 — Dhanteras night</h3><p>Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Night 2 — Narakasura's end</h3><p>Krishna and Satyabhama free the captives; the South's dawn telling, where this morning <em>is</em> Diwali.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Night 3 — Ayodhya's diyas</h3><p>Ram, Sita and Lakshman return after fourteen years, and the city lights every doorway. The centerpiece.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Night 3 — Lakshmi comes home</h3><p>The ocean, the welcome, Alakshmi driven out with the cleaning, and the puja-night vrat katha.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Night 4 — Govardhan</h3><p>Krishna lifts the hill for seven days, and Indra's pride is washed away in the rain.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Night 4 — Bali visits</h3><p>The king who kept his word returns to his people, closing with the new-year customs: Bali Padyami, Bestu Varas, Chopda Pujan.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Night 5 — Bhai Dooj</h3><p>Yama visits Yamuna — tilak, a meal, a promise — with Chitragupta and his book of accounts as companion thread.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Regional shelf — Kali Puja night (Bengal)</h3><p>Bengal's Diwali: Kali dancing, Shiva beneath her feet, the night turned to her darkness-and-light.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card"><h3>Regional shelf — Tihar's animal friends (Nepal)</h3><p>Nepal's five days through the crow, the dog and the cow — Yama's messengers honoured before the lamps.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 1 — Dhanteras night</h3><p>Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 2 — Narakasura's end</h3><p>Krishna and Satyabhama free the captives; the South's dawn telling, where this morning <em>is</em> Diwali.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 3 — Ayodhya's diyas</h3><p>Ram, Sita and Lakshman return after fourteen years, and the city lights every doorway. The centerpiece.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 3 — Lakshmi comes home</h3><p>The ocean, the welcome, Alakshmi driven out with the cleaning, and the puja-night vrat katha.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 4 — Govardhan</h3><p>Krishna lifts the hill for seven days, and Indra's pride is washed away in the rain.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 4 — Bali visits</h3><p>The king who kept his word returns to his people, closing with the new-year customs: Bali Padyami, Bestu Varas, Chopda Pujan.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Night 5 — Bhai Dooj</h3><p>Yama visits Yamuna — tilak, a meal, a promise — with Chitragupta and his book of accounts as companion thread.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Regional shelf — Kali Puja night (Bengal)</h3><p>Bengal's Diwali: Kali dancing, Shiva beneath her feet, the night turned to her darkness-and-light.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><h3>Regional shelf — Tihar's animal friends (Nepal)</h3><p>Nepal's five days through the crow, the dog and the cow — Yama's messengers honoured before the lamps.</p><p class="meta">Planned · Bedtime story</p></div>
   </div>
+  </section>
 
-  <h2>Also on the shelf</h2>
+  <section class="block">
+  <h2 id="shelf">Also on the shelf</h2>
   <div class="note">
     <p>The remaining Kartik festivals, Agni (Gods Before Gods, Book Two), Ganesha, Kartikeya, the Rama and Krishna arcs, and the full-ending Samudra Manthan.</p>
   </div>
+  </section>
 </main>
 <footer>
   <p>Written by Mahesh Gupta · Stories told from the Puranas and epics, in everyday Hindi · Art in the traditional manner inspired by Raja Ravi Varma · © 2026 Mahesh Gupta</p>
   <p>Print editions and older versions are available on request.</p>
 </footer>
+<script>
+function filterCards(f, btn) {
+  document.querySelectorAll('.filter').forEach(function(b){ b.classList.toggle('active', b === btn); });
+  document.querySelectorAll('.card').forEach(function(c){
+    var tags = (c.getAttribute('data-filter') || '').split(' ');
+    c.style.display = (f === 'all' || tags.indexOf(f) !== -1) ? '' : 'none';
+  });
+  document.querySelectorAll('section.block').forEach(function(s){
+    var any = Array.prototype.some.call(s.querySelectorAll('.card'), function(c){ return c.style.display !== 'none'; });
+    s.style.display = any ? '' : 'none';
+  });
+}
+</script>
 </body>
 </html>
