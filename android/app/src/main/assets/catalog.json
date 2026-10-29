@@ -40,6 +40,11 @@
      "meta_en": "22 pages · Published 25 Oct 2026 · Version 1",
      "pdf": "books/sharad-purnima-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-25",
+     "sha256": "b20f389def7007041b8b89d4934303cf02d514e24618ca192786deea71e59672",
+     "reflowable": "reflowable/sharad-purnima.html",
+     "reflowable_sha256": "83f1d043e109a492a1f80f7f6c450593695374150bbbe297cc6c1911cab8892c",
      "painting": "images/paintings/sharad.jpg"
     },
     {
@@ -51,6 +56,11 @@
      "meta_en": "27 pages · Published 28 Oct 2026 · Version 2",
      "pdf": "books/karva-chauth-everyday-hindi-v2.pdf",
      "status": "published",
+     "version": "2",
+     "published": "2026-10-28",
+     "sha256": "c1e1fd3c097e18ea1112f4b3696e6bb798af02fc8423b479c9f2e1ef76df9d13",
+     "reflowable": "reflowable/karva-chauth-v2.html",
+     "reflowable_sha256": "4979dc48b6845e376a0b270a6aeb9be07a878b3b07698d64e79bcd9c9c9911e9",
      "painting": "images/paintings/karva.jpg"
     },
     {
@@ -61,7 +71,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "धनतेरस की रात — दिवाली की सोने की कहानियाँ · किताब १",
@@ -72,6 +87,11 @@
      "meta_en": "20 pages · Published 29 Oct 2026 · Version 1",
      "pdf": "books/dhanteras-night-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-29",
+     "sha256": "0078323aa51e5cda67eac8d7d3df4d4f2a5c3f8a186d6d29aefed43000a50c88",
+     "reflowable": "reflowable/dhanteras-night-web.html",
+     "reflowable_sha256": "312fbb1b177d1141ed5eab5b190dd450ad0873256b4523fd33d5ad457baa3ea4",
      "painting": "images/paintings/dhanteras.jpg",
      "group": "diwali"
     },
@@ -84,6 +104,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -95,6 +120,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -106,6 +136,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -117,6 +152,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -128,6 +168,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -139,6 +184,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -150,6 +200,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     },
     {
@@ -161,6 +216,11 @@
      "meta_en": "Planned",
      "pdf": null,
      "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null,
      "group": "diwali"
     }
    ],
@@ -185,6 +245,11 @@
      "meta_en": "18 pages · Published 19 Oct 2026 · Version 3",
      "pdf": "books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf",
      "status": "published",
+     "version": "3",
+     "published": "2026-10-19",
+     "sha256": "f931244eb65f8f0aa9bca8031989d6aee60fdcc2c460bb012ad52c67371b5da5",
+     "reflowable": "reflowable/mahishasura-v3.html",
+     "reflowable_sha256": "22fb606edd58efdb4ecdc5eb432321827266aa2a13975adeb3b263ec9f9c045c",
      "painting": "images/paintings/mahishasura.jpg"
     },
     {
@@ -196,6 +261,11 @@
      "meta_en": "15 pages · Published 19 Oct 2026 · Version 1",
      "pdf": "books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-19",
+     "sha256": "71e5741fbea62a799e20e0f9080d14f0fd5be791720cc208dbacc8d2e0b2b6bc",
+     "reflowable": "reflowable/chanda-munda-raktabeej.html",
+     "reflowable_sha256": "31558653e979ac3eb7051fe8a5ce2956396991cb1739b97f13e4aa1f4fab4758",
      "painting": "images/paintings/chanda.jpg"
     },
     {
@@ -207,6 +277,11 @@
      "meta_en": "32 pages · Published 22 Oct 2026 · Version 2",
      "pdf": "books/shumbha-nishumbha-everyday-hindi-v2.pdf",
      "status": "published",
+     "version": "2",
+     "published": "2026-10-22",
+     "sha256": "c847c349a0c2b9cbcf8ca3355aafbdf5d10d1d484cc76c6d64cb1b11e2bd1b8a",
+     "reflowable": "reflowable/shumbha-nishumbha-v2.html",
+     "reflowable_sha256": "f9ad5f393cf5621772c2f71c88b1ae707af812b963ba0cd9f3652724677431e4",
      "painting": "images/paintings/shumbha.jpg"
     },
     {
@@ -218,6 +293,11 @@
      "meta_en": "16 pages · Published 20 Oct 2026 · Version 1",
      "pdf": "books/durga-katha-madhu-kaitabha-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-20",
+     "sha256": "3fd65498bffadfb1ef9d799dcb4418823d502bd9d130940ea0fe3b03f2a3ed83",
+     "reflowable": "reflowable/madhu-kaitabha.html",
+     "reflowable_sha256": "1f7ec55ce7aeacccef4ef98664da0a38637ef16e815b0532532538433c545679",
      "painting": "images/paintings/madhu.jpg"
     },
     {
@@ -228,7 +308,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "भीमा",
@@ -238,7 +323,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "भ्रामरी",
@@ -248,7 +338,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "दुर्गम",
@@ -258,7 +353,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     }
    ]
   },
@@ -276,6 +376,11 @@
      "meta_en": "16 pages · Published 20 Oct 2026 · Version 1",
      "pdf": "books/shiva-neelkanth-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-20",
+     "sha256": "8731c1bac9b5f3684f8d46f5bd0c7fdc72dc90cff06534acb0a36963b22a94de",
+     "reflowable": "reflowable/shiva-neelkanth.html",
+     "reflowable_sha256": "cf1aec8f2b61785ed7e0a29c8b3034304c7dedbe90e59a8d810c6c99dbd0dc4b",
      "painting": "images/paintings/neelkanth.jpg"
     },
     {
@@ -287,6 +392,11 @@
      "meta_en": "36 pages · Published 28 Oct 2026 · Version 3",
      "pdf": "books/shiva-parvati-everyday-hindi-v3.pdf",
      "status": "published",
+     "version": "3",
+     "published": "2026-10-28",
+     "sha256": "a1370db67aa8855a539b7fbab722635d611dbb2b7428b84e8c346df28d222add",
+     "reflowable": "reflowable/shiva-parvati-v3.html",
+     "reflowable_sha256": "23f84043558473c17dd162a9967ae93e6ab4bf45178903f03ec70665b3a4e947",
      "painting": "images/paintings/shivaparvati.jpg"
     }
    ]
@@ -305,6 +415,11 @@
      "meta_en": "23 pages · Published 22 Oct 2026 · Version 1",
      "pdf": "books/matsya-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-22",
+     "sha256": "79fcd5dfb636ca74d08739a846652fc55a40a295af98e225a43bf42e5b1ac730",
+     "reflowable": "reflowable/matsya.html",
+     "reflowable_sha256": "2618bf5ef33ce924aa4f91b0404b74cecd44eabca33e8012e57a4790a30968d7",
      "painting": "images/paintings/matsya.jpg"
     },
     {
@@ -316,6 +431,11 @@
      "meta_en": "23 pages · Published 20 Oct 2026 · Version 1",
      "pdf": "books/samudra-manthan-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-20",
+     "sha256": "e0f4eac7e0445a5e600aaa920e48d4130aaed58d2146d7758370d51669ba1093",
+     "reflowable": "reflowable/samudra-manthan.html",
+     "reflowable_sha256": "6730389455348ddb66f4427ad378c91405a8f2e01b04b8452466597d651fec52",
      "painting": "images/paintings/samudra.jpg"
     },
     {
@@ -327,6 +447,11 @@
      "meta_en": "21 pages · Published 22 Oct 2026 · Version 1",
      "pdf": "books/varaha-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-22",
+     "sha256": "2bb6e02c849bdc7687325d82e0bdb9bdabdd429b47647c49317a6ab64efaa60a",
+     "reflowable": "reflowable/varaha.html",
+     "reflowable_sha256": "57b24bc7ed60bfeb6fd04e1672982106e3236a81e613f87bb2412f19ab85802e",
      "painting": "images/paintings/varaha.jpg"
     },
     {
@@ -338,6 +463,11 @@
      "meta_en": "24 pages · Published 22 Oct 2026 · Version 1",
      "pdf": "books/narasimha-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-22",
+     "sha256": "6e7094b9f5d21ae368f56832e771c29ac88627d9c3f4d52d21bdc7175bed5ed4",
+     "reflowable": "reflowable/narasimha.html",
+     "reflowable_sha256": "f425356be514316f9026ebd4bcff6cd75466c4f774a0fd1b9a6c1c780a116fdd",
      "painting": "images/paintings/narasimha.jpg"
     },
     {
@@ -349,6 +479,11 @@
      "meta_en": "19 pages · Published 20 Oct 2026 · Version 1",
      "pdf": "books/vishnu-vamana-bali-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-20",
+     "sha256": "6414055e9400cb935bf23eac5452792a19be12c1f740cd955fe3fdbf3e24d2f0",
+     "reflowable": "reflowable/vamana-bali.html",
+     "reflowable_sha256": "3e4a79b02ae0cd9b91d6602796e816a8de43847b81fadd38b0b40564a3aa8da7",
      "painting": "images/paintings/vamana.jpg"
     },
     {
@@ -360,6 +495,11 @@
      "meta_en": "28 pages · Published 22 Oct 2026 · Version 1",
      "pdf": "books/parashurama-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-22",
+     "sha256": "24f5877e063718ddd86dabc3953ab806231d2d9555f50b90d436b88a8dbdfd26",
+     "reflowable": "reflowable/parashurama.html",
+     "reflowable_sha256": "ec7dba51ac94053abc29f16ab3d237003d2697204f9ed85fe0c63e159ad29f63",
      "painting": "images/paintings/parashurama.jpg"
     },
     {
@@ -370,7 +510,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "कृष्ण",
@@ -380,7 +525,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "कल्कि",
@@ -390,7 +540,12 @@
      "meta_hi": "जल्द आ रहा है",
      "meta_en": "Planned",
      "pdf": null,
-     "status": "planned"
+     "status": "planned",
+     "version": null,
+     "published": null,
+     "sha256": null,
+     "reflowable": null,
+     "reflowable_sha256": null
     }
    ]
   },
@@ -408,6 +563,11 @@
      "meta_en": "52 pages · Published 28 Oct 2026 · Version 2",
      "pdf": "books/indra-v2.pdf",
      "status": "published",
+     "version": "2",
+     "published": "2026-10-28",
+     "sha256": "70d7396177a14fd300521f1803b719d06426b4ca3f2aee55940f70a93556b4cf",
+     "reflowable": "reflowable/indra-v2.html",
+     "reflowable_sha256": "826e886a2893faf9f8a39acf621f256d8a66c5a4385967a71ee670f2b3a5f465",
      "painting": "images/paintings/indra.jpg"
     }
    ]
@@ -426,6 +586,11 @@
      "meta_en": "32 pages · Published 22 Oct 2026 · Version 1",
      "pdf": "books/shukracharya-everyday-hindi.pdf",
      "status": "published",
+     "version": "1",
+     "published": "2026-10-22",
+     "sha256": "415f909c5fcbdec6e1ebeaa0cdd82fc94f2a6d8fb15f7d61d0bc3d01409e579f",
+     "reflowable": "reflowable/shukracharya.html",
+     "reflowable_sha256": "733e5ff2bf0edc3715df506aaf90f737ef3beeab7e91b851486cb83767f90d8b",
      "painting": "images/paintings/shukracharya.jpg"
     }
    ]
@@ -443,7 +608,12 @@
      "meta_hi": "23 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2",
      "meta_en": "23 pages · Published 18 Oct 2026 · Version 2",
      "pdf": "books/durga-katha-story-book-vol1-v2.pdf",
-     "status": "published"
+     "status": "published",
+     "version": "2",
+     "published": "2026-10-18",
+     "sha256": "c213ef569d63f6dbe5e9c6e89a32b2550fdbc1bf5a550190bf9bb97243de3580",
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)",
@@ -453,7 +623,12 @@
      "meta_hi": "20 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1",
      "meta_en": "20 pages · Published 18 Oct 2026 · Version 1",
      "pdf": "books/durga-katha-story-book-vol1-hindi.pdf",
-     "status": "published"
+     "status": "published",
+     "version": "1",
+     "published": "2026-10-18",
+     "sha256": "ece7660a7843407eb21d2a09eef110d7d661bef6e4c7f22cf3daef1b33642674",
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)",
@@ -463,7 +638,12 @@
      "meta_hi": "34 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 2",
      "meta_en": "34 pages · Published 18 Oct 2026 · Version 2",
      "pdf": "books/durga-katha-comic-vol1-v2.pdf",
-     "status": "published"
+     "status": "published",
+     "version": "2",
+     "published": "2026-10-18",
+     "sha256": "51235d956853703b9c4cf3326e54cfad67850a48a195d15977fd846f46ec0d1d",
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "दुर्गा कथा खंड १ — कॉमिक (हिंदी)",
@@ -473,7 +653,12 @@
      "meta_hi": "28 पृष्ठ · प्रकाशित 18 अक्तूबर 2026 · संस्करण 1",
      "meta_en": "28 pages · Published 18 Oct 2026 · Version 1",
      "pdf": "books/durga-katha-comic-vol1-hindi.pdf",
-     "status": "published"
+     "status": "published",
+     "version": "1",
+     "published": "2026-10-18",
+     "sha256": "73c3a9c93ddc53385cf553a5d0c8360f49b5093bee2807a3012a446f146d8bd4",
+     "reflowable": null,
+     "reflowable_sha256": null
     },
     {
      "title_hi": "देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए",
@@ -483,7 +668,12 @@
      "meta_hi": "26 पृष्ठ · प्रकाशित 19 अक्तूबर 2026 · संस्करण 1",
      "meta_en": "26 pages · Published 19 Oct 2026 · Version 1",
      "pdf": "books/mahishasura-for-little-readers-hindi.pdf",
-     "status": "published"
+     "status": "published",
+     "version": "1",
+     "published": "2026-10-19",
+     "sha256": "1ae1c95bafc47611346306e7f1654844b394879c741afb42d2d5ad9f0a197e4f",
+     "reflowable": null,
+     "reflowable_sha256": null
     }
    ]
   }
