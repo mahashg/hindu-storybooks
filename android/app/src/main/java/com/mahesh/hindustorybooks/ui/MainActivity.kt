@@ -39,10 +39,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.nav_host, settingsFragment, "settings").hide(settingsFragment)
-            .add(R.id.nav_host, savedFragment, "saved").hide(savedFragment)
-            .add(R.id.nav_host, catalogFragment, "catalog").hide(catalogFragment)
-            .add(R.id.nav_host, homeFragment, "home")
+            .replace(R.id.nav_host, homeFragment, "home")
             .commit()
 
         binding.bottomNav.setOnItemSelectedListener { item ->
@@ -54,8 +51,12 @@ class MainActivity : AppCompatActivity() {
                 else -> homeFragment
             }
             if (next != active) {
+                // REPLACE, not add/hide: only one tab's views are ever
+                // attached, so a previous tab's painting can never show
+                // through the new tab.
                 supportFragmentManager.beginTransaction()
-                    .hide(active).show(next).commit()
+                    .replace(R.id.nav_host, next)
+                    .commit()
                 active = next
             }
             true
@@ -79,10 +80,11 @@ class MainActivity : AppCompatActivity() {
 }
 
 /** Opens the in-app reader for a story. Never an external browser. */
-fun openReader(context: Context, pdfUrl: String, title: String) {
+fun openReader(context: Context, pdfUrl: String, title: String, startPage: Int = -1) {
     val intent = Intent(context, ReaderActivity::class.java).apply {
         putExtra(ReaderActivity.EXTRA_PDF_URL, pdfUrl)
         putExtra(ReaderActivity.EXTRA_TITLE, title)
+        putExtra(ReaderActivity.EXTRA_START_PAGE, startPage)
     }
     context.startActivity(intent)
 }

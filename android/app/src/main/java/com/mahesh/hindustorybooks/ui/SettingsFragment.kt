@@ -31,6 +31,7 @@ class SettingsFragment : Fragment() {
             1.25f -> b.zoom125.isChecked = true
             1.5f -> b.zoom150.isChecked = true
             2.0f -> b.zoom200.isChecked = true
+            3.0f -> b.zoom300.isChecked = true
             else -> b.zoomFit.isChecked = true
         }
 
@@ -47,6 +48,7 @@ class SettingsFragment : Fragment() {
                 R.id.zoom_125 -> 1.25f
                 R.id.zoom_150 -> 1.5f
                 R.id.zoom_200 -> 2.0f
+                R.id.zoom_300 -> 3.0f
                 else -> 1.0f
             }
         }
