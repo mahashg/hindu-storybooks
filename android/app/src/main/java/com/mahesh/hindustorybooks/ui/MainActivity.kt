@@ -14,6 +14,7 @@ import com.mahesh.hindustorybooks.data.CatalogRefresh
 import com.mahesh.hindustorybooks.data.Prefs
 import com.mahesh.hindustorybooks.data.RefreshResult
 import com.mahesh.hindustorybooks.databinding.ActivityMainBinding
+import com.mahesh.hindustorybooks.util.FontScaleHelper
 import com.mahesh.hindustorybooks.util.LocaleHelper
 import com.mahesh.hindustorybooks.work.CatalogWorker
 import java.util.concurrent.TimeUnit
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
     override fun attachBaseContext(newBase: Context) {
         val lang = Prefs(newBase).language
         LocaleHelper.apply(lang)
-        super.attachBaseContext(newBase)
+        super.attachBaseContext(FontScaleHelper.wrap(newBase, Prefs(newBase).appFontScale))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

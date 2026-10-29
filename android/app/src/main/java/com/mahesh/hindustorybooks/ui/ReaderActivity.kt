@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.mahesh.hindustorybooks.R
 import com.mahesh.hindustorybooks.data.Prefs
 import com.mahesh.hindustorybooks.databinding.ActivityReaderBinding
+import com.mahesh.hindustorybooks.util.FontScaleHelper
 import com.mahesh.hindustorybooks.util.LocaleHelper
 import java.io.File
 import java.io.FileOutputStream
@@ -31,10 +32,12 @@ import kotlin.math.roundToInt
  * reopen), renders with android.graphics.pdf.PdfRenderer, and always fits
  * the phone: page bitmaps are rendered at the CURRENT zoom from the actual
  * runtime screen width (never an upscaled low-resolution bitmap), capped
- * at 3000px wide for memory. Zoom: Settings default on open, pinch and +/−
- * in the reader (0.75×–4.0×) for the session. Last-read page is stored per
- * book and restored on reopen; viewing the last page marks the book
- * finished. v1.1 scope is clean reading + zoom + resume only.
+ * at 3000px wide for memory. Book zoom is ONE value shared across all
+ * books: it is loaded from Prefs on open and saved back on every change
+ * (pinch and +/−, 0.75×–4.0×). Zoom changes never reset the reading
+ * position — the content under the viewport stays under the viewport.
+ * Last-read page is stored per book and restored on reopen; viewing the
+ * last page marks the book finished.
  */
 class ReaderActivity : AppCompatActivity() {
 
@@ -63,7 +66,7 @@ class ReaderActivity : AppCompatActivity() {
 
     override fun attachBaseContext(newBase: Context) {
         LocaleHelper.apply(Prefs(newBase).language)
-        super.attachBaseContext(newBase)
+        super.attachBaseContext(FontScaleHelper.wrap(newBase, Prefs(newBase).appFontScale))
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,7 +78,9 @@ class ReaderActivity : AppCompatActivity() {
         val title = intent.getStringExtra(EXTRA_TITLE) ?: ""
         binding.readerTitle.text = title
         binding.readerBack.setOnClickListener { finish() }
-        zoom = Prefs(this).zoomDefault
+        // ONE book zoom shared across all books: open at the saved value
+        // (fit to width on first run); every change below saves it back.
+        zoom = Prefs(this).bookZoom
         screenWidthPx = currentScreenWidth()
         this.pdfUrl = pdfUrl
         // Explicit start page (e.g. Home "Continue reading") wins; otherwise
@@ -133,6 +138,11 @@ class ReaderActivity : AppCompatActivity() {
         saveProgress()
     }
 
+    override fun onStop() {
+        super.onStop()
+        saveProgress()
+    }
+
     override fun onDestroy() {
         super.onDestroy()
         saveProgress()
@@ -155,6 +165,24 @@ class ReaderActivity : AppCompatActivity() {
         val prefs = Prefs(this)
         if (currentPage >= pageCount - 1) prefs.clearResume(pdfUrl)
         else prefs.setResumePage(pdfUrl, currentPage)
+    }
+
+    /**
+     * Scrolls to the restored page with a double post and a landing check:
+     * a scrollToPosition posted before the RecyclerView has laid out the
+     * new items can silently miss, leaving the reader on page 1. If the
+     * first visible page is not the target after layout, retry once. The
+     * scroll listener then updates currentPage and saves progress as usual.
+     */
+    private fun restoreScroll(target: Int) {
+        binding.readerPages.post {
+            layoutManager.scrollToPosition(target)
+            binding.readerPages.post {
+                if (layoutManager.findFirstVisibleItemPosition() != target) {
+                    layoutManager.scrollToPosition(target)
+                }
+            }
+        }
     }
 
     private fun currentScreenWidth(): Int {
@@ -212,7 +240,7 @@ class ReaderActivity : AppCompatActivity() {
                 pageAdapter.notifyDataSetChanged()
                 // Restore the saved page (or the explicit start page).
                 currentPage = startPage.coerceIn(0, (pageCount - 1).coerceAtLeast(0))
-                binding.readerPages.post { layoutManager.scrollToPosition(currentPage) }
+                restoreScroll(currentPage)
                 updatePageLabel()
             }
         } catch (e: Exception) {
@@ -223,14 +251,36 @@ class ReaderActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * Zoom change that NEVER resets the book to the top of the page.
+     * Anchor: the topmost visible page and how far its top sits above the
+     * viewport top. After the re-render, that page is put back and shifted
+     * by the anchor offset scaled by the zoom ratio, so the content that
+     * was under the viewport stays under the viewport — zooming in and
+     * out, repeatedly. Also persists the shared book zoom.
+     */
     private fun applyZoom(newZoom: Float) {
         val clamped = newZoom.coerceIn(MIN_ZOOM, MAX_ZOOM)
         if (clamped == zoom) return
+        val oldZoom = zoom
+        val anchorPage = layoutManager.findFirstVisibleItemPosition()
+            .takeIf { it >= 0 } ?: currentPage
+        val anchorTop = layoutManager.findViewByPosition(anchorPage)
+            ?.let { it.top - binding.readerPages.paddingTop } ?: 0
+        val ratio = clamped / oldZoom
         zoom = clamped
+        Prefs(this).bookZoom = clamped
         zoomGen++
         pageAdapter.evictBitmaps()
         pageAdapter.notifyDataSetChanged()
-        binding.readerPages.post { layoutManager.scrollToPosition(currentPage) }
+        binding.readerPages.post {
+            layoutManager.scrollToPosition(anchorPage)
+            val targetTop = (anchorTop * ratio).roundToInt()
+            // Second post runs after the new layout, so this shift lands
+            // on the freshly laid-out pages (scrollBy +dy moves content
+            // up, putting the anchor top at targetTop, which is <= 0).
+            binding.readerPages.post { binding.readerPages.scrollBy(0, -targetTop) }
+        }
     }
 
     private fun goToPage(page: Int, smooth: Boolean) {
