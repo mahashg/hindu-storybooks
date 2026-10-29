@@ -37,7 +37,20 @@
   li.planned { color:#7a6a4f; background:#f7f1e0; }
   li.planned b { color:#7a6a4f; }
   footer { text-align:center; color:#7a6a4f; padding:2rem 1rem 3rem; font-size:.9rem; }
-  @media (max-width: 700px) { .tonight img { max-height:320px; } .logo { width:40px; height:40px; } header h1 { font-size:1.2rem; } }
+  @media (max-width: 700px) {
+    .tonight img { max-height:320px; }
+    header { padding:.7rem .8rem; }
+    .brand { gap:.5rem; }
+    .logo { width:36px; height:36px; }
+    header h1 { font-size:1.05rem; white-space:nowrap; }
+    .lang { gap:.3rem; }
+    .lang button { padding:.3rem .55rem; font-size:.85rem; }
+  }
+  @media (max-width: 360px) {
+    .logo { width:32px; height:32px; }
+    header h1 { font-size:.9rem; }
+    .lang button { padding:.25rem .45rem; font-size:.8rem; }
+  }
 </style></head>
 <body>
 
