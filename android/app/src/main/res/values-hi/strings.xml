@@ -8,6 +8,7 @@
     <string name="kicker_tonight">आज रात की कहानी</string>
     <string name="kicker_today">आज की कहानी</string>
     <string name="kicker_resume">जारी रखें · पृष्ठ %1$d</string>
+    <string name="kicker_resume_reflow">जारी रखें</string>
     <string name="save">सहेजें</string>
     <string name="unsave">सहेजना हटाएँ</string>
     <string name="next_story">अगली कहानी</string>
@@ -35,6 +36,7 @@
     <string name="toast_unsaved">सहेजी हुई से हटा दी गई</string>
     <string name="reader_downloading">किताब डाउनलोड हो रही है…</string>
     <string name="reader_download_failed">किताब डाउनलोड नहीं हो पाई। कृपया फिर कोशिश करें।</string>
+    <string name="reader_verify_failed">किताब की जाँच नहीं हो पाई। कृपया फिर कोशिश करें।</string>
     <string name="reader_page">पृष्ठ %1$d / %2$d</string>
     <string name="reader_zoom_in">ज़ूम बढ़ाएँ</string>
     <string name="reader_zoom_out">ज़ूम घटाएँ</string>
