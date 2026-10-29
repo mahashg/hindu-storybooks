@@ -11,7 +11,7 @@
     <string name="kicker_resume_reflow">जारी रखें</string>
     <string name="save">सहेजें</string>
     <string name="unsave">सहेजना हटाएँ</string>
-    <string name="next_story">अगली कहानी</string>
+    <string name="swipe_hint">अगली कहानी के लिए बाईं ओर स्वाइप करें</string>
     <string name="planned">जल्द आ रहा है</string>
     <string name="new_badge">नया</string>
     <string name="saved_empty_title">अभी कुछ सहेजा नहीं है।</string>
