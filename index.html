@@ -9,160 +9,192 @@
   :root { --maroon:#5b1f24; --gold:#c9a227; --cream:#fdf8ec; --ink:#2b2118; --soft:#f3e9d2; }
   * { box-sizing:border-box; }
   body { margin:0; font-family:"Noto Serif Devanagari","Noto Serif",serif; background:var(--cream); color:var(--ink); line-height:1.6; }
-  header { background:var(--maroon); color:#fff; padding:2.2rem 1.2rem 1.8rem; text-align:center; border-bottom:5px solid var(--gold); }
+  header { background:var(--maroon); color:#fff; padding:2rem 1.2rem 1.4rem; text-align:center; border-bottom:5px solid var(--gold); }
   header h1 { margin:0 0 .3rem; font-size:2rem; }
   header p { margin:.2rem auto; max-width:640px; opacity:.92; }
-  nav.toc { position:sticky; top:0; z-index:10; background:var(--maroon); padding:.55rem .8rem; overflow-x:auto; white-space:nowrap; box-shadow:0 2px 8px rgba(0,0,0,.25); }
-  nav.toc a { display:inline-block; color:#fff; text-decoration:none; padding:.3rem .7rem; margin-right:.3rem; border:1px solid rgba(255,255,255,.35); border-radius:20px; font-size:.9rem; }
-  nav.toc a:hover { background:rgba(255,255,255,.15); }
+  .lang { margin-top:.9rem; }
+  .lang button { font-family:inherit; font-size:.95rem; padding:.4rem 1.1rem; margin:0 .2rem; border-radius:20px; border:1.5px solid rgba(255,255,255,.6); background:transparent; color:#fff; cursor:pointer; }
+  .lang button.active { background:#fff; color:var(--maroon); font-weight:700; }
   .filters { background:var(--soft); border-bottom:2px solid var(--gold); padding:.8rem 1rem; text-align:center; }
   .filters span { font-weight:700; color:var(--maroon); margin-right:.4rem; }
   .filters button { font-family:inherit; font-size:.9rem; margin:.2rem; padding:.4rem .9rem; border:1.5px solid var(--maroon); border-radius:20px; background:#fff; color:var(--maroon); cursor:pointer; }
   .filters button.active { background:var(--maroon); color:#fff; }
-  main { max-width:900px; margin:0 auto; padding:1.2rem; }
-  h2 { color:var(--maroon); border-bottom:2px solid var(--gold); padding-bottom:.25rem; margin-top:2.2rem; scroll-margin-top:60px; }
-  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1rem; }
+  .layout { display:flex; align-items:flex-start; max-width:1180px; margin:0 auto; }
+  aside { width:235px; flex-shrink:0; position:sticky; top:0; height:100vh; overflow-y:auto; padding:1.2rem .9rem; background:#fff; border-right:1px solid #e5d9b8; }
+  aside h3 { color:var(--maroon); margin:.2rem 0 .7rem; font-size:1.05rem; }
+  aside a { display:block; color:var(--ink); text-decoration:none; padding:.45rem .6rem; border-radius:6px; font-size:.95rem; }
+  aside a:hover { background:var(--soft); }
+  aside a b { color:var(--maroon); }
+  main { flex:1; min-width:0; padding:1.2rem; }
+  h2 { color:var(--maroon); border-bottom:2px solid var(--gold); padding-bottom:.25rem; margin-top:2rem; scroll-margin-top:20px; }
+  h2:first-child { margin-top:.2rem; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:1rem; }
   .card { background:#fff; border:1px solid #e5d9b8; border-radius:10px; padding:1rem 1.1rem; }
-  .card h3 { margin:.1rem 0 .3rem; color:var(--maroon); font-size:1.15rem; }
+  .card h3 { margin:.7rem 0 .3rem; color:var(--maroon); font-size:1.15rem; }
   .card p { margin:.2rem 0; font-size:.95rem; }
   .meta { color:#7a6a4f; font-size:.85rem; }
+  img.cover { width:100%; aspect-ratio:3/4; object-fit:cover; object-position:center; border-radius:8px; border:1px solid #e5d9b8; background:#f3e9d2; }
+  .cover-soon { width:100%; aspect-ratio:3/4; border-radius:8px; background:linear-gradient(160deg,#5b1f24,#7a2b31); color:#f3e9d2; display:flex; align-items:center; justify-content:center; text-align:center; font-size:1.1rem; padding:1rem; border:1px solid #c9a227; }
   .btn { display:inline-block; margin-top:.6rem; background:var(--maroon); color:#fff; text-decoration:none; padding:.45rem 1rem; border-radius:6px; font-weight:600; }
   .btn:hover { background:#7a2b31; }
   .note { background:var(--soft); border-left:4px solid var(--gold); padding:.8rem 1rem; border-radius:0 8px 8px 0; }
   footer { text-align:center; color:#7a6a4f; padding:2rem 1rem 3rem; font-size:.9rem; }
+  @media (max-width: 820px) {
+    .layout { flex-direction:column; }
+    aside { width:100%; height:auto; position:static; overflow-x:auto; white-space:nowrap; border-right:none; border-bottom:1px solid #e5d9b8; padding:.7rem .8rem; }
+    aside h3 { display:inline; margin-right:.6rem; }
+    aside a { display:inline-block; border:1px solid #e5d9b8; margin-right:.3rem; }
+    main { padding:1rem; }
+  }
 </style>
 </head>
 <body>
 <header>
-  <h1>देवों की कहानियाँ</h1>
-  <p>Hindu storybooks by Mahesh Gupta — everyday Hindi, read aloud, in the traditional ink-and-flat-colour manner inspired by Raja Ravi Varma.</p>
-  <p>रोज़ की हिंदी में, कहानी सुनाने की शैली में — बच्चों और बड़ों, दोनों के लिए।</p>
+  <h1 class="t" data-hi="देवों की कहानियाँ" data-en="Stories of the Gods">देवों की कहानियाँ</h1>
+  <p class="t" data-hi="महेश गुप्ता की हिंदू कहानी-पुस्तकें — रोज़ की हिंदी में, ज़ोर से पढ़ने के लिए, राजा रवि वर्मा की परंपरा से प्रेरित पारंपरिक चित्रों के साथ।" data-en="Hindu storybooks by Mahesh Gupta — everyday Hindi, read aloud, in the traditional ink-and-flat-colour manner inspired by Raja Ravi Varma.">महेश गुप्ता की हिंदू कहानी-पुस्तकें — रोज़ की हिंदी में, ज़ोर से पढ़ने के लिए, राजा रवि वर्मा की परंपरा से प्रेरित पारंपरिक चित्रों के साथ।</p>
+  <p class="t" data-hi="रोज़ की हिंदी में, कहानी सुनाने की शैली में — बच्चों और बड़ों, दोनों के लिए।" data-en="In everyday Hindi, in the storyteller's style — for children and adults alike.">रोज़ की हिंदी में, कहानी सुनाने की शैली में — बच्चों और बड़ों, दोनों के लिए।</p>
+  <div class="lang">
+    <button id="btn-hi" class="active" onclick="setLang('hi', this)">हिंदी</button>
+    <button id="btn-en" onclick="setLang('en', this)">English</button>
+  </div>
 </header>
-<nav class="toc">
-  <a href="#durga">दुर्गा कथा (5)</a>
-  <a href="#shiva">शिव (2)</a>
-  <a href="#vishnu">विष्णु अवतार (5)</a>
-  <a href="#gurus">गुरु (1)</a>
-  <a href="#festivals">त्योहार (3)</a>
-  <a href="#little">छोटे पाठक (1)</a>
-  <a href="#gods">देवों से पहले (1)</a>
-  <a href="#vol1">Vol. 1 EN + HI (4)</a>
-  <a href="#diwali">दिवाली सीरीज़ (9 planned)</a>
-</nav>
 <div class="filters">
-  <span>Browse by:</span>
-  <button class="filter active" onclick="filterCards('all', this)">All books</button>
-  <button class="filter" onclick="filterCards('hindi', this)">Hindi</button>
-  <button class="filter" onclick="filterCards('english', this)">English</button>
-  <button class="filter" onclick="filterCards('comic', this)">Comics</button>
-  <button class="filter" onclick="filterCards('storybook', this)">Storybooks</button>
-  <button class="filter" onclick="filterCards('festival', this)">Festivals</button>
-  <button class="filter" onclick="filterCards('little', this)">Little readers</button>
-  <button class="filter" onclick="filterCards('planned', this)">Coming soon</button>
+  <span class="t" data-hi="देखें:" data-en="Browse by:">देखें:</span>
+  <button class="filter active t" data-hi="सभी किताबें" data-en="All books" onclick="filterCards('all', this)">सभी किताबें</button>
+  <button class="filter t" data-hi="हिंदी" data-en="Hindi" onclick="filterCards('hindi', this)">हिंदी</button>
+  <button class="filter t" data-hi="अंग्रेज़ी" data-en="English" onclick="filterCards('english', this)">अंग्रेज़ी</button>
+  <button class="filter t" data-hi="कॉमिक्स" data-en="Comics" onclick="filterCards('comic', this)">कॉमिक्स</button>
+  <button class="filter t" data-hi="कहानी-पुस्तकें" data-en="Storybooks" onclick="filterCards('storybook', this)">कहानी-पुस्तकें</button>
+  <button class="filter t" data-hi="त्योहार" data-en="Festivals" onclick="filterCards('festival', this)">त्योहार</button>
+  <button class="filter t" data-hi="छोटे पाठक" data-en="Little readers" onclick="filterCards('little', this)">छोटे पाठक</button>
+  <button class="filter t" data-hi="जल्द आ रहा है" data-en="Coming soon" onclick="filterCards('planned', this)">जल्द आ रहा है</button>
 </div>
+<div class="layout">
+<aside>
+  <h3 class="t" data-hi="अनुभाग" data-en="Sections">अनुभाग</h3>
+  <a href="#durga"><b>१.</b> <span class="t" data-hi="दुर्गा कथा" data-en="Durga Katha">दुर्गा कथा</span> (5)</a>
+  <a href="#shiva"><b>२.</b> <span class="t" data-hi="शिव" data-en="Shiva">शिव</span> (2)</a>
+  <a href="#vishnu"><b>३.</b> <span class="t" data-hi="विष्णु अवतार" data-en="Vishnu Avatars">विष्णु अवतार</span> (5)</a>
+  <a href="#gurus"><b>४.</b> <span class="t" data-hi="गुरु" data-en="Gurus">गुरु</span> (1)</a>
+  <a href="#festivals"><b>५.</b> <span class="t" data-hi="त्योहार" data-en="Festivals">त्योहार</span> (3)</a>
+  <a href="#little"><b>६.</b> <span class="t" data-hi="छोटे पाठक" data-en="Little readers">छोटे पाठक</span> (1)</a>
+  <a href="#gods"><b>७.</b> <span class="t" data-hi="देवों से पहले" data-en="Gods Before Gods">देवों से पहले</span> (1)</a>
+  <a href="#vol1"><b>८.</b> <span class="t" data-hi="खंड १ — अंग्रेज़ी + हिंदी" data-en="Vol. 1 — English + Hindi">खंड १ — अंग्रेज़ी + हिंदी</span> (4)</a>
+  <a href="#diwali"><b>९.</b> <span class="t" data-hi="दिवाली सीरीज़" data-en="Diwali series">दिवाली सीरीज़</span> (9 planned)</a>
+  <a href="#shelf"><b>१०.</b> <span class="t" data-hi="और भी" data-en="Also ahead">और भी</span></a>
+</aside>
 <main>
-  <div class="note"><strong>How to read:</strong> tap <em>Read the book</em> on any card to open its PDF. Each card shows the latest version only; older versions have been retired. New stories arrive here as they are written. Use the bar above to jump to a section, or the buttons to show only Hindi, English, comics, and so on.</div>
+  <div class="note"><span class="t" data-hi="<strong>कैसे पढ़ें:</strong> किसी भी कार्ड पर <em>किताब पढ़ें</em> दबाएँ — PDF खुल जाएगी। हर कार्ड पर सिर्फ़ नवीनतम संस्करण है; पुराने संस्करण हटा दिए गए हैं। नई कहानियाँ बनते ही यहाँ आती रहेंगी। ऊपर के बटन से सिर्फ़ हिंदी, अंग्रेज़ी, कॉमिक्स वगैरह देखें, या बाईं ओर से किसी अनुभाग पर जाएँ।" data-en="<strong>How to read:</strong> tap <em>Read the book</em> on any card to open its PDF. Each card shows the latest version only; older versions have been retired. New stories arrive here as they are written. Use the buttons above to show only Hindi, English, comics, and so on, or jump to a section from the left."><strong>कैसे पढ़ें:</strong> किसी भी कार्ड पर <em>किताब पढ़ें</em> दबाएँ — PDF खुल जाएगी। हर कार्ड पर सिर्फ़ नवीनतम संस्करण है; पुराने संस्करण हटा दिए गए हैं। नई कहानियाँ बनते ही यहाँ आती रहेंगी। ऊपर के बटन से सिर्फ़ हिंदी, अंग्रेज़ी, कॉमिक्स वगैरह देखें, या बाईं ओर से किसी अनुभाग पर जाएँ।</span></div>
 
   <section class="block">
-  <h2 id="durga">दुर्गा कथा और देवी — Durga Katha &amp; the Devi</h2>
+  <h2 id="durga" class="t" data-hi="दुर्गा कथा और देवी" data-en="Durga Katha &amp; the Devi">दुर्गा कथा और देवी</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi storybook"><h3>महिषासुर — देवी दुर्गा और भैंसा असुर</h3><p>The first story: Devi against the buffalo demon.</p><p class="meta">Latest: v3 · 18 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>चंड-मुण्ड और रक्तबीज</h3><p>Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.</p><p class="meta">15 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>शुम्भ और निशुम्भ — पूरी कथा (संशोधित संस्करण)</h3><p>The complete story: Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.</p><p class="meta">Revised edition · 32 pages · Everyday Hindi</p><a class="btn" href="books/shumbha-nishumbha-everyday-hindi-v2.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>मधु-कैटभ</h3><p>From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.</p><p class="meta">16 pages · Everyday Hindi</p><a class="btn" href="books/durga-katha-madhu-kaitabha-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>समुद्र मंथन — पूरी कथा</h3><p>The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.</p><p class="meta">23 pages · Everyday Hindi</p><a class="btn" href="books/samudra-manthan-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf"><img class="cover" src="images/durga-katha-mahishasura-everyday-hindi-sample-v3-01.jpg" alt=""></a><h3 class="t" data-hi="महिषासुर — देवी दुर्गा और भैंसा असुर" data-en="Mahishasura — Devi Durga and the Buffalo Demon">महिषासुर — देवी दुर्गा और भैंसा असुर</h3><p class="t" data-hi="पहली कहानी: भैंसा असुर के सामने देवी।" data-en="The first story: Devi against the buffalo demon.">पहली कहानी: भैंसा असुर के सामने देवी।</p><p class="meta t" data-hi="नवीनतम: v3 · 18 पृष्ठ · रोज़ की हिंदी" data-en="Latest: v3 · 18 pages · Everyday Hindi">नवीनतम: v3 · 18 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-mahishasura-everyday-hindi-sample-v3.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf"><img class="cover" src="images/durga-katha-chanda-munda-raktabeej-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="चंड-मुण्ड और रक्तबीज" data-en="Chanda-Munda and Raktabeej">चंड-मुण्ड और रक्तबीज</h3><p class="t" data-hi="चंड-मुण्ड गिरते हैं, और रक्तबीज की हर बूँद से नया असुर उठता है — जब तक काली उत्तर नहीं देतीं।" data-en="Chanda-Munda fall, and from every drop of Raktabeej's blood a new demon rises — until Kali answers.">चंड-मुण्ड गिरते हैं, और रक्तबीज की हर बूँद से नया असुर उठता है — जब तक काली उत्तर नहीं देतीं।</p><p class="meta t" data-hi="15 पृष्ठ · रोज़ की हिंदी" data-en="15 pages · Everyday Hindi">15 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-chanda-munda-raktabeej-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/shumbha-nishumbha-everyday-hindi-v2.pdf"><img class="cover" src="images/shumbha-nishumbha-everyday-hindi-v2-01.jpg" alt=""></a><h3 class="t" data-hi="शुम्भ और निशुम्भ — पूरी कथा (संशोधित संस्करण)" data-en="Shumbha and Nishumbha — the Complete Story (Revised)">शुम्भ और निशुम्भ — पूरी कथा (संशोधित संस्करण)</h3><p class="t" data-hi="पूरी कथा: कौशिकी का प्रकट होना, धूम्रलोचन, मातृकाएँ, शिवदूती, और देवी का वचन।" data-en="The complete story: Kaushiki's emergence, Dhumralochana, the Matrikas, Shiva-duti, and Devi's promise.">पूरी कथा: कौशिकी का प्रकट होना, धूम्रलोचन, मातृकाएँ, शिवदूती, और देवी का वचन।</p><p class="meta t" data-hi="संशोधित संस्करण · 32 पृष्ठ · रोज़ की हिंदी" data-en="Revised edition · 32 pages · Everyday Hindi">संशोधित संस्करण · 32 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/shumbha-nishumbha-everyday-hindi-v2.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/durga-katha-madhu-kaitabha-everyday-hindi.pdf"><img class="cover" src="images/durga-katha-madhu-kaitabha-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="मधु-कैटभ" data-en="Madhu-Kaitabha">मधु-कैटभ</h3><p class="t" data-hi="विष्णु के कान से दो असुर वेद चुरा लेते हैं — और महामाया प्रभु को जगाती हैं।" data-en="From Vishnu's ear, two demons steal the Vedas — and Mahamaya wakes the Lord.">विष्णु के कान से दो असुर वेद चुरा लेते हैं — और महामाया प्रभु को जगाती हैं।</p><p class="meta t" data-hi="16 पृष्ठ · रोज़ की हिंदी" data-en="16 pages · Everyday Hindi">16 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-madhu-kaitabha-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/samudra-manthan-everyday-hindi.pdf"><img class="cover" src="images/samudra-manthan-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="समुद्र मंथन — पूरी कथा" data-en="Samudra Manthan — the Complete Story">समुद्र मंथन — पूरी कथा</h3><p class="t" data-hi="समुद्र का मंथन: विष, अमृत, लक्ष्मी, मोहिनी, और राहु-केतु।" data-en="The churning of the ocean: poison, nectar, Lakshmi, Mohini, and Rahu-Ketu.">समुद्र का मंथन: विष, अमृत, लक्ष्मी, मोहिनी, और राहु-केतु।</p><p class="meta t" data-hi="23 पृष्ठ · रोज़ की हिंदी" data-en="23 pages · Everyday Hindi">23 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/samudra-manthan-everyday-hindi.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="shiva">शिव — Shiva</h2>
+  <h2 id="shiva" class="t" data-hi="शिव" data-en="Shiva">शिव</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi storybook"><h3>शिव — नीलकंठ की कथा</h3><p>Shiva drinks the halahala poison to save the worlds, and his throat turns blue.</p><p class="meta">16 pages · Everyday Hindi</p><a class="btn" href="books/shiva-neelkanth-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>शिव–पार्वती — पूरी कथा</h3><p>Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.</p><p class="meta">Latest: v3 · 36 pages · Everyday Hindi</p><a class="btn" href="books/shiva-parvati-everyday-hindi-v3.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/shiva-neelkanth-everyday-hindi.pdf"><img class="cover" src="images/shiva-neelkanth-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="शिव — नीलकंठ की कथा" data-en="Shiva — the Neelkanth Story">शिव — नीलकंठ की कथा</h3><p class="t" data-hi="शिव संसार को बचाने के लिए हलाहल विष पीते हैं, और उनका गला नीला हो जाता है।" data-en="Shiva drinks the halahala poison to save the worlds, and his throat turns blue.">शिव संसार को बचाने के लिए हलाहल विष पीते हैं, और उनका गला नीला हो जाता है।</p><p class="meta t" data-hi="16 पृष्ठ · रोज़ की हिंदी" data-en="16 pages · Everyday Hindi">16 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/shiva-neelkanth-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/shiva-parvati-everyday-hindi-v3.pdf"><img class="cover" src="images/shiva-parvati-everyday-hindi-v3-01.jpg" alt=""></a><h3 class="t" data-hi="शिव–पार्वती — पूरी कथा" data-en="Shiva–Parvati — the Complete Story">शिव–पार्वती — पूरी कथा</h3><p class="t" data-hi="सती, अग्नि, वह शोक जो तभी थमा जब कुछ भी नहीं बचा — और पार्वती, जिनकी तपस्या, ज़िद और विवाह शिव को घर ले आए। कामदेव, सप्तर्षि, और कार्तिकेय का तारकासुर-वध सहित।" data-en="Sati, the fire, the grief that ends only when nothing remains — and Parvati, whose tapasya, zid and wedding bring Shiva home. With Kamadeva, the Saptarishi, and Kartikeya's defeat of Tarakasura.">सती, अग्नि, वह शोक जो तभी थमा जब कुछ भी नहीं बचा — और पार्वती, जिनकी तपस्या, ज़िद और विवाह शिव को घर ले आए। कामदेव, सप्तर्षि, और कार्तिकेय का तारकासुर-वध सहित।</p><p class="meta t" data-hi="नवीनतम: v3 · 36 पृष्ठ · रोज़ की हिंदी" data-en="Latest: v3 · 36 pages · Everyday Hindi">नवीनतम: v3 · 36 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/shiva-parvati-everyday-hindi-v3.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="vishnu">विष्णु और अवतार — Vishnu &amp; the Avatars</h2>
+  <h2 id="vishnu" class="t" data-hi="विष्णु और अवतार" data-en="Vishnu &amp; the Avatars">विष्णु और अवतार</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi storybook"><h3>वामन अवतार और राजा बलि</h3><p>Three steps of land — and a king who keeps his word. Bali honoured, not villainised.</p><p class="meta">19 pages · Everyday Hindi</p><a class="btn" href="books/vishnu-vamana-bali-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>मत्स्य अवतार — बाढ़ में बची दुनिया</h3><p>The tiny fish in Manu's palms grows into the world's boat.</p><p class="meta">23 pages · Everyday Hindi</p><a class="btn" href="books/matsya-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>वराह अवतार — धरती को उठाने वाले</h3><p>The boar who lifts the drowned earth on his tusks.</p><p class="meta">21 pages · Everyday Hindi</p><a class="btn" href="books/varaha-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>परशुराम — क्रोध और प्रतिज्ञा की कथा</h3><p>Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.</p><p class="meta">28 pages · Everyday Hindi</p><a class="btn" href="books/parashurama-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>नृसिंह अवतार — भक्त प्रह्लाद की कथा</h3><p>From the pillar at dusk, neither man nor beast — and a son who forgives his father.</p><p class="meta">24 pages · Everyday Hindi</p><a class="btn" href="books/narasimha-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/vishnu-vamana-bali-everyday-hindi.pdf"><img class="cover" src="images/vishnu-vamana-bali-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="वामन अवतार और राजा बलि" data-en="Vamana Avatar and King Bali">वामन अवतार और राजा बलि</h3><p class="t" data-hi="तीन पग भूमि — और एक राजा जो अपना वचन निभाता है। बलि सम्मानित हैं, खलनायक नहीं।" data-en="Three steps of land — and a king who keeps his word. Bali honoured, not villainised.">तीन पग भूमि — और एक राजा जो अपना वचन निभाता है। बलि सम्मानित हैं, खलनायक नहीं।</p><p class="meta t" data-hi="19 पृष्ठ · रोज़ की हिंदी" data-en="19 pages · Everyday Hindi">19 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/vishnu-vamana-bali-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/matsya-everyday-hindi.pdf"><img class="cover" src="images/matsya-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="मत्स्य अवतार — बाढ़ में बची दुनिया" data-en="Matsya Avatar — the World Saved in the Flood">मत्स्य अवतार — बाढ़ में बची दुनिया</h3><p class="t" data-hi="मनु की हथेलियों की छोटी-सी मछली दुनिया की नाव बन जाती है।" data-en="The tiny fish in Manu's palms grows into the world's boat.">मनु की हथेलियों की छोटी-सी मछली दुनिया की नाव बन जाती है।</p><p class="meta t" data-hi="23 पृष्ठ · रोज़ की हिंदी" data-en="23 pages · Everyday Hindi">23 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/matsya-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/varaha-everyday-hindi.pdf"><img class="cover" src="images/varaha-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="वराह अवतार — धरती को उठाने वाले" data-en="Varaha Avatar — the One Who Lifted the Earth">वराह अवतार — धरती को उठाने वाले</h3><p class="t" data-hi="वराह जो डूबी हुई धरती को अपने दाँतों पर उठा लेते हैं।" data-en="The boar who lifts the drowned earth on his tusks.">वराह जो डूबी हुई धरती को अपने दाँतों पर उठा लेते हैं।</p><p class="meta t" data-hi="21 पृष्ठ · रोज़ की हिंदी" data-en="21 pages · Everyday Hindi">21 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/varaha-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/parashurama-everyday-hindi.pdf"><img class="cover" src="images/parashurama-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="परशुराम — क्रोध और प्रतिज्ञा की कथा" data-en="Parashurama — a Story of Anger and Vows">परशुराम — क्रोध और प्रतिज्ञा की कथा</h3><p class="t" data-hi="राजाओं को जन्म ने नहीं, शक्ति और अहंकार ने भ्रष्ट किया — और योद्धा युवा राम के सामने झुकता है।" data-en="Power and pride, not birth, corrupted the kings — and the warrior bows to young Ram.">राजाओं को जन्म ने नहीं, शक्ति और अहंकार ने भ्रष्ट किया — और योद्धा युवा राम के सामने झुकता है।</p><p class="meta t" data-hi="28 पृष्ठ · रोज़ की हिंदी" data-en="28 pages · Everyday Hindi">28 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/parashurama-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/narasimha-everyday-hindi.pdf"><img class="cover" src="images/narasimha-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="नृसिंह अवतार — भक्त प्रह्लाद की कथा" data-en="Narasimha Avatar — the Story of Bhakt Prahlada">नृसिंह अवतार — भक्त प्रह्लाद की कथा</h3><p class="t" data-hi="संध्या के समय खंभे से, न मनुष्य न पशु — और एक पुत्र जो अपने पिता को क्षमा करता है।" data-en="From the pillar at dusk, neither man nor beast — and a son who forgives his father.">संध्या के समय खंभे से, न मनुष्य न पशु — और एक पुत्र जो अपने पिता को क्षमा करता है।</p><p class="meta t" data-hi="24 पृष्ठ · रोज़ की हिंदी" data-en="24 pages · Everyday Hindi">24 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/narasimha-everyday-hindi.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="gurus">गुरु और मोड़ — Gurus &amp; Turning Points</h2>
+  <h2 id="gurus" class="t" data-hi="गुरु और मोड़" data-en="Gurus &amp; Turning Points">गुरु और मोड़</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi storybook"><h3>शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता</h3><p>The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.</p><p class="meta">32 pages · Everyday Hindi</p><a class="btn" href="books/shukracharya-everyday-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/shukracharya-everyday-hindi.pdf"><img class="cover" src="images/shukracharya-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता" data-en="Shukracharya — Guru of the Asuras, Knower of Sanjivani">शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता</h3><p class="t" data-hi="वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।" data-en="The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.">वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।</p><p class="meta t" data-hi="32 पृष्ठ · रोज़ की हिंदी" data-en="32 pages · Everyday Hindi">32 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/shukracharya-everyday-hindi.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="festivals">त्योहार — Festival Books</h2>
+  <h2 id="festivals" class="t" data-hi="त्योहार" data-en="Festival Books">त्योहार</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi festival"><h3>शरद पूर्णिमा — चाँद की सबसे बड़ी रात</h3><p>The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.</p><p class="meta">22 pages · Everyday Hindi</p><a class="btn" href="books/sharad-purnima-everyday-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi festival"><h3>करवा चौथ — चाँद का इंतज़ार (संशोधित संस्करण)</h3><p>Veervati's year beside her husband, the separate house, and the true moonrise.</p><p class="meta">Revised edition · 27 pages · Everyday Hindi</p><a class="btn" href="books/karva-chauth-everyday-hindi-v2.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi festival"><h3>अहोई अष्टमी — नमूना अध्याय</h3><p>Pilot chapter of the Kartik festival book: a mother's fast, a small harm, a year of service, forgiveness.</p><p class="meta">Pilot · 7 pages · Hindi + English nutshell</p><a class="btn" href="books/ahoi-ashtami-namuna.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi festival"><a href="books/sharad-purnima-everyday-hindi.pdf"><img class="cover" src="images/sharad-purnima-everyday-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="शरद पूर्णिमा — चाँद की सबसे बड़ी रात" data-en="Sharad Purnima — the Moon's Greatest Night">शरद पूर्णिमा — चाँद की सबसे बड़ी रात</h3><p class="t" data-hi="सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।" data-en="The night of sixteen kalas, the Raas on the Yamuna, and kheer kept under the moon.">सोलह कलाओं की रात, यमुना पर रास, और चाँदनी में रखी खीर।</p><p class="meta t" data-hi="22 पृष्ठ · रोज़ की हिंदी" data-en="22 pages · Everyday Hindi">22 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/sharad-purnima-everyday-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi festival"><a href="books/karva-chauth-everyday-hindi-v2.pdf"><img class="cover" src="images/karva-chauth-everyday-hindi-v2-01.jpg" alt=""></a><h3 class="t" data-hi="करवा चौथ — चाँद का इंतज़ार (संशोधित संस्करण)" data-en="Karva Chauth — Waiting for the Moon (Revised)">करवा चौथ — चाँद का इंतज़ार (संशोधित संस्करण)</h3><p class="t" data-hi="वीरवती का पति के साथ बिताया वर्ष, अलग घर, और सच्चा चंद्रोदय।" data-en="Veervati's year beside her husband, the separate house, and the true moonrise.">वीरवती का पति के साथ बिताया वर्ष, अलग घर, और सच्चा चंद्रोदय।</p><p class="meta t" data-hi="संशोधित संस्करण · 27 पृष्ठ · रोज़ की हिंदी" data-en="Revised edition · 27 pages · Everyday Hindi">संशोधित संस्करण · 27 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/karva-chauth-everyday-hindi-v2.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi festival"><a href="books/ahoi-ashtami-namuna.pdf"><img class="cover" src="images/ahoi-ashtami-namuna-1.jpg" alt=""></a><h3 class="t" data-hi="अहोई अष्टमी — नमूना अध्याय" data-en="Ahoi Ashtami — Sample Chapter">अहोई अष्टमी — नमूना अध्याय</h3><p class="t" data-hi="कार्तिक त्योहार-पुस्तक का नमूना अध्याय: माँ का व्रत, एक छोटी भूल, सेवा का वर्ष, क्षमा।" data-en="Pilot chapter of the Kartik festival book: a mother's fast, a small harm, a year of service, forgiveness.">कार्तिक त्योहार-पुस्तक का नमूना अध्याय: माँ का व्रत, एक छोटी भूल, सेवा का वर्ष, क्षमा।</p><p class="meta t" data-hi="नमूना · 7 पृष्ठ · हिंदी + अंग्रेज़ी सार" data-en="Pilot · 7 pages · Hindi + English nutshell">नमूना · 7 पृष्ठ · हिंदी + अंग्रेज़ी सार</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/ahoi-ashtami-namuna.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="little">छोटे पाठकों के लिए — For Little Readers</h2>
+  <h2 id="little" class="t" data-hi="छोटे पाठकों के लिए" data-en="For Little Readers">छोटे पाठकों के लिए</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi little storybook"><h3>देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए</h3><p>Mahishasura retold for a child reading alone: tiny lines, sight words, a refrain at each shape-change, play and colouring pages.</p><p class="meta">26 pages · Everyday Hindi</p><a class="btn" href="books/mahishasura-for-little-readers-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi little storybook"><a href="books/mahishasura-for-little-readers-hindi.pdf"><img class="cover" src="images/mahishasura-for-little-readers-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए" data-en="Devi Durga and the Buffalo Demon — For Little Readers">देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए</h3><p class="t" data-hi="महिषासुर, अकेले पढ़ने वाले बच्चे के लिए: छोटी पंक्तियाँ, दृष्टि-शब्द, हर रूप-बदल पर टेक, खेल और रंग भरने के पृष्ठ।" data-en="Mahishasura retold for a child reading alone: tiny lines, sight words, a refrain at each shape-change, play and colouring pages.">महिषासुर, अकेले पढ़ने वाले बच्चे के लिए: छोटी पंक्तियाँ, दृष्टि-शब्द, हर रूप-बदल पर टेक, खेल और रंग भरने के पृष्ठ।</p><p class="meta t" data-hi="26 पृष्ठ · रोज़ की हिंदी" data-en="26 pages · Everyday Hindi">26 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/mahishasura-for-little-readers-hindi.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="gods">देवों से पहले के भी देव — Gods Before Gods</h2>
+  <h2 id="gods" class="t" data-hi="देवों से पहले के भी देव" data-en="Gods Before Gods">देवों से पहले के भी देव</h2>
   <div class="grid">
-    <div class="card" data-filter="hindi storybook"><h3>इंद्र — स्वर्ग के राजा की कहानी</h3><p>Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.</p><p class="meta">Latest: v2 · 52 pages · Everyday Hindi</p><a class="btn" href="books/indra-v2.pdf">Read the book</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/indra-v2.pdf"><img class="cover" src="images/indra-v2-01.jpg" alt=""></a><h3 class="t" data-hi="इंद्र — स्वर्ग के राजा की कहानी" data-en="Indra — Story of the King of Svarga">इंद्र — स्वर्ग के राजा की कहानी</h3><p class="t" data-hi="पहली पुस्तक: पुराण-युग से पहले के देवता। इंद्र की उत्पत्ति, ख़ज़ाने, कर्म, दोष, महाकाव्य — और आज के इंद्र। कॉमिक-शैली का आवरण, अंदर श्रृंखला-पृष्ठ।" data-en="Book One: the older gods before the Puranic age. Indra's origin, treasures, deeds, flaws, epics — and Indra today. Comic-book cover, series page inside.">पहली पुस्तक: पुराण-युग से पहले के देवता। इंद्र की उत्पत्ति, ख़ज़ाने, कर्म, दोष, महाकाव्य — और आज के इंद्र। कॉमिक-शैली का आवरण, अंदर श्रृंखला-पृष्ठ।</p><p class="meta t" data-hi="नवीनतम: v2 · 52 पृष्ठ · रोज़ की हिंदी" data-en="Latest: v2 · 52 pages · Everyday Hindi">नवीनतम: v2 · 52 पृष्ठ · रोज़ की हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/indra-v2.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="vol1">Durga Katha, Volume 1 — English &amp; Hindi editions</h2>
+  <h2 id="vol1" class="t" data-hi="दुर्गा कथा, खंड १ — अंग्रेज़ी और हिंदी संस्करण" data-en="Durga Katha, Volume 1 — English &amp; Hindi editions">दुर्गा कथा, खंड १ — अंग्रेज़ी और हिंदी संस्करण</h2>
   <div class="grid">
-    <div class="card" data-filter="english storybook"><h3>Durga Katha Vol. 1 — Storybook (English, v2)</h3><p>Mahishasura, Chanda-Munda &amp; Raktabeej, Shumbha-Nishumbha — with Storyteller's Notes and read-aloud features.</p><p class="meta">23 pages · English</p><a class="btn" href="books/durga-katha-story-book-vol1-v2.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi storybook"><h3>Durga Katha Vol. 1 — Storybook (Hindi)</h3><p>The same three stories in Hindi.</p><p class="meta">20 pages · Hindi</p><a class="btn" href="books/durga-katha-story-book-vol1-hindi.pdf">Read the book</a></div>
-    <div class="card" data-filter="english comic"><h3>Durga Katha Vol. 1 — Comic (English, v2)</h3><p>The three stories as a comic, with unique panel art.</p><p class="meta">34 pages · English</p><a class="btn" href="books/durga-katha-comic-vol1-v2.pdf">Read the book</a></div>
-    <div class="card" data-filter="hindi comic"><h3>Durga Katha Vol. 1 — Comic (Hindi)</h3><p>The three stories as a comic in Hindi.</p><p class="meta">28 pages · Hindi</p><a class="btn" href="books/durga-katha-comic-vol1-hindi.pdf">Read the book</a></div>
+    <div class="card" data-filter="english storybook"><a href="books/durga-katha-story-book-vol1-v2.pdf"><img class="cover" src="images/durga-katha-story-book-vol1-v2-01.jpg" alt=""></a><h3 class="t" data-hi="दुर्गा कथा खंड १ — कहानी-पुस्तक (अंग्रेज़ी, v2)" data-en="Durga Katha Vol. 1 — Storybook (English, v2)">दुर्गा कथा खंड १ — कहानी-पुस्तक (अंग्रेज़ी, v2)</h3><p class="t" data-hi="महिषासुर, चंड-मुण्ड और रक्तबीज, शुम्भ-निशुम्भ — कथावाचक-टिप्पणियों और ज़ोर से पढ़ने की सुविधाओं सहित।" data-en="Mahishasura, Chanda-Munda &amp; Raktabeej, Shumbha-Nishumbha — with Storyteller's Notes and read-aloud features.">महिषासुर, चंड-मुण्ड और रक्तबीज, शुम्भ-निशुम्भ — कथावाचक-टिप्पणियों और ज़ोर से पढ़ने की सुविधाओं सहित।</p><p class="meta t" data-hi="23 पृष्ठ · अंग्रेज़ी" data-en="23 pages · English">23 पृष्ठ · अंग्रेज़ी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-story-book-vol1-v2.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi storybook"><a href="books/durga-katha-story-book-vol1-hindi.pdf"><img class="cover" src="images/durga-katha-story-book-vol1-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)" data-en="Durga Katha Vol. 1 — Storybook (Hindi)">दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)</h3><p class="t" data-hi="वही तीन कहानियाँ, हिंदी में।" data-en="The same three stories in Hindi.">वही तीन कहानियाँ, हिंदी में।</p><p class="meta t" data-hi="20 पृष्ठ · हिंदी" data-en="20 pages · Hindi">20 पृष्ठ · हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-story-book-vol1-hindi.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="english comic"><a href="books/durga-katha-comic-vol1-v2.pdf"><img class="cover" src="images/durga-katha-comic-vol1-v2-01.jpg" alt=""></a><h3 class="t" data-hi="दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)" data-en="Durga Katha Vol. 1 — Comic (English, v2)">दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)</h3><p class="t" data-hi="तीन कहानियाँ कॉमिक के रूप में, अनूठी पैनल-कला के साथ।" data-en="The three stories as a comic, with unique panel art.">तीन कहानियाँ कॉमिक के रूप में, अनूठी पैनल-कला के साथ।</p><p class="meta t" data-hi="34 पृष्ठ · अंग्रेज़ी" data-en="34 pages · English">34 पृष्ठ · अंग्रेज़ी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-comic-vol1-v2.pdf">किताब पढ़ें</a></div>
+    <div class="card" data-filter="hindi comic"><a href="books/durga-katha-comic-vol1-hindi.pdf"><img class="cover" src="images/durga-katha-comic-vol1-hindi-01.jpg" alt=""></a><h3 class="t" data-hi="दुर्गा कथा खंड १ — कॉमिक (हिंदी)" data-en="Durga Katha Vol. 1 — Comic (Hindi)">दुर्गा कथा खंड १ — कॉमिक (हिंदी)</h3><p class="t" data-hi="तीन कहानियाँ हिंदी में कॉमिक के रूप में।" data-en="The three stories as a comic in Hindi.">तीन कहानियाँ हिंदी में कॉमिक के रूप में।</p><p class="meta t" data-hi="28 पृष्ठ · हिंदी" data-en="28 pages · Hindi">28 पृष्ठ · हिंदी</p><a class="btn t" data-hi="किताब पढ़ें" data-en="Read the book" href="books/durga-katha-comic-vol1-hindi.pdf">किताब पढ़ें</a></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="diwali">What comes next — the Diwali bedtime series</h2>
+  <h2 id="diwali" class="t" data-hi="आगे क्या — दिवाली सोने की कहानियाँ" data-en="What comes next — the Diwali bedtime series">आगे क्या — दिवाली सोने की कहानियाँ</h2>
   <div class="note">
-    <p>One story per night, in everyday Hindi, each ending calm — a lamp lit, a homecoming, a promise kept. Hindu festival only: the mainstream five nights plus the regional shelf, built one by one.</p>
+    <p class="t" data-hi="हर रात एक कहानी, रोज़ की हिंदी में, हर अंत शांत — एक दीप जला, एक घर वापसी, एक वचन निभा। सिर्फ़ हिंदू त्योहार: मुख्य पाँच रातें और क्षेत्रीय शेल्फ़, एक-एक करके बन रही हैं।" data-en="One story per night, in everyday Hindi, each ending calm — a lamp lit, a homecoming, a promise kept. Hindu festival only: the mainstream five nights plus the regional shelf, built one by one.">हर रात एक कहानी, रोज़ की हिंदी में, हर अंत शांत — एक दीप जला, एक घर वापसी, एक वचन निभा। सिर्फ़ हिंदू त्योहार: मुख्य पाँच रातें और क्षेत्रीय शेल्फ़, एक-एक करके बन रही हैं।</p>
   </div>
   <div class="grid">
-    <div class="card" data-filter="hindi planned"><h3>Night 1 — Dhanteras night</h3><p>Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Night 2 — Narakasura's end</h3><p>Krishna and Satyabhama free the captives; the South's dawn telling, where this morning <em>is</em> Diwali.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Night 3 — Ayodhya's diyas</h3><p>Ram, Sita and Lakshman return after fourteen years, and the city lights every doorway. The centerpiece.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Night 3 — Lakshmi comes home</h3><p>The ocean, the welcome, Alakshmi driven out with the cleaning, and the puja-night vrat katha.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Night 4 — Govardhan</h3><p>Krishna lifts the hill for seven days, and Indra's pride is washed away in the rain.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Night 4 — Bali visits</h3><p>The king who kept his word returns to his people, closing with the new-year customs: Bali Padyami, Bestu Varas, Chopda Pujan.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Night 5 — Bhai Dooj</h3><p>Yama visits Yamuna — tilak, a meal, a promise — with Chitragupta and his book of accounts as companion thread.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Regional shelf — Kali Puja night (Bengal)</h3><p>Bengal's Diwali: Kali dancing, Shiva beneath her feet, the night turned to her darkness-and-light.</p><p class="meta">Planned · Bedtime story</p></div>
-    <div class="card" data-filter="hindi planned"><h3>Regional shelf — Tihar's animal friends (Nepal)</h3><p>Nepal's five days through the crow, the dog and the cow — Yama's messengers honoured before the lamps.</p><p class="meta">Planned · Bedtime story</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात १ — धनतेरस की रात" data-en="Night 1 — Dhanteras night">रात १ — धनतेरस की रात</h3><p class="t" data-hi="धन्वंतरि समुद्र से उठते हैं; हिमा के पुत्र और यम को मात देने वाले दीप; कुबेर की समृद्धि-धारा।" data-en="Dhanvantari rises from the ocean; Hima's son and the lamps that outwitted Yama; Kubera's prosperity thread.">धन्वंतरि समुद्र से उठते हैं; हिमा के पुत्र और यम को मात देने वाले दीप; कुबेर की समृद्धि-धारा।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात २ — नरकासुर का अंत" data-en="Night 2 — Narakasura's end">रात २ — नरकासुर का अंत</h3><p class="t" data-hi="कृष्ण और सत्यभामा बंदियों को मुक्त करते हैं; दक्षिण की भोर वाली कथा, जहाँ यही सुबह दिवाली है।" data-en="Krishna and Satyabhama free the captives; the South's dawn telling, where this morning is Diwali.">कृष्ण और सत्यभामा बंदियों को मुक्त करते हैं; दक्षिण की भोर वाली कथा, जहाँ यही सुबह दिवाली है।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात ३ — अयोध्या के दीये" data-en="Night 3 — Ayodhya's diyas">रात ३ — अयोध्या के दीये</h3><p class="t" data-hi="चौदह वर्ष बाद राम, सीता और लक्ष्मण लौटते हैं, और नगर हर द्वार पर दीप जलाता है। केंद्र-बिंदु।" data-en="Ram, Sita and Lakshman return after fourteen years, and the city lights every doorway. The centerpiece.">चौदह वर्ष बाद राम, सीता और लक्ष्मण लौटते हैं, और नगर हर द्वार पर दीप जलाता है। केंद्र-बिंदु।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात ३ — लक्ष्मी घर आती हैं" data-en="Night 3 — Lakshmi comes home">रात ३ — लक्ष्मी घर आती हैं</h3><p class="t" data-hi="समुद्र, स्वागत, सफ़ाई के साथ अलक्ष्मी का विदा होना, और पूजा-रात की व्रत कथा।" data-en="The ocean, the welcome, Alakshmi driven out with the cleaning, and the puja-night vrat katha.">समुद्र, स्वागत, सफ़ाई के साथ अलक्ष्मी का विदा होना, और पूजा-रात की व्रत कथा।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात ४ — गोवर्धन" data-en="Night 4 — Govardhan">रात ४ — गोवर्धन</h3><p class="t" data-hi="कृष्ण सात दिन तक पहाड़ उठाते हैं, और इंद्र का अभिमान वर्षा में धुल जाता है।" data-en="Krishna lifts the hill for seven days, and Indra's pride is washed away in the rain.">कृष्ण सात दिन तक पहाड़ उठाते हैं, और इंद्र का अभिमान वर्षा में धुल जाता है।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात ४ — बलि का आगमन" data-en="Night 4 — Bali visits">रात ४ — बलि का आगमन</h3><p class="t" data-hi="वचन निभाने वाला राजा अपनी प्रजा के पास लौटता है, अंत में नववर्ष की परंपराएँ: बलि पाड्यमी, बेस्तु वरस, चोपड़ा पूजन।" data-en="The king who kept his word returns to his people, closing with the new-year customs: Bali Padyami, Bestu Varas, Chopda Pujan.">वचन निभाने वाला राजा अपनी प्रजा के पास लौटता है, अंत में नववर्ष की परंपराएँ: बलि पाड्यमी, बेस्तु वरस, चोपड़ा पूजन।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="रात ५ — भाई दूज" data-en="Night 5 — Bhai Dooj">रात ५ — भाई दूज</h3><p class="t" data-hi="यम यमुना से मिलने आते हैं — तिलक, भोजन, वचन — साथ में चित्रगुप्त और उनकी बही की धारा।" data-en="Yama visits Yamuna — tilak, a meal, a promise — with Chitragupta and his book of accounts as companion thread.">यम यमुना से मिलने आते हैं — तिलक, भोजन, वचन — साथ में चित्रगुप्त और उनकी बही की धारा।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="क्षेत्रीय शेल्फ़ — काली पूजा की रात (बंगाल)" data-en="Regional shelf — Kali Puja night (Bengal)">क्षेत्रीय शेल्फ़ — काली पूजा की रात (बंगाल)</h3><p class="t" data-hi="बंगाल की दिवाली: नृत्य करती काली, उनके पैरों तले शिव, अंधकार और प्रकाश में बदली रात।" data-en="Bengal's Diwali: Kali dancing, Shiva beneath her feet, the night turned to her darkness-and-light.">बंगाल की दिवाली: नृत्य करती काली, उनके पैरों तले शिव, अंधकार और प्रकाश में बदली रात।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
+    <div class="card" data-filter="hindi planned"><div class="cover-soon"><span class="t" data-hi="जल्द आ रहा है" data-en="Coming soon">जल्द आ रहा है</span></div><h3 class="t" data-hi="क्षेत्रीय शेल्फ़ — तिहार के पशु-मित्र (नेपाल)" data-en="Regional shelf — Tihar's animal friends (Nepal)">क्षेत्रीय शेल्फ़ — तिहार के पशु-मित्र (नेपाल)</h3><p class="t" data-hi="नेपाल के पाँच दिन कौए, कुत्ते और गाय के माध्यम से — दीपों से पहले यम के दूतों का सम्मान।" data-en="Nepal's five days through the crow, the dog and the cow — Yama's messengers honoured before the lamps.">नेपाल के पाँच दिन कौए, कुत्ते और गाय के माध्यम से — दीपों से पहले यम के दूतों का सम्मान।</p><p class="meta t" data-hi="जल्द आ रहा है · सोने की कहानी" data-en="Planned · Bedtime story">जल्द आ रहा है · सोने की कहानी</p></div>
   </div>
   </section>
 
   <section class="block">
-  <h2 id="shelf">Also on the shelf</h2>
+  <h2 id="shelf" class="t" data-hi="और भी" data-en="Also on the shelf">और भी</h2>
   <div class="note">
-    <p>The remaining Kartik festivals, Agni (Gods Before Gods, Book Two), Ganesha, Kartikeya, the Rama and Krishna arcs, and the full-ending Samudra Manthan.</p>
+    <p class="t" data-hi="बाक़ी कार्तिक त्योहार, अग्नि (देवों से पहले के भी देव, दूसरी पुस्तक), गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ, और समुद्र मंथन का पूरा अंत।" data-en="The remaining Kartik festivals, Agni (Gods Before Gods, Book Two), Ganesha, Kartikeya, the Rama and Krishna arcs, and the full-ending Samudra Manthan.">बाक़ी कार्तिक त्योहार, अग्नि (देवों से पहले के भी देव, दूसरी पुस्तक), गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ, और समुद्र मंथन का पूरा अंत।</p>
   </div>
   </section>
 </main>
+</div>
 <footer>
-  <p>Written by Mahesh Gupta · Stories told from the Puranas and epics, in everyday Hindi · Art in the traditional manner inspired by Raja Ravi Varma · © 2026 Mahesh Gupta</p>
-  <p>Print editions and older versions are available on request.</p>
+  <p class="t" data-hi="महेश गुप्ता द्वारा लिखित · पुराणों और महाकाव्यों से ली गई कहानियाँ, रोज़ की हिंदी में · राजा रवि वर्मा से प्रेरित पारंपरिक शैली की कला · © 2026 महेश गुप्ता" data-en="Written by Mahesh Gupta · Stories told from the Puranas and epics, in everyday Hindi · Art in the traditional manner inspired by Raja Ravi Varma · © 2026 Mahesh Gupta">महेश गुप्ता द्वारा लिखित · पुराणों और महाकाव्यों से ली गई कहानियाँ, रोज़ की हिंदी में · राजा रवि वर्मा से प्रेरित पारंपरिक शैली की कला · © 2026 महेश गुप्ता</p>
+  <p class="t" data-hi="मुद्रित संस्करण और पुराने संस्करण अनुरोध पर उपलब्ध हैं।" data-en="Print editions and older versions are available on request.">मुद्रित संस्करण और पुराने संस्करण अनुरोध पर उपलब्ध हैं।</p>
 </footer>
 <script>
+function setLang(lang, btn) {
+  document.querySelectorAll('.lang button').forEach(function(b){ b.classList.toggle('active', b === btn); });
+  document.documentElement.lang = lang;
+  document.querySelectorAll('.t').forEach(function(el){
+    var v = el.getAttribute('data-' + lang);
+    if (v !== null) el.innerHTML = v;
+  });
+}
 function filterCards(f, btn) {
   document.querySelectorAll('.filter').forEach(function(b){ b.classList.toggle('active', b === btn); });
   document.querySelectorAll('.card').forEach(function(c){
