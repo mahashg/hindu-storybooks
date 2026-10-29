@@ -8,6 +8,7 @@
     <string name="kicker_tonight">Tonight\'s story</string>
     <string name="kicker_today">Today\'s story</string>
     <string name="kicker_resume">Continue reading · Page %1$d</string>
+    <string name="kicker_resume_reflow">Continue reading</string>
     <string name="save">Save</string>
     <string name="unsave">Unsave</string>
     <string name="next_story">Next story</string>
@@ -35,6 +36,7 @@
     <string name="toast_unsaved">Removed from saved</string>
     <string name="reader_downloading">Downloading book…</string>
     <string name="reader_download_failed">Could not download the book. Please try again.</string>
+    <string name="reader_verify_failed">Could not verify the book. Please try again.</string>
     <string name="reader_page">Page %1$d of %2$d</string>
     <string name="reader_zoom_in">Zoom in</string>
     <string name="reader_zoom_out">Zoom out</string>
