@@ -28,6 +28,29 @@ class MainActivity : AppCompatActivity() {
     private val settingsFragment = SettingsFragment()
     private var active: Fragment = homeFragment
 
+    companion object {
+        // The tab the user was on when the activity was last torn down.
+        // Needed because a settings change recreates this activity (the
+        // new locale / font scale only applies via attachBaseContext on a
+        // fresh instance), and without this the fresh instance always
+        // landed on Home — kicking the user out of Settings.
+        private const val KEY_SELECTED_TAB = "selected_tab"
+    }
+
+    private fun fragmentFor(tabId: Int): Fragment = when (tabId) {
+        R.id.nav_catalog -> catalogFragment
+        R.id.nav_saved -> savedFragment
+        R.id.nav_settings -> settingsFragment
+        else -> homeFragment
+    }
+
+    private fun tabIdFor(fragment: Fragment): Int = when (fragment) {
+        catalogFragment -> R.id.nav_catalog
+        savedFragment -> R.id.nav_saved
+        settingsFragment -> R.id.nav_settings
+        else -> R.id.nav_home
+    }
+
     override fun attachBaseContext(newBase: Context) {
         val lang = Prefs(newBase).language
         LocaleHelper.apply(lang)
@@ -39,18 +62,19 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Restore the tab the user was on (Settings after a settings
+        // change), instead of always starting on Home. active is set
+        // first so the listener below treats this tab as already shown.
+        val startTabId =
+            savedInstanceState?.getInt(KEY_SELECTED_TAB, R.id.nav_home) ?: R.id.nav_home
+        val start = fragmentFor(startTabId)
+        active = start
         supportFragmentManager.beginTransaction()
-            .replace(R.id.nav_host, homeFragment, "home")
+            .replace(R.id.nav_host, start)
             .commit()
 
         binding.bottomNav.setOnItemSelectedListener { item ->
-            val next = when (item.itemId) {
-                R.id.nav_home -> homeFragment
-                R.id.nav_catalog -> catalogFragment
-                R.id.nav_saved -> savedFragment
-                R.id.nav_settings -> settingsFragment
-                else -> homeFragment
-            }
+            val next = fragmentFor(item.itemId)
             if (next != active) {
                 // REPLACE, not add/hide: only one tab's views are ever
                 // attached, so a previous tab's painting can never show
@@ -62,6 +86,9 @@ class MainActivity : AppCompatActivity() {
             }
             true
         }
+        // Highlight the restored tab. Firing the listener here is safe:
+        // next == active, so it no-ops instead of re-replacing.
+        binding.bottomNav.selectedItemId = startTabId
 
         // Daily background catalog refresh (same validated flow as manual).
         val request = PeriodicWorkRequestBuilder<CatalogWorker>(24, TimeUnit.HOURS).build()
@@ -77,6 +104,13 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, getString(R.string.toast_new_books, result.count), Toast.LENGTH_LONG).show()
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        // Remember the visible tab so a recreate (settings change,
+        // rotation) restores it instead of dropping the user on Home.
+        outState.putInt(KEY_SELECTED_TAB, tabIdFor(active))
+        super.onSaveInstanceState(outState)
     }
 }
 

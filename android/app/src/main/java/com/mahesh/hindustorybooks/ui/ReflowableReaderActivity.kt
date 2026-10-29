@@ -45,7 +45,13 @@ class ReflowableReaderActivity : AppCompatActivity() {
         const val EXTRA_SHA256 = "sha256"
         const val EXTRA_START_SCROLL = "start_scroll"
         private const val END_TOLERANCE_PX = 8
-        private const val RESTORE_RETRY_MS = 400L
+        // Restore retries: base64 images keep decoding after page load and
+        // the document keeps growing, so a single early scrollTo gets
+        // clamped to a too-small maximum and then never revisited. Retry
+        // until the content height stops changing and the scroll lands.
+        private const val RESTORE_INTERVAL_MS = 250L
+        private const val RESTORE_MAX_ATTEMPTS = 20
+        private const val RESTORE_TOLERANCE_PX = 4
     }
 
     private lateinit var binding: ActivityReflowableBinding
@@ -54,7 +60,11 @@ class ReflowableReaderActivity : AppCompatActivity() {
     private var startScroll = -1
     private var currentScroll = 0
     private var loaded = false
-    private var restoreAttempted = false
+    private var restoreStarted = false
+    private var restoreRunnable: Runnable? = null
+    // Set on any touch: once the user grabs the page, the restore loop
+    // must stop yanking the scroll position back.
+    private var userInteracted = false
 
     override fun attachBaseContext(newBase: Context) {
         LocaleHelper.apply(Prefs(newBase).language)
@@ -81,6 +91,12 @@ class ReflowableReaderActivity : AppCompatActivity() {
         webView.setOnScrollChangeListener { _, _, scrollY, _, _ ->
             currentScroll = scrollY
             saveProgress()
+        }
+        // Touches are only observed, never consumed: the edition still
+        // receives them exactly as before.
+        webView.setOnTouchListener { _, _ ->
+            userInteracted = true
+            false
         }
         webView.webViewClient = object : WebViewClient() {
             override fun onPageFinished(view: WebView, url: String) {
@@ -118,6 +134,10 @@ class ReflowableReaderActivity : AppCompatActivity() {
         super.onDestroy()
         saveProgress()
         try {
+            restoreRunnable?.let { binding.reflowWeb.removeCallbacks(it) }
+        } catch (ignored: Exception) {
+        }
+        try {
             binding.reflowWeb.stopLoading()
         } catch (ignored: Exception) {
         }
@@ -127,37 +147,92 @@ class ReflowableReaderActivity : AppCompatActivity() {
         }
     }
 
-    /** Stores the scroll offset the book was left at; reaching the very end
-     * counts as FINISHED, so the resume entry is cleared instead. */
+    /** Stores the position the book was left at; reaching the very end
+     * counts as FINISHED, so the resume entry is cleared instead. Both the
+     * pixel offset and the fraction of the scrollable range are stored:
+     * the fraction is what restore uses, since it survives content-height
+     * changes between sessions. */
     private fun saveProgress() {
         if (!loaded || reflowUrl.isEmpty()) return
         val prefs = Prefs(this)
         if (isAtEnd()) prefs.clearReflowScroll(reflowUrl)
-        else prefs.setReflowScroll(reflowUrl, currentScroll)
+        else {
+            val maxScroll = maxScrollPx()
+            val fraction = if (maxScroll > 0) {
+                (currentScroll / maxScroll).coerceIn(0f, 1f)
+            } else 0f
+            prefs.setReflowScroll(reflowUrl, currentScroll, fraction)
+        }
+    }
+
+    /** Maximum vertical scroll in view pixels, or 0 while the document has
+     * no measurable height yet (images still decoding). */
+    private fun maxScrollPx(): Float {
+        val webView = binding.reflowWeb
+        val contentHeight = webView.contentHeight
+        if (contentHeight <= 0) return 0f
+        return (contentHeight * webView.scale - webView.height).coerceAtLeast(0f)
     }
 
     private fun isAtEnd(): Boolean {
-        val webView = binding.reflowWeb
-        val contentHeight = webView.contentHeight
-        if (contentHeight <= 0) return false
-        val maxScroll = (contentHeight * webView.scale - webView.height).coerceAtLeast(0f)
+        val maxScroll = maxScrollPx()
+        if (maxScroll <= 0) return false
         return currentScroll >= maxScroll - END_TOLERANCE_PX
     }
 
+    /**
+     * Restores the saved position internally, whatever opened the book.
+     * Previously only the Home hero passed a scroll offset, so opening a
+     * book from Catalog or Saved always started at the top. Now the reader
+     * reads Prefs itself: the stored fraction wins (it survives height
+     * changes), with the pixel offset as fallback for pre-fraction saves
+     * and for the explicit Home-hero offset. The loop re-applies the
+     * target until the content height stops changing and the scroll lands
+     * — one early scrollTo used to get clamped to a still-growing document
+     * and the single 400 ms retry was often still too early. The loop stops
+     * as soon as the user touches the page.
+     */
     private fun restoreScroll() {
-        val target = startScroll
-        if (target < 0 || restoreAttempted) return
-        restoreAttempted = true
+        if (restoreStarted) return
+        restoreStarted = true
+        val prefs = Prefs(this)
+        val fraction = prefs.reflowFraction(reflowUrl)
+        val pxFallback = if (startScroll >= 0) startScroll else prefs.reflowScroll(reflowUrl)
+        if (fraction == null && pxFallback < 0) return
         val webView = binding.reflowWeb
-        webView.post { webView.scrollTo(0, target) }
-        webView.post {
-            if (webView.scrollY != target) webView.scrollTo(0, target)
+        var attempts = 0
+        var lastHeight = -1
+        val step = object : Runnable {
+            override fun run() {
+                if (userInteracted) return
+                attempts++
+                val maxScroll = maxScrollPx()
+                if (fraction == null || maxScroll > 0) {
+                    val targetPx = if (fraction != null) {
+                        (fraction * maxScroll).toInt()
+                    } else {
+                        pxFallback
+                    }
+                    webView.scrollTo(0, targetPx)
+                    val heightNow = webView.contentHeight
+                    val settled = heightNow == lastHeight &&
+                        kotlin.math.abs(webView.scrollY - targetPx) <= RESTORE_TOLERANCE_PX
+                    lastHeight = heightNow
+                    if (!settled && attempts < RESTORE_MAX_ATTEMPTS) {
+                        webView.postDelayed(this, RESTORE_INTERVAL_MS)
+                    }
+                } else {
+                    // Fraction known but the document has no measurable
+                    // height yet: keep waiting for content to arrive.
+                    lastHeight = webView.contentHeight
+                    if (attempts < RESTORE_MAX_ATTEMPTS) {
+                        webView.postDelayed(this, RESTORE_INTERVAL_MS)
+                    }
+                }
+            }
         }
-        // Images decode after page load and grow the document; one delayed
-        // retry lands the restore even if the first scrolls ran too early.
-        webView.postDelayed({
-            if (webView.scrollY != target) webView.scrollTo(0, target)
-        }, RESTORE_RETRY_MS)
+        restoreRunnable = step
+        webView.post(step)
     }
 
     private fun fileNameFor(url: String): String =

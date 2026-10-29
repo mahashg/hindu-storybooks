@@ -2,7 +2,10 @@ package com.mahesh.hindustorybooks.ui
 
 import android.graphics.Paint
 import android.os.Bundle
+import android.util.TypedValue
+import android.view.GestureDetector
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
@@ -37,10 +40,66 @@ class HomeFragment : Fragment() {
         // The hero painting opens the same book, exactly like the title.
         b.homePainting.setOnClickListener { openCurrent() }
         b.homeStar.setOnClickListener { toggleSave() }
-        b.homeNext.setOnClickListener {
-            val catalog = CatalogStore.load(requireContext())
-            catalog.anotherStory(current)?.let { showBook(it) }
-        }
+        // Swipe left on the hero card shuffles to another story: the gold
+        // "Next" FAB is gone (v1.5), and this gesture replaces it exactly —
+        // same anotherStory() call, same never-current-story rule.
+        // Taps still reach the hero's own click targets first (title,
+        // painting, star are clickable children, so touches on them never
+        // reach this listener). Touches on the hero's non-clickable areas
+        // reach here: onDown returns true so the fling sequence is tracked,
+        // and a plain tap there does nothing, exactly as before.
+        // Vertical drags are NOT stolen: onScroll only disallows the
+        // ScrollView's interception for predominantly horizontal movement,
+        // so a vertical drag is still intercepted by the ScrollView (the
+        // hero gets ACTION_CANCEL and no fling fires) and scrolls normally.
+        val swipeDistance = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP, 100f, resources.displayMetrics
+        )
+        val swipeVelocity = TypedValue.applyDimension(
+            TypedValue.COMPLEX_UNIT_DIP, 100f, resources.displayMetrics
+        )
+        val swipeDetector = GestureDetector(
+            requireContext(),
+            object : GestureDetector.SimpleOnGestureListener() {
+                override fun onDown(e: MotionEvent): Boolean = true
+
+                override fun onScroll(
+                    e1: MotionEvent?,
+                    e2: MotionEvent,
+                    distanceX: Float,
+                    distanceY: Float
+                ): Boolean {
+                    if (Math.abs(distanceX) > Math.abs(distanceY)) {
+                        b.homeHero.requestDisallowInterceptTouchEvent(true)
+                    }
+                    return false
+                }
+
+                override fun onFling(
+                    e1: MotionEvent?,
+                    e2: MotionEvent,
+                    velocityX: Float,
+                    velocityY: Float
+                ): Boolean {
+                    if (e1 == null) return false
+                    val dx = e2.x - e1.x
+                    val dy = e2.y - e1.y
+                    // Left fling only, predominantly horizontal, past both
+                    // thresholds. Right flings do nothing: the pool is a
+                    // shuffle, not a sequence, so there is no "previous".
+                    if (dx < 0 && Math.abs(dx) > Math.abs(dy) &&
+                        Math.abs(dx) > swipeDistance &&
+                        Math.abs(velocityX) > swipeVelocity
+                    ) {
+                        val catalog = CatalogStore.load(requireContext())
+                        catalog.anotherStory(current)?.let { showBook(it) }
+                        return true
+                    }
+                    return false
+                }
+            }
+        )
+        b.homeHero.setOnTouchListener { _, event -> swipeDetector.onTouchEvent(event) }
         return b.root
     }
 
