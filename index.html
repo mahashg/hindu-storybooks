@@ -33,7 +33,7 @@
   .card h3 { margin:.7rem 0 .3rem; color:var(--maroon); font-size:1.15rem; }
   .card p { margin:.2rem 0; font-size:.95rem; }
   .meta { color:#7a6a4f; font-size:.85rem; }
-  img.cover { width:100%; height:auto; display:block; object-fit:contain; border-radius:8px; border:1px solid #e5d9b8; background:#f3e9d2; }
+  img.cover { width:100%; height:220px; display:block; object-fit:contain; border-radius:8px; border:1px solid #e5d9b8; background:#f3e9d2; }
   .cover-soon { width:100%; aspect-ratio:3/4; border-radius:8px; background:linear-gradient(160deg,#5b1f24,#7a2b31); color:#f3e9d2; display:flex; align-items:center; justify-content:center; text-align:center; font-size:1.1rem; padding:1rem; border:1px solid #c9a227; }
   .btn { display:inline-block; margin-top:.6rem; background:var(--maroon); color:#fff; text-decoration:none; padding:.45rem 1rem; border-radius:6px; font-weight:600; }
   .btn:hover { background:#7a2b31; }
@@ -54,6 +54,13 @@
 .side-group h4 { color:var(--maroon); margin:.2rem 0 .4rem; font-size:.95rem; }
 .side-group .filter { display:block; width:100%; text-align:left; font-family:inherit; font-size:.9rem; margin:.2rem 0; padding:.4rem .8rem; border:1.5px solid var(--maroon); border-radius:20px; background:#fff; color:var(--maroon); cursor:pointer; }
 .side-group .filter.active { background:var(--maroon); color:#fff; }
+.card[data-filter*="planned"] { padding:.7rem 1rem; background:var(--soft); }
+.card[data-filter*="planned"] .cover-soon { display:none; }
+.card[data-filter*="planned"] h3 { margin-top:.2rem; font-size:1.05rem; }
+section.block h2 { cursor:pointer; }
+section.block h2::after { content:" \25be"; color:var(--gold); }
+section.block.collapsed h2::after { content:" \25b8"; color:var(--gold); }
+section.block.collapsed .grid, section.block.collapsed .note { display:none; }
 </style>
 </head>
 <body>
@@ -99,7 +106,6 @@
   <a href="#gods"><b>७.</b> <span class="t" data-hi="देवों से पहले" data-en="Gods Before Gods">देवों से पहले</span> (1)</a>
   <a href="#vol1"><b>८.</b> <span class="t" data-hi="खंड १ — अंग्रेज़ी + हिंदी" data-en="Vol. 1 — English + Hindi">खंड १ — अंग्रेज़ी + हिंदी</span> (4)</a>
   <a href="#diwali"><b>९.</b> <span class="t" data-hi="दिवाली सीरीज़" data-en="Diwali series">दिवाली सीरीज़</span> (1 book, 8 planned)</a>
-  <a href="#shelf"><b>१०.</b> <span class="t" data-hi="और भी" data-en="Also ahead">और भी</span></a>
 </aside>
 <main>
 
@@ -200,17 +206,12 @@
   </div>
   </section>
 
-  <section class="block">
-  <h2 id="shelf" class="t" data-hi="और भी" data-en="Also on the shelf">और भी</h2>
-  <div class="note">
-    <p class="t" data-hi="बाक़ी कार्तिक त्योहार, अग्नि (देवों से पहले के भी देव, दूसरी पुस्तक), गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ, और समुद्र मंथन का पूरा अंत।" data-en="The remaining Kartik festivals, Agni (Gods Before Gods, Book Two), Ganesha, Kartikeya, the Rama and Krishna arcs, and the full-ending Samudra Manthan.">बाक़ी कार्तिक त्योहार, अग्नि (देवों से पहले के भी देव, दूसरी पुस्तक), गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ, और समुद्र मंथन का पूरा अंत।</p>
-  </div>
-  </section>
 </main>
 </div>
 <footer>
   <p class="t" data-hi="महेश गुप्ता द्वारा लिखित · पुराणों और महाकाव्यों से ली गई कहानियाँ, रोज़ की हिंदी में · राजा रवि वर्मा से प्रेरित पारंपरिक शैली की कला · © 2026 महेश गुप्ता" data-en="Written by Mahesh Gupta · Stories told from the Puranas and epics, in everyday Hindi · Art in the traditional manner inspired by Raja Ravi Varma · © 2026 Mahesh Gupta">महेश गुप्ता द्वारा लिखित · पुराणों और महाकाव्यों से ली गई कहानियाँ, रोज़ की हिंदी में · राजा रवि वर्मा से प्रेरित पारंपरिक शैली की कला · © 2026 महेश गुप्ता</p>
   <p class="t" data-hi="मुद्रित संस्करण और पुराने संस्करण अनुरोध पर उपलब्ध हैं।" data-en="Print editions and older versions are available on request.">मुद्रित संस्करण और पुराने संस्करण अनुरोध पर उपलब्ध हैं।</p>
+  <p class="t" data-hi="आगे: बाक़ी कार्तिक त्योहार, अग्नि (देवों से पहले के भी देव, दूसरी पुस्तक), गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ, और समुद्र मंथन का पूरा अंत।" data-en="Also ahead: the remaining Kartik festivals, Agni (Gods Before Gods, Book Two), Ganesha, Kartikeya, the Rama and Krishna arcs, and the full-ending Samudra Manthan.">आगे: बाक़ी कार्तिक त्योहार, अग्नि (देवों से पहले के भी देव, दूसरी पुस्तक), गणेश, कार्तिकेय, राम और कृष्ण की कथाएँ, और समुद्र मंथन का पूरा अंत।</p>
 </footer>
 <script>
 function setLang(lang, btn) {
@@ -289,6 +290,17 @@ function applySort(mode) {
   if (layout) layout.style.display = 'none';
   grid.style.display = 'grid';
 }
+
+document.querySelectorAll('section.block h2').forEach(function(h){
+  h.addEventListener('click', function(){ h.parentElement.classList.toggle('collapsed'); });
+});
+document.querySelectorAll('aside a[href^="#"]').forEach(function(a){
+  a.addEventListener('click', function(){
+    var t = document.querySelector(a.getAttribute('href'));
+    var s = t ? t.closest('section') : null;
+    if (s) s.classList.remove('collapsed');
+  });
+});
 </script>
 </body>
 </html>
