@@ -77,13 +77,13 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="24dp"
-            android:text="@string/settings_zoom"
+            android:text="@string/settings_app_zoom"
             android:textColor="@color/maroon"
             android:textSize="16sp"
             android:textStyle="bold" />
 
         <RadioGroup
-            android:id="@+id/zoom_group"
+            android:id="@+id/appzoom_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -91,34 +91,28 @@
             android:orientation="vertical">
 
             <RadioButton
-                android:id="@+id/zoom_fit"
+                android:id="@+id/appzoom_system"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/zoom_fit" />
+                android:text="@string/appzoom_system" />
 
             <RadioButton
-                android:id="@+id/zoom_125"
+                android:id="@+id/appzoom_medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="125%" />
+                android:text="@string/appzoom_medium" />
 
             <RadioButton
-                android:id="@+id/zoom_150"
+                android:id="@+id/appzoom_large"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="150%" />
+                android:text="@string/appzoom_large" />
 
             <RadioButton
-                android:id="@+id/zoom_200"
+                android:id="@+id/appzoom_xlarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="200%" />
-
-            <RadioButton
-                android:id="@+id/zoom_300"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="300%" />
+                android:text="@string/appzoom_xlarge" />
         </RadioGroup>
 
         <TextView
@@ -128,7 +122,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="24dp"
-            android:text="@string/settings_zoom_hint"
+            android:text="@string/settings_app_zoom_hint"
             android:textColor="@color/muted"
             android:textSize="13sp" />
     </LinearLayout>
