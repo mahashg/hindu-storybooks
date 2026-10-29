@@ -50,6 +50,11 @@ object CatalogRefresh {
         for (book in candidate.allBooks) {
             book.pdfUrl()?.let { urls.add(it) }
         }
+        // Reflowable editions validate alongside the PDFs: every edition
+        // URL must answer, or the whole refresh is rejected like the rest.
+        for (book in candidate.allBooks) {
+            book.reflowableUrl()?.let { urls.add(it) }
+        }
         for (book in candidate.pool) {
             book.paintingUrl()?.let { urls.add(it) }
         }

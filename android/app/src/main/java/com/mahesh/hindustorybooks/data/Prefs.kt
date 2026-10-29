@@ -103,6 +103,71 @@ class Prefs(context: Context) {
         return if (bestUrl != null && bestPage >= 0) bestUrl to bestPage else null
     }
 
+    /**
+     * Last-read scroll position per reflowable book, as a JSON map:
+     * reflowableUrl -> {scroll, time}. Scroll is the WebView's vertical
+     * scroll offset in pixels. A book with no entry is never started or
+     * finished (scrolled to the very end).
+     */
+    private fun reflowResumeMap(): org.json.JSONObject {
+        return try {
+            org.json.JSONObject(prefs.getString(KEY_REFLOW_RESUME, "{}") ?: "{}")
+        } catch (e: Exception) {
+            org.json.JSONObject()
+        }
+    }
+
+    /** Saved scroll offset for a reflowable book, or -1 if none. */
+    fun reflowScroll(reflowUrl: String): Int {
+        return reflowResumeMap().optJSONObject(reflowUrl)?.optInt("scroll", -1) ?: -1
+    }
+
+    /** Record the scroll offset a reflowable book was left at. */
+    fun setReflowScroll(reflowUrl: String, scroll: Int) {
+        val map = reflowResumeMap()
+        map.put(
+            reflowUrl,
+            org.json.JSONObject()
+                .put("scroll", scroll)
+                .put("time", System.currentTimeMillis())
+        )
+        prefs.edit().putString(KEY_REFLOW_RESUME, map.toString()).apply()
+    }
+
+    /** Clear the reflowable resume entry: the book is finished (or never started). */
+    fun clearReflowScroll(reflowUrl: String) {
+        val map = reflowResumeMap()
+        map.remove(reflowUrl)
+        prefs.edit().putString(KEY_REFLOW_RESUME, map.toString()).apply()
+    }
+
+    /**
+     * Most recently read UNFINISHED book across BOTH readers, by timestamp:
+     * PDF books carry a page, reflowable books carry a scroll offset.
+     */
+    fun lastUnfinishedAny(): ResumeInfo? {
+        var best: ResumeInfo? = null
+        val pdfMap = resumeMap()
+        for (key in pdfMap.keys()) {
+            val entry = pdfMap.optJSONObject(key) ?: continue
+            val page = entry.optInt("page", -1)
+            val time = entry.optLong("time", 0)
+            if (page >= 0 && (best == null || time > best.time)) {
+                best = ResumeInfo(ResumeKind.PDF, key, page, time)
+            }
+        }
+        val reflowMap = reflowResumeMap()
+        for (key in reflowMap.keys()) {
+            val entry = reflowMap.optJSONObject(key) ?: continue
+            val scroll = entry.optInt("scroll", -1)
+            val time = entry.optLong("time", 0)
+            if (scroll >= 0 && (best == null || time > best.time)) {
+                best = ResumeInfo(ResumeKind.REFLOW, key, scroll, time)
+            }
+        }
+        return best
+    }
+
     companion object {
         private const val KEY_LANG = "language"
         private const val KEY_SAVED = "saved_pdf_urls"
@@ -111,5 +176,17 @@ class Prefs(context: Context) {
         private const val KEY_ZOOM_OLD = "zoom_default"
         private const val KEY_APP_FONT_SCALE = "app_font_scale"
         private const val KEY_RESUME = "resume_pages"
+        private const val KEY_REFLOW_RESUME = "reflow_resume"
     }
 }
+
+/** Which reader an unfinished book belongs to (PDF = page, reflowable = scroll). */
+enum class ResumeKind { PDF, REFLOW }
+
+/** One unfinished book: its reader kind, its URL key, and its position. */
+data class ResumeInfo(
+    val kind: ResumeKind,
+    val url: String,
+    val position: Int,
+    val time: Long
+)
