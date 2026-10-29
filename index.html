@@ -195,30 +195,20 @@ function toggleSec(h) {
   h.parentElement.classList.toggle('collapsed');
   saveCollapsed();
 }
-function init(data) {
-  UI = data.ui;
-  var setUi = function(id, v) {
-    var el = document.getElementById(id);
-    el.setAttribute('data-hi', v.hi);
-    el.setAttribute('data-en', v.en);
-    el.textContent = curLang === 'hi' ? v.hi : v.en;
-  };
-  setUi('siteTitle', UI.title);
-  setUi('tKicker', UI.kicker);
-  setUi('tRead', UI.read);
-  setUi('tShuffle', UI.shuffle);
-  setUi('footT', UI.footer);
-  renderLists(data.sections);
-  BOOKS = [];
-  data.sections.forEach(function(s) {
+function buildPool(sections) {
+  var pool = [];
+  sections.forEach(function(s) {
     if (s.id === 'archives') return;
     s.books.forEach(function(b) {
       if (b.status === 'published' && b.painting) {
-        BOOKS.push({thi: b.title_hi, ten: b.title_en, dhi: b.desc_hi, den: b.desc_en,
-                    mhi: b.meta_hi, men: b.meta_en, img: b.painting, pdf: b.pdf});
+        pool.push({thi: b.title_hi, ten: b.title_en, dhi: b.desc_hi, den: b.desc_en,
+                   mhi: b.meta_hi, men: b.meta_en, img: b.painting, pdf: b.pdf});
       }
     });
   });
+  return pool;
+}
+function restoreState() {
   try {
     var saved = JSON.parse(localStorage.getItem('collapsed-sections') || '[]');
     saved.forEach(function(id) {
@@ -233,21 +223,71 @@ function init(data) {
       document.documentElement.lang = 'en';
       document.querySelectorAll('.lang button')[0].classList.remove('active');
       document.querySelectorAll('.lang button')[1].classList.add('active');
-      applyLang();
     }
   } catch (e) {}
+  applyLang();
+}
+function renderAll(data) {
+  UI = data.ui;
+  var setUi = function(id, v) {
+    var el = document.getElementById(id);
+    el.setAttribute('data-hi', v.hi);
+    el.setAttribute('data-en', v.en);
+    el.textContent = curLang === 'hi' ? v.hi : v.en;
+  };
+  setUi('siteTitle', UI.title);
+  setUi('tKicker', UI.kicker);
+  setUi('tRead', UI.read);
+  setUi('tShuffle', UI.shuffle);
+  setUi('footT', UI.footer);
+  document.getElementById('lists').innerHTML = '';
+  renderLists(data.sections);
+  BOOKS = buildPool(data.sections);
+  restoreState();
+}
+function init(data) {
+  renderAll(data);
   render(randomIdx());
+  document.getElementById('tonightSec').style.visibility = 'visible';
+}
+function refreshCatalog(text) {
+  var data;
+  try { data = JSON.parse(text); } catch (e) { return; }
+  var currentPdf = (curIdx >= 0 && BOOKS[curIdx]) ? BOOKS[curIdx].pdf : null;
+  renderAll(data);
+  var keep = -1;
+  BOOKS.forEach(function(b, i) { if (b.pdf === currentPdf) keep = i; });
+  if (keep >= 0) { render(keep); }
+  else { render(randomIdx()); }
+  document.getElementById('tonightSec').style.visibility = 'visible';
+}
+function readCache() {
+  try { return localStorage.getItem('site-catalog'); } catch (e) { return null; }
+}
+function writeCache(text) {
+  try { localStorage.setItem('site-catalog', text); } catch (e) {}
+}
+function showError() {
+  document.getElementById('tDesc').textContent = 'कैटलॉग लोड नहीं हुआ। Could not load the catalog.';
   document.getElementById('tonightSec').style.visibility = 'visible';
 }
 if (window.CATALOG_DATA) {
   init(window.CATALOG_DATA);
 } else {
-  fetch('catalog.json', {cache: 'no-store'}).then(function(r) {
+  var cached = readCache();
+  if (cached) {
+    try { init(JSON.parse(cached)); } catch (e) { cached = null; }
+  }
+  fetch('catalog.json', {cache: 'no-cache'}).then(function(r) {
     if (!r.ok) throw new Error('HTTP ' + r.status);
-    return r.json();
-  }).then(init).catch(function() {
-    document.getElementById('tDesc').textContent = 'कैटलॉग लोड नहीं हुआ। Could not load the catalog.';
-    document.getElementById('tonightSec').style.visibility = 'visible';
+    return r.text();
+  }).then(function(text) {
+    if (text === cached) return;
+    writeCache(text);
+    if (cached) { refreshCatalog(text); }
+    else { init(JSON.parse(text)); }
+  }).catch(function() {
+    if (!cached) showError();
   });
 }
 </script>
