@@ -106,6 +106,7 @@ function setLang(lang, btn) {
   document.documentElement.lang = lang;
   applyLang();
 }
+function readUrl(b) { return b.reflowable || b.pdf; }
 function render(idx) {
   curIdx = idx;
   var b = BOOKS[idx];
@@ -119,8 +120,8 @@ function render(idx) {
   set('tDesc', b.dhi, b.den);
   set('tMeta', b.mhi, b.men);
   document.getElementById('tImg').src = b.img;
-  document.getElementById('tRead').href = b.pdf;
-  document.getElementById('tLink').href = b.pdf;
+  document.getElementById('tRead').href = readUrl(b);
+  document.getElementById('tLink').href = readUrl(b);
 }
 function shuffleStory() {
   var idx;
@@ -132,7 +133,7 @@ function renderBook(b) {
   var title = tEl('b', b.title_hi, b.title_en, 't');
   if (b.status === 'published') {
     var a = document.createElement('a');
-    a.href = b.pdf;
+    a.href = readUrl(b);
     a.target = '_blank';
     a.appendChild(title);
     li.appendChild(a);
@@ -202,7 +203,7 @@ function buildPool(sections) {
     s.books.forEach(function(b) {
       if (b.status === 'published' && b.painting) {
         pool.push({thi: b.title_hi, ten: b.title_en, dhi: b.desc_hi, den: b.desc_en,
-                   mhi: b.meta_hi, men: b.meta_en, img: b.painting, pdf: b.pdf});
+                   mhi: b.meta_hi, men: b.meta_en, img: b.painting, pdf: b.pdf, reflowable: b.reflowable});
       }
     });
   });
@@ -253,10 +254,10 @@ function init(data) {
 function refreshCatalog(text) {
   var data;
   try { data = JSON.parse(text); } catch (e) { return; }
-  var currentPdf = (curIdx >= 0 && BOOKS[curIdx]) ? BOOKS[curIdx].pdf : null;
+  var currentUrl = (curIdx >= 0 && BOOKS[curIdx]) ? readUrl(BOOKS[curIdx]) : null;
   renderAll(data);
   var keep = -1;
-  BOOKS.forEach(function(b, i) { if (b.pdf === currentPdf) keep = i; });
+  BOOKS.forEach(function(b, i) { if (readUrl(b) === currentUrl) keep = i; });
   if (keep >= 0) { render(keep); }
   else { render(randomIdx()); }
   document.getElementById('tonightSec').style.visibility = 'visible';
