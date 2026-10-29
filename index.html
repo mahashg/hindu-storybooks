@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="hi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stories of the Gods</title>
+<link rel="icon" type="image/png" href="images/favicon.png">
 <style>
   * { box-sizing:border-box; }
   img { max-width:100%; height:auto; object-fit:contain; }
@@ -8,6 +9,8 @@
   .banner { background:#2b2118; color:#f3e9d2; text-align:center; padding:.5rem; font-size:.9rem; }
   header { background:#5b1f24; color:#fff; padding:.9rem 1.2rem; border-bottom:5px solid #c9a227; display:flex; justify-content:space-between; align-items:center; }
   header h1 { margin:0; font-size:1.5rem; }
+  .brand { display:flex; align-items:center; gap:.7rem; }
+  .logo { width:52px; height:52px; }
   .lang button { font-family:inherit; font-size:.95rem; padding:.4rem 1.1rem; margin:0 .2rem; border-radius:20px; border:1.5px solid rgba(255,255,255,.6); background:transparent; color:#fff; cursor:pointer; }
   .lang button.active { background:#fff; color:#5b1f24; font-weight:700; }
   .tonight { display:flex; flex-direction:column; align-items:center; text-align:center; max-width:960px; margin:0 auto; padding:2rem 1.2rem; }
@@ -34,11 +37,11 @@
   li.planned { color:#7a6a4f; background:#f7f1e0; }
   li.planned b { color:#7a6a4f; }
   footer { text-align:center; color:#7a6a4f; padding:2rem 1rem 3rem; font-size:.9rem; }
-  @media (max-width: 700px) { .tonight img { max-height:320px; } }
+  @media (max-width: 700px) { .tonight img { max-height:320px; } .logo { width:40px; height:40px; } header h1 { font-size:1.2rem; } }
 </style></head>
 <body>
 
-<header><h1 class="t" data-hi="देवों की कहानियाँ" data-en="Stories of the Gods">देवों की कहानियाँ</h1>
+<header><div class="brand"><img class="logo" src="images/logo-devi-seal.png" alt="देवी"><h1 class="t" data-hi="देवों की कहानियाँ" data-en="Stories of the Gods">देवों की कहानियाँ</h1></div>
 <div class="lang"><button class="active" onclick="setLang('hi', this)">हिंदी</button><button onclick="setLang('en', this)">English</button></div></header>
 <section class="tonight"><a id="tLink" href="books/sharad-purnima-everyday-hindi.pdf" target="_blank"><img id="tImg" src="images/paintings/sharad.jpg" alt=""></a>
 <div>
