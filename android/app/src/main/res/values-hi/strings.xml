@@ -7,6 +7,7 @@
     <string name="tab_settings">सेटिंग</string>
     <string name="kicker_tonight">आज रात की कहानी</string>
     <string name="kicker_today">आज की कहानी</string>
+    <string name="kicker_resume">जारी रखें · पृष्ठ %1$d</string>
     <string name="save">सहेजें</string>
     <string name="unsave">सहेजना हटाएँ</string>
     <string name="next_story">अगली कहानी</string>
