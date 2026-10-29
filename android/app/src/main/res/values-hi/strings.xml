@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">देवों की कहानियाँ</string>
+    <string name="tab_home">मुख्य</string>
+    <string name="tab_catalog">सूची</string>
+    <string name="tab_saved">सहेजी हुई</string>
+    <string name="tab_settings">सेटिंग</string>
+    <string name="kicker_tonight">आज रात की कहानी</string>
+    <string name="kicker_today">आज की कहानी</string>
+    <string name="save">सहेजें</string>
+    <string name="unsave">सहेजना हटाएँ</string>
+    <string name="next_story">अगली कहानी</string>
+    <string name="planned">जल्द आ रहा है</string>
+    <string name="new_badge">नया</string>
+    <string name="saved_empty_title">अभी कुछ सहेजा नहीं है।</string>
+    <string name="saved_empty_body">किसी कहानी पर ☆ सहेजें दबाएँ — वह यहाँ आ जाएगी।</string>
+    <string name="settings_language">भाषा</string>
+    <string name="settings_catalog">कैटलॉग</string>
+    <string name="settings_refresh">नई किताबें आईं?</string>
+    <string name="settings_auto_refresh">ऐप दिन में एक बार पृष्ठभूमि में कैटलॉग खुद ताज़ा करता है।</string>
+    <string name="settings_zoom">पुस्तक ज़ूम</string>
+    <string name="settings_zoom_hint">किताब खुलने पर यही ज़ूम लगेगा। रीडर में पिंच और + / − से भी बदल सकते हैं।</string>
+    <string name="zoom_fit">चौड़ाई के अनुसार</string>
+    <string name="toast_new_books">%1$d नई किताबें आ गई हैं!</string>
+    <string name="toast_already_current">कैटलॉग पहले से ताज़ा है।</string>
+    <string name="toast_refresh_failed">ताज़ा नहीं हो पाया: %1$s</string>
+    <string name="toast_saved">सहेज ली गई</string>
+    <string name="toast_unsaved">सहेजी हुई से हटा दी गई</string>
+    <string name="reader_downloading">किताब डाउनलोड हो रही है…</string>
+    <string name="reader_download_failed">किताब डाउनलोड नहीं हो पाई। कृपया फिर कोशिश करें।</string>
+    <string name="reader_page">पृष्ठ %1$d / %2$d</string>
+    <string name="reader_zoom_in">ज़ूम बढ़ाएँ</string>
+    <string name="reader_zoom_out">ज़ूम घटाएँ</string>
+    <string name="reader_close">किताब बंद करें</string>
+    <string name="reader_prev">पिछला पृष्ठ</string>
+    <string name="reader_next">अगला पृष्ठ</string>
+    <string name="loading">लोड हो रहा है…</string>
+</resources>
