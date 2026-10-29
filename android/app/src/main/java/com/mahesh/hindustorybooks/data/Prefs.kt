@@ -105,9 +105,15 @@ class Prefs(context: Context) {
 
     /**
      * Last-read scroll position per reflowable book, as a JSON map:
-     * reflowableUrl -> {scroll, time}. Scroll is the WebView's vertical
-     * scroll offset in pixels. A book with no entry is never started or
-     * finished (scrolled to the very end).
+     * reflowableUrl -> {scroll, fraction, time}. Scroll is the WebView's
+     * vertical scroll offset in pixels; fraction is the offset as a share
+     * of the scrollable range (0 = top, 1 = end). The fraction is what
+     * restore uses: pixel offsets go stale when the content height changes
+     * (base64 images still decoding, font size changed), while the fraction
+     * still lands at the same place in the story. The px offset is kept so
+     * older entries and the Home hero's "unfinished" check keep working.
+     * A book with no entry is never started or finished (scrolled to the
+     * very end).
      */
     private fun reflowResumeMap(): org.json.JSONObject {
         return try {
@@ -122,13 +128,24 @@ class Prefs(context: Context) {
         return reflowResumeMap().optJSONObject(reflowUrl)?.optInt("scroll", -1) ?: -1
     }
 
-    /** Record the scroll offset a reflowable book was left at. */
-    fun setReflowScroll(reflowUrl: String, scroll: Int) {
+    /** Saved fraction of the scrollable range, or null if the entry predates
+     * fractions (very old saves) or the book was never started. */
+    fun reflowFraction(reflowUrl: String): Float? {
+        val entry = reflowResumeMap().optJSONObject(reflowUrl) ?: return null
+        if (!entry.has("fraction")) return null
+        val f = entry.optDouble("fraction", -1.0).toFloat()
+        return if (f >= 0f) f else null
+    }
+
+    /** Record the scroll offset AND the fraction of the scrollable range a
+     * reflowable book was left at. */
+    fun setReflowScroll(reflowUrl: String, scroll: Int, fraction: Float) {
         val map = reflowResumeMap()
         map.put(
             reflowUrl,
             org.json.JSONObject()
                 .put("scroll", scroll)
+                .put("fraction", fraction.toDouble())
                 .put("time", System.currentTimeMillis())
         )
         prefs.edit().putString(KEY_REFLOW_RESUME, map.toString()).apply()
