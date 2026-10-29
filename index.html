@@ -74,7 +74,6 @@ var BOOKS = [
 var SITE = "";
 var curLang = 'hi';
 var curIdx = -1;
-var taps = 0;
 function fnv(s) {
   var h = 2166136261;
   for (var i = 0; i < s.length; i++) {
@@ -104,11 +103,15 @@ function render(idx) {
   document.getElementById('tLink').href = SITE + b.pdf;
 }
 function shuffleStory() {
-  var day = todayStr();
   var idx;
   do {
-    taps++;
-    idx = fnv(day + ':' + taps) % BOOKS.length;
+    if (window.crypto && window.crypto.getRandomValues) {
+      var buf = new Uint32Array(1);
+      window.crypto.getRandomValues(buf);
+      idx = buf[0] % BOOKS.length;
+    } else {
+      idx = Math.floor(Math.random() * BOOKS.length);
+    }
   } while (idx === curIdx);
   render(idx);
 }
