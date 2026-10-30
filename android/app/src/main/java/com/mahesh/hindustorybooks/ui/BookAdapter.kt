@@ -19,13 +19,15 @@ sealed class DisplayItem {
 
 /**
  * One adapter for Catalog and Saved. Cards are text-only: title, description,
- * meta, a small star at the right end, and a नया badge for arrivals.
+ * meta, a small star at the right end, a नया badge for arrivals, and a
+ * READ badge for finished books.
  * Tapping a card reads; tapping the star saves/unsaves.
  */
 class BookAdapter(
     private var items: List<DisplayItem>,
     private val lang: String,
     private val isSaved: (String) -> Boolean,
+    private val isRead: (String) -> Boolean,
     private val onCard: (Book) -> Unit,
     private val onStar: (Book) -> Unit
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -98,6 +100,11 @@ class BookAdapter(
             }
             b.bookNew.visibility = if (item.isNew) View.VISIBLE else View.GONE
             val pdfUrl = book.pdfUrl()
+            // READ badge: same bottom row as the नया tag, quiet chip.
+            // Shown only for published books with a pdf identity; planned
+            // books (no pdf URL) never carry it.
+            b.bookRead.visibility =
+                if (pdfUrl != null && isRead(pdfUrl)) View.VISIBLE else View.GONE
             if (pdfUrl == null) {
                 b.bookStar.visibility = View.GONE
                 b.root.setOnClickListener(null)

@@ -49,6 +49,7 @@ class CatalogFragment : Fragment() {
                 items = emptyList(),
                 lang = Prefs(requireContext()).language,
                 isSaved = { url -> Prefs(requireContext()).isSaved(url) },
+                isRead = { url -> Prefs(requireContext()).isRead(url) },
                 onCard = { book -> openBook(book) },
                 onStar = { book -> toggleStar(book) }
             )
@@ -97,6 +98,7 @@ class CatalogFragment : Fragment() {
                 items = items,
                 lang = prefs.language,
                 isSaved = { url -> prefs.isSaved(url) },
+                isRead = { url -> prefs.isRead(url) },
                 onCard = { book -> openBook(book) },
                 onStar = { book -> toggleStar(book) }
             )

@@ -141,6 +141,7 @@ fun openBook(
     if (reflowUrl != null) {
         val intent = Intent(context, ReflowableReaderActivity::class.java).apply {
             putExtra(ReflowableReaderActivity.EXTRA_REFLOW_URL, reflowUrl)
+            putExtra(ReflowableReaderActivity.EXTRA_PDF_URL, book.pdfUrl())
             putExtra(ReflowableReaderActivity.EXTRA_TITLE, title)
             putExtra(ReflowableReaderActivity.EXTRA_SHA256, book.reflowableSha256)
             putExtra(ReflowableReaderActivity.EXTRA_START_SCROLL, startScroll)

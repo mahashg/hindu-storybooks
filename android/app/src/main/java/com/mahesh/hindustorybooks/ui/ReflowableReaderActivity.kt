@@ -41,6 +41,7 @@ class ReflowableReaderActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_REFLOW_URL = "reflow_url"
+        const val EXTRA_PDF_URL = "pdf_url"
         const val EXTRA_TITLE = "title"
         const val EXTRA_SHA256 = "sha256"
         const val EXTRA_START_SCROLL = "start_scroll"
@@ -56,6 +57,7 @@ class ReflowableReaderActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityReflowableBinding
     private var reflowUrl = ""
+    private var pdfUrl = ""
     private var expectedSha: String? = null
     private var startScroll = -1
     private var currentScroll = 0
@@ -81,6 +83,11 @@ class ReflowableReaderActivity : AppCompatActivity() {
         binding.reflowTitle.text = title
         binding.reflowBack.setOnClickListener { finish() }
         this.reflowUrl = reflowUrl
+        // The book's stable identity for READ marking: its pdf URL, the
+        // same key saved books use. openBook always passes it; if it ever
+        // arrives empty, finishing marks nothing rather than keying by
+        // the reflowable URL (which would split one book across two keys).
+        pdfUrl = intent.getStringExtra(EXTRA_PDF_URL) ?: ""
         expectedSha = intent.getStringExtra(EXTRA_SHA256)
         startScroll = intent.getIntExtra(EXTRA_START_SCROLL, -1)
 
@@ -148,15 +155,18 @@ class ReflowableReaderActivity : AppCompatActivity() {
     }
 
     /** Stores the position the book was left at; reaching the very end
-     * counts as FINISHED, so the resume entry is cleared instead. Both the
+     * counts as FINISHED, so the resume entry is cleared instead — and
+     * the book is marked READ (same finish path, one-way). Both the
      * pixel offset and the fraction of the scrollable range are stored:
      * the fraction is what restore uses, since it survives content-height
      * changes between sessions. */
     private fun saveProgress() {
         if (!loaded || reflowUrl.isEmpty()) return
         val prefs = Prefs(this)
-        if (isAtEnd()) prefs.clearReflowScroll(reflowUrl)
-        else {
+        if (isAtEnd()) {
+            prefs.clearReflowScroll(reflowUrl)
+            if (pdfUrl.isNotEmpty()) prefs.markRead(pdfUrl)
+        } else {
             val maxScroll = maxScrollPx()
             val fraction = if (maxScroll > 0) {
                 (currentScroll / maxScroll).coerceIn(0f, 1f)

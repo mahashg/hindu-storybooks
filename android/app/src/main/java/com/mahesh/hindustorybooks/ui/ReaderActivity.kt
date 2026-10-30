@@ -158,13 +158,16 @@ class ReaderActivity : AppCompatActivity() {
 
     /**
      * Stores the page the book was left on. Viewing the last page counts
-     * as FINISHED, so the resume entry is cleared instead of stored.
+     * as FINISHED, so the resume entry is cleared instead of stored — and
+     * the book is marked READ (same finish path, one-way).
      */
     private fun saveProgress() {
         if (pageCount <= 0 || pdfUrl.isEmpty()) return
         val prefs = Prefs(this)
-        if (currentPage >= pageCount - 1) prefs.clearResume(pdfUrl)
-        else prefs.setResumePage(pdfUrl, currentPage)
+        if (currentPage >= pageCount - 1) {
+            prefs.clearResume(pdfUrl)
+            prefs.markRead(pdfUrl)
+        } else prefs.setResumePage(pdfUrl, currentPage)
     }
 
     /**

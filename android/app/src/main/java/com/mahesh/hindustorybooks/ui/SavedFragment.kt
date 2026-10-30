@@ -48,6 +48,7 @@ class SavedFragment : Fragment() {
                 items = emptyList(),
                 lang = Prefs(requireContext()).language,
                 isSaved = { true },
+                isRead = { url -> Prefs(requireContext()).isRead(url) },
                 onCard = { book -> openBook(book) },
                 onStar = { book -> unsave(book) }
             )
@@ -103,6 +104,7 @@ class SavedFragment : Fragment() {
                 items = items,
                 lang = prefs.language,
                 isSaved = { true },
+                isRead = { url -> prefs.isRead(url) },
                 onCard = { book -> openBook(book) },
                 onStar = { book -> unsave(book) }
             )
