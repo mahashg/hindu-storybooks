@@ -45,6 +45,8 @@
      "sha256": "b20f389def7007041b8b89d4934303cf02d514e24618ca192786deea71e59672",
      "reflowable": "reflowable/sharad-purnima.html",
      "reflowable_sha256": "f2799e316faefce567e50c8be45a59b4bf3cfa63509c862593db7c64b3be0328",
+     "reflowable_en": "reflowable-en/sharad-purnima.html",
+     "reflowable_en_sha256": "cb9f64cea501c9e4340062daecc63a39de5d1f22ecef2a32ac329f73039d4ad5",
      "painting": "images/paintings/sharad.jpg"
     },
     {
@@ -61,6 +63,8 @@
      "sha256": "c1e1fd3c097e18ea1112f4b3696e6bb798af02fc8423b479c9f2e1ef76df9d13",
      "reflowable": "reflowable/karva-chauth-v2.html",
      "reflowable_sha256": "521dec4b9cbfe2654bfc92ae280bf7bab5d6548a2945ba11a0fe374f1d56fd99",
+     "reflowable_en": "reflowable-en/karva-chauth-v2.html",
+     "reflowable_en_sha256": "c63efe4ca29126fcd0d666e07adc4e171a72938a4f33438371861ab3df2afe74",
      "painting": "images/paintings/karva.jpg"
     },
     {
@@ -76,7 +80,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "धनतेरस की रात — दिवाली की सोने की कहानियाँ · किताब १",
@@ -92,6 +98,8 @@
      "sha256": "0078323aa51e5cda67eac8d7d3df4d4f2a5c3f8a186d6d29aefed43000a50c88",
      "reflowable": "reflowable/dhanteras-night-web.html",
      "reflowable_sha256": "2931758981eb13bc2d597a236f9e9c313f1351ee66db9b684f3f3fe33dfa9520",
+     "reflowable_en": "reflowable-en/dhanteras-night-web.html",
+     "reflowable_en_sha256": "c0b6426bcd17f76845f6bc7b661bbe5305b26c09945b9779d745e0ec9e805ce9",
      "painting": "images/paintings/dhanteras.jpg",
      "group": "diwali"
     },
@@ -109,6 +117,8 @@
      "sha256": "3b3846288d27c164f506bcaa9d454504d46229307b32a5358b3fca93c57a6183",
      "reflowable": "reflowable/narakasura-end-web.html",
      "reflowable_sha256": "fa714909513cd4885f2d84a4c418f359cc664bcc5899930202a9e44a1a73ff41",
+     "reflowable_en": "reflowable-en/narakasura-end-web.html",
+     "reflowable_en_sha256": "2e5f4f7458680630c9f664e7de431e56ee4052f2c516539f458219d9fd607456",
      "painting": "images/paintings/narakasura.jpg",
      "group": "diwali"
     },
@@ -126,6 +136,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     },
     {
@@ -142,6 +154,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     },
     {
@@ -158,6 +172,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     },
     {
@@ -174,6 +190,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     },
     {
@@ -190,6 +208,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     },
     {
@@ -206,6 +226,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     },
     {
@@ -222,6 +244,8 @@
      "sha256": null,
      "reflowable": null,
      "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null,
      "group": "diwali"
     }
    ],
@@ -251,6 +275,8 @@
      "sha256": "f931244eb65f8f0aa9bca8031989d6aee60fdcc2c460bb012ad52c67371b5da5",
      "reflowable": "reflowable/mahishasura-v3.html",
      "reflowable_sha256": "ddcc01084f1764f064790d69f9599619c4591eca82b09511cc976bf9b3865a8e",
+     "reflowable_en": "reflowable-en/mahishasura-v3.html",
+     "reflowable_en_sha256": "0dc4154eb61122d6c05b730d583b99b4f42382640907e00922d4a5763ac11162",
      "painting": "images/paintings/mahishasura.jpg"
     },
     {
@@ -267,6 +293,8 @@
      "sha256": "71e5741fbea62a799e20e0f9080d14f0fd5be791720cc208dbacc8d2e0b2b6bc",
      "reflowable": "reflowable/chanda-munda-raktabeej.html",
      "reflowable_sha256": "e54cb90ef910442ea64ef3a2dca0683e1c726b14480ea510a65a2485b70e7a07",
+     "reflowable_en": "reflowable-en/chanda-munda-raktabeej.html",
+     "reflowable_en_sha256": "1be979c57c11ea57389b54e1e2541c0d758e76d34fe1b53e138602c3a6a0b807",
      "painting": "images/paintings/chanda.jpg"
     },
     {
@@ -283,6 +311,8 @@
      "sha256": "c847c349a0c2b9cbcf8ca3355aafbdf5d10d1d484cc76c6d64cb1b11e2bd1b8a",
      "reflowable": "reflowable/shumbha-nishumbha-v2.html",
      "reflowable_sha256": "fd28983a3761e5386138ce4785b06d2d8a5db6995d5e90b8fdd69192b5f5ebef",
+     "reflowable_en": "reflowable-en/shumbha-nishumbha-v2.html",
+     "reflowable_en_sha256": "768c43e77c5e95c6bd14de254b7c9a8fb5615f0e20f407728cad9c49c5bc6b04",
      "painting": "images/paintings/shumbha.jpg"
     },
     {
@@ -299,6 +329,8 @@
      "sha256": "3fd65498bffadfb1ef9d799dcb4418823d502bd9d130940ea0fe3b03f2a3ed83",
      "reflowable": "reflowable/madhu-kaitabha.html",
      "reflowable_sha256": "297badd9af04b3ed80ce95d290fa00ff5eeb70f0d71ffb0ac5f7975056c44dd2",
+     "reflowable_en": "reflowable-en/madhu-kaitabha.html",
+     "reflowable_en_sha256": "145c7a1e8e60beb84f810166258b7a4463eba384dda2da1087f3fdcfcac80af6",
      "painting": "images/paintings/madhu.jpg"
     },
     {
@@ -314,7 +346,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "भीमा",
@@ -329,7 +363,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "भ्रामरी",
@@ -344,7 +380,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "दुर्गम",
@@ -359,7 +397,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     }
    ]
   },
@@ -382,6 +422,8 @@
      "sha256": "8731c1bac9b5f3684f8d46f5bd0c7fdc72dc90cff06534acb0a36963b22a94de",
      "reflowable": "reflowable/shiva-neelkanth.html",
      "reflowable_sha256": "96ecbfdc04b10c69d08608bf0e3519b983a1077c8cfa61ddee83e987d85b5791",
+     "reflowable_en": "reflowable-en/shiva-neelkanth.html",
+     "reflowable_en_sha256": "156beda27748ac43483ac93dfb95186c022ed49d7e6dec48001a18c10af8e0b7",
      "painting": "images/paintings/neelkanth.jpg"
     },
     {
@@ -398,6 +440,8 @@
      "sha256": "a1370db67aa8855a539b7fbab722635d611dbb2b7428b84e8c346df28d222add",
      "reflowable": "reflowable/shiva-parvati-v3.html",
      "reflowable_sha256": "177d2cfaf031471f389ff059816fb225c3fc29b381c76f753bb76d4eecccda31",
+     "reflowable_en": "reflowable-en/shiva-parvati-v3.html",
+     "reflowable_en_sha256": "96fba0b1bc2ad4c9f020f3f0f1a9960010a2d61b48f6e3e080fd91d37abf4b2d",
      "painting": "images/paintings/shivaparvati.jpg"
     }
    ]
@@ -421,6 +465,8 @@
      "sha256": "79fcd5dfb636ca74d08739a846652fc55a40a295af98e225a43bf42e5b1ac730",
      "reflowable": "reflowable/matsya.html",
      "reflowable_sha256": "cd7c2f2e3ef21b7c4f2c3b48565613c1fd04fb0eeff4c387c873e373effb5b3f",
+     "reflowable_en": "reflowable-en/matsya.html",
+     "reflowable_en_sha256": "dcb1757f284b4948cf742fea36774444e0b4995a9e092aa23e0cb03b1c10865f",
      "painting": "images/paintings/matsya.jpg"
     },
     {
@@ -437,6 +483,8 @@
      "sha256": "e0f4eac7e0445a5e600aaa920e48d4130aaed58d2146d7758370d51669ba1093",
      "reflowable": "reflowable/samudra-manthan.html",
      "reflowable_sha256": "6bcd306325ef5fde873976286b6b1469a7f6f373fbd3eb757429464df2e73f0b",
+     "reflowable_en": "reflowable-en/samudra-manthan.html",
+     "reflowable_en_sha256": "35d0e315319848989ec5f05a4a6c34f8bbf6cff45a1b815614b2469df0db97dc",
      "painting": "images/paintings/samudra.jpg"
     },
     {
@@ -453,6 +501,8 @@
      "sha256": "2bb6e02c849bdc7687325d82e0bdb9bdabdd429b47647c49317a6ab64efaa60a",
      "reflowable": "reflowable/varaha.html",
      "reflowable_sha256": "96cff3eab57a332c2e5acacb8ed7af4552cd792f875f77427d63cba28cdf59d5",
+     "reflowable_en": "reflowable-en/varaha.html",
+     "reflowable_en_sha256": "45678297260ad613f7841be33f4214934054f72acc9798d0e51d68a0f0b03f5a",
      "painting": "images/paintings/varaha.jpg"
     },
     {
@@ -469,6 +519,8 @@
      "sha256": "6e7094b9f5d21ae368f56832e771c29ac88627d9c3f4d52d21bdc7175bed5ed4",
      "reflowable": "reflowable/narasimha.html",
      "reflowable_sha256": "e743b49a7342cb31aa664688508f7786347ab3938ef71a5b1d34d394855e300e",
+     "reflowable_en": "reflowable-en/narasimha.html",
+     "reflowable_en_sha256": "2e666b858b220393ae403844ee401381e1ee592694d7e050d8101b4a0b2dc7d4",
      "painting": "images/paintings/narasimha.jpg"
     },
     {
@@ -485,6 +537,8 @@
      "sha256": "6414055e9400cb935bf23eac5452792a19be12c1f740cd955fe3fdbf3e24d2f0",
      "reflowable": "reflowable/vamana-bali.html",
      "reflowable_sha256": "6e2347e74da259d1be5dc88c4b3fcb864bd14366326e3dc0105ab5856b1937e5",
+     "reflowable_en": "reflowable-en/vamana-bali.html",
+     "reflowable_en_sha256": "34f982e70351deaae31a2589718dfc410a9f91aadccc77d7867dc5eadd9b83dd",
      "painting": "images/paintings/vamana.jpg"
     },
     {
@@ -501,6 +555,8 @@
      "sha256": "24f5877e063718ddd86dabc3953ab806231d2d9555f50b90d436b88a8dbdfd26",
      "reflowable": "reflowable/parashurama.html",
      "reflowable_sha256": "f5ca1bd85f32608ea54da4a00a1cc179c4f8d18118d391622515d746ecea5fb9",
+     "reflowable_en": "reflowable-en/parashurama.html",
+     "reflowable_en_sha256": "504ea569e8c7f8ad4a62b1da76b685da4a356e1b3f6503daad4f57be760e6bb1",
      "painting": "images/paintings/parashurama.jpg"
     },
     {
@@ -516,7 +572,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "कृष्ण",
@@ -531,7 +589,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "कल्कि",
@@ -546,7 +606,9 @@
      "published": null,
      "sha256": null,
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     }
    ]
   },
@@ -569,6 +631,8 @@
      "sha256": "70d7396177a14fd300521f1803b719d06426b4ca3f2aee55940f70a93556b4cf",
      "reflowable": "reflowable/indra-v2.html",
      "reflowable_sha256": "8a988a68c28a712826f1f474934aee92d73c0a4e1ebb38f928de4f450fe8cd96",
+     "reflowable_en": "reflowable-en/indra-v2.html",
+     "reflowable_en_sha256": "1630dd9d7b8ac0398556d9c3c38bf2901b3c70610655a2ad9ed61479aad6c49a",
      "painting": "images/paintings/indra.jpg"
     }
    ]
@@ -592,6 +656,8 @@
      "sha256": "415f909c5fcbdec6e1ebeaa0cdd82fc94f2a6d8fb15f7d61d0bc3d01409e579f",
      "reflowable": "reflowable/shukracharya.html",
      "reflowable_sha256": "bb1233948e1bee75b55248c148a54052b4ac9e3563126c5c28d6b28fa3ee2428",
+     "reflowable_en": "reflowable-en/shukracharya.html",
+     "reflowable_en_sha256": "1480c54bbca1c78ebb278df68dcb3714adf5c6f34618271c11dbbb801d846c30",
      "painting": "images/paintings/shukracharya.jpg"
     }
    ]
@@ -614,7 +680,9 @@
      "published": "2026-10-18",
      "sha256": "c213ef569d63f6dbe5e9c6e89a32b2550fdbc1bf5a550190bf9bb97243de3580",
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "दुर्गा कथा खंड १ — कहानी-पुस्तक (हिंदी)",
@@ -629,7 +697,9 @@
      "published": "2026-10-18",
      "sha256": "ece7660a7843407eb21d2a09eef110d7d661bef6e4c7f22cf3daef1b33642674",
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "दुर्गा कथा खंड १ — कॉमिक (अंग्रेज़ी, v2)",
@@ -644,7 +714,9 @@
      "published": "2026-10-18",
      "sha256": "51235d956853703b9c4cf3326e54cfad67850a48a195d15977fd846f46ec0d1d",
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "दुर्गा कथा खंड १ — कॉमिक (हिंदी)",
@@ -659,7 +731,9 @@
      "published": "2026-10-18",
      "sha256": "73c3a9c93ddc53385cf553a5d0c8360f49b5093bee2807a3012a446f146d8bd4",
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "देवी दुर्गा और भैंसा असुर — छोटे पाठकों के लिए",
@@ -674,7 +748,9 @@
      "published": "2026-10-19",
      "sha256": "1ae1c95bafc47611346306e7f1654844b394879c741afb42d2d5ad9f0a197e4f",
      "reflowable": null,
-     "reflowable_sha256": null
+     "reflowable_sha256": null,
+     "reflowable_en": null,
+     "reflowable_en_sha256": null
     }
    ]
   }
