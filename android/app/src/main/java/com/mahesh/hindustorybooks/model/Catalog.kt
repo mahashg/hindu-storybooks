@@ -21,6 +21,8 @@ data class Book(
     val group: String?,
     val reflowable: String?,
     val reflowableSha256: String?,
+    val reflowableEn: String?,
+    val reflowableEnSha256: String?,
     val sectionId: String,
     val sectionTitleHi: String,
     val sectionTitleEn: String,
@@ -43,6 +45,10 @@ data class Book(
     // a JSON null must never become a ".../null" URL).
     fun reflowableUrl(): String? =
         reflowable?.takeIf { it.isNotBlank() && it != "null" }?.let { resolve(it) }
+            ?.takeIf { it.isNotEmpty() }
+    // English reflowable edition URL, same guards (v1.7).
+    fun reflowableEnUrl(): String? =
+        reflowableEn?.takeIf { it.isNotBlank() && it != "null" }?.let { resolve(it) }
             ?.takeIf { it.isNotEmpty() }
     fun sectionTitle(lang: String) = if (lang == "en") sectionTitleEn else sectionTitleHi
     fun groupTitle(lang: String): String? =
@@ -163,6 +169,8 @@ fun parseCatalog(json: String): Catalog {
                     group = groupKey,
                     reflowable = optNullable(b, "reflowable"),
                     reflowableSha256 = optNullable(b, "reflowable_sha256"),
+                    reflowableEn = optNullable(b, "reflowable_en"),
+                    reflowableEnSha256 = optNullable(b, "reflowable_en_sha256"),
                     sectionId = id,
                     sectionTitleHi = unescape(s.optString("title_hi", "")),
                     sectionTitleEn = unescape(s.optString("title_en", "")),
