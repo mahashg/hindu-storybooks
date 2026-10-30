@@ -126,9 +126,13 @@ fun openReader(context: Context, pdfUrl: String, title: String, startPage: Int =
 
 /**
  * The ONE open path for every book, used by Home, Catalog and Saved.
- * Reflowable ONLY for books that have a reflowable edition (the 17 current
- * books); otherwise the existing PDF reader (the 5 Archives books). There
- * is deliberately no PDF option for reflowable books.
+ * Language-aware (v1.7): when the app language is English and the book
+ * has an English reflowable edition, it opens; otherwise the Hindi
+ * reflowable edition; otherwise the existing PDF reader (the 5 Archives
+ * books). The reader itself is language-agnostic — only the URL and the
+ * expected hash passed to it change, so hash verification always checks
+ * the edition actually opened. There is deliberately no PDF option for
+ * reflowable books.
  */
 fun openBook(
     context: Context,
@@ -137,13 +141,23 @@ fun openBook(
     startPage: Int = -1,
     startScroll: Int = -1
 ) {
-    val reflowUrl = book.reflowableUrl()
+    val lang = Prefs(context).language
+    val enUrl = book.reflowableEnUrl()
+    val reflowUrl: String?
+    val expectedSha: String?
+    if (lang == "en" && enUrl != null) {
+        reflowUrl = enUrl
+        expectedSha = book.reflowableEnSha256
+    } else {
+        reflowUrl = book.reflowableUrl()
+        expectedSha = book.reflowableSha256
+    }
     if (reflowUrl != null) {
         val intent = Intent(context, ReflowableReaderActivity::class.java).apply {
             putExtra(ReflowableReaderActivity.EXTRA_REFLOW_URL, reflowUrl)
             putExtra(ReflowableReaderActivity.EXTRA_PDF_URL, book.pdfUrl())
             putExtra(ReflowableReaderActivity.EXTRA_TITLE, title)
-            putExtra(ReflowableReaderActivity.EXTRA_SHA256, book.reflowableSha256)
+            putExtra(ReflowableReaderActivity.EXTRA_SHA256, expectedSha)
             putExtra(ReflowableReaderActivity.EXTRA_START_SCROLL, startScroll)
         }
         context.startActivity(intent)

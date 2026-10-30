@@ -115,7 +115,9 @@ class HomeFragment : Fragment() {
                 com.mahesh.hindustorybooks.data.ResumeKind.PDF ->
                     catalog.allBooks.firstOrNull { it.pdfUrl() == resume.url }
                 com.mahesh.hindustorybooks.data.ResumeKind.REFLOW ->
-                    catalog.allBooks.firstOrNull { it.reflowableUrl() == resume.url }
+                    catalog.allBooks.firstOrNull {
+                        it.reflowableUrl() == resume.url || it.reflowableEnUrl() == resume.url
+                    }
             }
             if (resumeBook != null) {
                 if (resume.kind == com.mahesh.hindustorybooks.data.ResumeKind.PDF) {
