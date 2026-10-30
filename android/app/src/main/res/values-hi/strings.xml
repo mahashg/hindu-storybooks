@@ -14,6 +14,7 @@
     <string name="swipe_hint">अगली कहानी के लिए बाईं ओर स्वाइप करें</string>
     <string name="planned">जल्द आ रहा है</string>
     <string name="new_badge">नया</string>
+    <string name="read_badge">✓ पढ़ी गई</string>
     <string name="saved_empty_title">अभी कुछ सहेजा नहीं है।</string>
     <string name="saved_empty_body">किसी कहानी पर ☆ सहेजें दबाएँ — वह यहाँ आ जाएगी।</string>
     <string name="settings_language">भाषा</string>
