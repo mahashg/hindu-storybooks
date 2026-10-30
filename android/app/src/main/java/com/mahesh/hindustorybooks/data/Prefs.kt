@@ -3,7 +3,7 @@ package com.mahesh.hindustorybooks.data
 import android.content.Context
 import android.content.SharedPreferences
 
-/** Single SharedPreferences home for language, saved books, arrivals, zoom. */
+/** Single SharedPreferences home for language, saved books, arrivals, zoom, read books. */
 class Prefs(context: Context) {
     private val prefs: SharedPreferences =
         context.applicationContext.getSharedPreferences("storybooks", Context.MODE_PRIVATE)
@@ -30,6 +30,26 @@ class Prefs(context: Context) {
 
     fun setArrivals(pdfUrls: Set<String>) {
         prefs.edit().putStringSet(KEY_ARRIVALS, pdfUrls).apply()
+    }
+
+    /** Books finished (read to the end), as pdf URLs — the same stable
+     * identity saved books use, so reflowable books and archive PDFs
+     * share one scheme. Local-only: catalog refresh never touches this
+     * set (it only replaces arrivals), and SharedPreferences lives in the
+     * app's internal data dir, which Android preserves across app updates
+     * for the same package and signing key — it is NOT cacheDir (which
+     * the system may clear) and NOT the bundled assets catalog (which
+     * every update replaces). */
+    fun readPdfUrls(): Set<String> =
+        prefs.getStringSet(KEY_READ, emptySet()) ?: emptySet()
+
+    fun isRead(pdfUrl: String): Boolean = readPdfUrls().contains(pdfUrl)
+
+    /** Mark finished. One-way: partial re-reads never unmark, and there
+     * is no unmark control. */
+    fun markRead(pdfUrl: String) {
+        val set = readPdfUrls().toMutableSet()
+        if (set.add(pdfUrl)) prefs.edit().putStringSet(KEY_READ, set).apply()
     }
 
     /** One persisted reader zoom, shared across ALL books (default 1.0 = fit to width).
@@ -194,6 +214,7 @@ class Prefs(context: Context) {
         private const val KEY_APP_FONT_SCALE = "app_font_scale"
         private const val KEY_RESUME = "resume_pages"
         private const val KEY_REFLOW_RESUME = "reflow_resume"
+        private const val KEY_READ = "read_pdf_urls"
     }
 }
 
