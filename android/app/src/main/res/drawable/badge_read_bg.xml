@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Quiet READ chip: same rounded shape and padding as the नया badge,
+     but a soft cream fill instead of gold, so a finished book reads as
+     settled rather than shouting like a new arrival. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle">
+    <corners android:radius="8dp" />
+    <solid android:color="@color/cream_dark" />
+</shape>
