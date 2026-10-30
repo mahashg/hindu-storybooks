@@ -55,6 +55,10 @@ object CatalogRefresh {
         for (book in candidate.allBooks) {
             book.reflowableUrl()?.let { urls.add(it) }
         }
+        // English reflowable editions (v1.7) validate the same way.
+        for (book in candidate.allBooks) {
+            book.reflowableEnUrl()?.let { urls.add(it) }
+        }
         for (book in candidate.pool) {
             book.paintingUrl()?.let { urls.add(it) }
         }
