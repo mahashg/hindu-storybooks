@@ -14,6 +14,7 @@
     <string name="swipe_hint">Swipe left for another story</string>
     <string name="planned">Planned</string>
     <string name="new_badge">New</string>
+    <string name="read_badge">✓ Read</string>
     <string name="saved_empty_title">Nothing saved yet.</string>
     <string name="saved_empty_body">Tap the star on any story and it will appear here.</string>
     <string name="settings_language">Language</string>
