@@ -1012,8 +1012,7 @@
      "reflowable_sha256": "0d673dd7378a229d5e51d81c5e405183f1a127de310e3e1c85b152e38f235967",
      "reflowable_en": "reflowable-en/ravan-web-en.html",
      "reflowable_en_sha256": "86dde437518e045ac5cea93c47f9d2de64d77f14f91d496519c376c167410526",
-     "painting": "images/paintings/ravan.jpg",
-     "group": "patra"
+     "painting": "images/paintings/ravan.jpg"
     },
     {
      "title_hi": "सीता",
@@ -1031,8 +1030,7 @@
      "reflowable_sha256": "df9c9c2cbeee0f5d7ac8b2f778dbbf0229db624e3213cfc4ab5613e0b9f941bb",
      "reflowable_en": "reflowable-en/sita-web-en.html",
      "reflowable_en_sha256": "2c8950125948b7a1aad9cdf84221eb9beae8f7e98e5060f655fddcc210a71f2f",
-     "painting": "images/paintings/sita.jpg",
-     "group": "patra"
+     "painting": "images/paintings/sita.jpg"
     },
     {
      "title_hi": "हनुमान",
@@ -1049,8 +1047,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "बालि",
@@ -1067,8 +1064,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "विभीषण",
@@ -1085,8 +1081,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "भरत",
@@ -1103,8 +1098,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "कुंभकर्ण",
@@ -1121,8 +1115,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "लक्ष्मण",
@@ -1139,8 +1132,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "कैकेयी",
@@ -1157,8 +1149,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "दशरथ",
@@ -1175,8 +1166,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "मंदोदरी और तारा",
@@ -1193,8 +1183,7 @@
      "reflowable": null,
      "reflowable_sha256": null,
      "reflowable_en": null,
-     "reflowable_en_sha256": null,
-     "group": "patra"
+     "reflowable_en_sha256": null
     },
     {
      "title_hi": "शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता",
@@ -1212,20 +1201,9 @@
      "reflowable_sha256": "5656bcefdc0a987f8f44ac46e33b333b12eeac4bf8cadf6634c65e8e48eb78d4",
      "reflowable_en": "reflowable-en/shukracharya.html",
      "reflowable_en_sha256": "5ae27a869dbb8a9e425795c0481ff2158f6bbc3459076d21ae482fcd3d3e36dd",
-     "painting": "images/paintings/shukracharya.jpg",
-     "group": "guru"
+     "painting": "images/paintings/shukracharya.jpg"
     }
-   ],
-   "groups": {
-    "patra": {
-     "title_hi": "रामायण के पात्र",
-     "title_en": "Ramayana Characters"
-    },
-    "guru": {
-     "title_hi": "गुरु",
-     "title_en": "Gurus"
-    }
-   }
+   ]
   },
   {
    "id": "gods",
