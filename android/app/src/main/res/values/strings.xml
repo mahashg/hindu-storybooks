@@ -12,6 +12,7 @@
     <string name="save">Save</string>
     <string name="unsave">Unsave</string>
     <string name="swipe_hint">Swipe left for another story</string>
+    <string name="next_story">Next story</string>
     <string name="planned">Planned</string>
     <string name="new_badge">New</string>
     <string name="section_new_books">New books</string>
