@@ -67,7 +67,7 @@
 <button class="shuffle" onclick="shuffleStory()">&#8635; <span class="t" id="tShuffle"></span></button>
 </div></section>
 <main id="lists"></main>
-<footer><p class="t" id="footT"></p></footer>
+<footer><p class="t" id="footT"></p><p class="t" id="bylineT"></p></footer>
 
 <script>
 var UI = null;
@@ -244,6 +244,7 @@ function renderAll(data) {
   setUi('tRead', UI.read);
   setUi('tShuffle', UI.shuffle);
   setUi('footT', UI.footer);
+  setUi('bylineT', UI.byline);
   document.getElementById('lists').innerHTML = '';
   renderLists(data.sections);
   BOOKS = buildPool(data.sections);
