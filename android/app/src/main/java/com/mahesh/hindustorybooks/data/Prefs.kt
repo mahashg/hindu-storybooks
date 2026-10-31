@@ -52,6 +52,35 @@ class Prefs(context: Context) {
         if (set.add(pdfUrl)) prefs.edit().putStringSet(KEY_READ, set).apply()
     }
 
+    /**
+     * Collapsed Catalog headers (v1.8). Section keys look like
+     * "section:festivals", "section:new", "section:read"; group keys look
+     * like "group:festivals|diwali". Default is empty = everything
+     * expanded, which is the pre-v1.8 behavior. Stored as copied sets:
+     * getStringSet() may return the live set, so never mutate it in place.
+     */
+    fun collapsedSectionKeys(): Set<String> =
+        prefs.getStringSet(KEY_COLLAPSED_SECTIONS, emptySet())?.toSet() ?: emptySet()
+
+    fun isSectionCollapsed(key: String): Boolean = collapsedSectionKeys().contains(key)
+
+    fun setSectionCollapsed(key: String, collapsed: Boolean) {
+        val set = collapsedSectionKeys().toMutableSet()
+        if (collapsed) set.add(key) else set.remove(key)
+        prefs.edit().putStringSet(KEY_COLLAPSED_SECTIONS, set).apply()
+    }
+
+    fun collapsedGroupKeys(): Set<String> =
+        prefs.getStringSet(KEY_COLLAPSED_GROUPS, emptySet())?.toSet() ?: emptySet()
+
+    fun isGroupCollapsed(key: String): Boolean = collapsedGroupKeys().contains(key)
+
+    fun setGroupCollapsed(key: String, collapsed: Boolean) {
+        val set = collapsedGroupKeys().toMutableSet()
+        if (collapsed) set.add(key) else set.remove(key)
+        prefs.edit().putStringSet(KEY_COLLAPSED_GROUPS, set).apply()
+    }
+
     /** One persisted reader zoom, shared across ALL books (default 1.0 = fit to width).
      * Changing zoom in any book saves it here; every book opens at this zoom.
      * Migrates the old Settings book-zoom default once, if present. */
@@ -215,6 +244,8 @@ class Prefs(context: Context) {
         private const val KEY_RESUME = "resume_pages"
         private const val KEY_REFLOW_RESUME = "reflow_resume"
         private const val KEY_READ = "read_pdf_urls"
+        private const val KEY_COLLAPSED_SECTIONS = "collapsed_sections"
+        private const val KEY_COLLAPSED_GROUPS = "collapsed_groups"
     }
 }
 
