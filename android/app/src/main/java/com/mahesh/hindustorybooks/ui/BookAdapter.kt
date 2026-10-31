@@ -12,8 +12,24 @@ import com.mahesh.hindustorybooks.databinding.ItemSectionBinding
 import com.mahesh.hindustorybooks.model.Book
 
 sealed class DisplayItem {
-    data class SectionHeader(val title: String) : DisplayItem()
-    data class GroupHeader(val title: String) : DisplayItem()
+    /**
+     * collapseKey is the Prefs collapse key ("section:<id>" or
+     * "group:<sectionId>|<groupKey>"); collapsed is its current state;
+     * hasNew shows the section/group-level नया tag. Defaults keep
+     * header-less callers (Saved builds BookCards only) unaffected.
+     */
+    data class SectionHeader(
+        val title: String,
+        val collapseKey: String = "",
+        val collapsed: Boolean = false,
+        val hasNew: Boolean = false
+    ) : DisplayItem()
+    data class GroupHeader(
+        val title: String,
+        val collapseKey: String = "",
+        val collapsed: Boolean = false,
+        val hasNew: Boolean = false
+    ) : DisplayItem()
     data class BookCard(val book: Book, val isNew: Boolean) : DisplayItem()
 }
 
@@ -22,6 +38,9 @@ sealed class DisplayItem {
  * meta, a small star at the right end, a नया badge for arrivals, and a
  * READ badge for finished books.
  * Tapping a card reads; tapping the star saves/unsaves.
+ * v1.8: section/group headers are tappable and collapse their books;
+ * onHeaderClick receives the header's collapse key ("" means no-op, which
+ * is the Saved case — Saved never builds headers).
  */
 class BookAdapter(
     private var items: List<DisplayItem>,
@@ -29,7 +48,8 @@ class BookAdapter(
     private val isSaved: (String) -> Boolean,
     private val isRead: (String) -> Boolean,
     private val onCard: (Book) -> Unit,
-    private val onStar: (Book) -> Unit
+    private val onStar: (Book) -> Unit,
+    private val onHeaderClick: (String) -> Unit = {}
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
@@ -68,17 +88,28 @@ class BookAdapter(
         }
     }
 
-    private class SectionHolder(private val b: ItemSectionBinding) :
+    private inner class SectionHolder(private val b: ItemSectionBinding) :
         RecyclerView.ViewHolder(b.root) {
         fun bind(item: DisplayItem.SectionHeader) {
             b.sectionTitle.text = item.title
+            // Same badge style as the book-level नया tag (badge_bg).
+            b.sectionNew.visibility = if (item.hasNew) View.VISIBLE else View.GONE
+            b.sectionIndicator.text = if (item.collapsed) "▸" else "▾"
+            b.root.setOnClickListener {
+                if (item.collapseKey.isNotEmpty()) onHeaderClick(item.collapseKey)
+            }
         }
     }
 
-    private class GroupHolder(private val b: ItemGroupBinding) :
+    private inner class GroupHolder(private val b: ItemGroupBinding) :
         RecyclerView.ViewHolder(b.root) {
         fun bind(item: DisplayItem.GroupHeader) {
             b.groupTitle.text = item.title
+            b.groupNew.visibility = if (item.hasNew) View.VISIBLE else View.GONE
+            b.groupIndicator.text = if (item.collapsed) "▸" else "▾"
+            b.root.setOnClickListener {
+                if (item.collapseKey.isNotEmpty()) onHeaderClick(item.collapseKey)
+            }
         }
     }
 
@@ -127,27 +158,105 @@ class BookAdapter(
 }
 
 /** Builds the Catalog display list: sections in order, ungrouped books first,
- *  then each labeled group row with its books. */
+ *  then each labeled group row with its books.
+ *
+ *  v1.8, display-level only (no catalog.json change):
+ *  - A "New books" section at the very top: books whose pdfUrl is in
+ *    arrivalUrls AND present in the current catalog, in catalog order.
+ *    Hidden entirely when empty; its header carries NO new tag.
+ *  - A "Read books" section at the very bottom: books whose pdfUrl is in
+ *    readUrls AND present in the current catalog, in catalog order.
+ *    Hidden entirely when empty; its header follows the same new-tag rule
+ *    as any other section (tagged only if it contains an arrival).
+ *  - A book in New/Read ALSO stays in its home section: duplication is
+ *    intended (a filtered view, not a move). State stays consistent
+ *    because saved/read/resume are all keyed by pdfUrl.
+ *  - Every section/group header is collapsible: collapsed headers hide
+ *    their books (a collapsed section hides its groups too). Collapse
+ *    keys live in Prefs; empty sets mean everything expanded.
+ *  - Section/group headers carry the नया tag exactly when their own books
+ *    contain an arrival — the same lifecycle as the book-level tags. */
 fun buildCatalogItems(
     catalog: com.mahesh.hindustorybooks.model.Catalog,
     lang: String,
-    arrivalUrls: Set<String>
+    arrivalUrls: Set<String>,
+    readUrls: Set<String> = emptySet(),
+    collapsedSections: Set<String> = emptySet(),
+    collapsedGroups: Set<String> = emptySet(),
+    newSectionTitle: String = if (lang == "en") "New books" else "नई किताबें",
+    readSectionTitle: String = if (lang == "en") "Read books" else "पढ़ी गई"
 ): List<DisplayItem> {
     val items = mutableListOf<DisplayItem>()
+    val all = catalog.allBooks
+    fun isNew(book: Book): Boolean = book.pdfUrl() in arrivalUrls
+
+    // New section at top (hidden when empty).
+    val newBooks = all.filter { isNew(it) }
+    if (newBooks.isNotEmpty()) {
+        val key = "section:new"
+        val collapsed = key in collapsedSections
+        items.add(DisplayItem.SectionHeader(newSectionTitle, key, collapsed, false))
+        if (!collapsed) {
+            for (book in newBooks) items.add(DisplayItem.BookCard(book, true))
+        }
+    }
+
     for (section in catalog.sections) {
-        items.add(DisplayItem.SectionHeader(section.title(lang)))
+        val sectionKey = "section:${section.id}"
+        val sectionCollapsed = sectionKey in collapsedSections
+        items.add(
+            DisplayItem.SectionHeader(
+                section.title(lang),
+                sectionKey,
+                sectionCollapsed,
+                section.books.any { isNew(it) }
+            )
+        )
+        if (sectionCollapsed) continue
         val ungrouped = section.books.filter { it.group == null }
         val grouped = section.books.filter { it.group != null }
             .groupBy { it.group!! }
         for (book in ungrouped) {
-            items.add(DisplayItem.BookCard(book, book.pdfUrl() in arrivalUrls))
+            items.add(DisplayItem.BookCard(book, isNew(book)))
         }
-        for ((_, books) in grouped) {
+        for ((groupKey, books) in grouped) {
             val title = books.firstOrNull()?.groupTitle(lang) ?: ""
-            if (title.isNotEmpty()) items.add(DisplayItem.GroupHeader(title))
-            for (book in books) {
-                items.add(DisplayItem.BookCard(book, book.pdfUrl() in arrivalUrls))
+            if (title.isEmpty()) {
+                // Header-less group (pre-v1.8 behavior): books always shown.
+                for (book in books) items.add(DisplayItem.BookCard(book, isNew(book)))
+                continue
             }
+            val groupCollapseKey = "group:${section.id}|$groupKey"
+            val groupCollapsed = groupCollapseKey in collapsedGroups
+            items.add(
+                DisplayItem.GroupHeader(
+                    title,
+                    groupCollapseKey,
+                    groupCollapsed,
+                    books.any { isNew(it) }
+                )
+            )
+            if (!groupCollapsed) {
+                for (book in books) items.add(DisplayItem.BookCard(book, isNew(book)))
+            }
+        }
+    }
+
+    // Read section at bottom (hidden when empty).
+    val readBooks = all.filter { it.pdfUrl() in readUrls }
+    if (readBooks.isNotEmpty()) {
+        val key = "section:read"
+        val collapsed = key in collapsedSections
+        items.add(
+            DisplayItem.SectionHeader(
+                readSectionTitle,
+                key,
+                collapsed,
+                readBooks.any { isNew(it) }
+            )
+        )
+        if (!collapsed) {
+            for (book in readBooks) items.add(DisplayItem.BookCard(book, isNew(book)))
         }
     }
     return items
