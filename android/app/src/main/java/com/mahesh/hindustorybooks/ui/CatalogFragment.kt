@@ -51,7 +51,8 @@ class CatalogFragment : Fragment() {
                 isSaved = { url -> Prefs(requireContext()).isSaved(url) },
                 isRead = { url -> Prefs(requireContext()).isRead(url) },
                 onCard = { book -> openBook(book) },
-                onStar = { book -> toggleStar(book) }
+                onStar = { book -> toggleStar(book) },
+                onHeaderClick = { key -> toggleHeader(key) }
             )
         }
         b.catalogList.adapter = adapter
@@ -91,7 +92,22 @@ class CatalogFragment : Fragment() {
 
     private fun reload() {
         val prefs = Prefs(requireContext())
-        val items = buildCatalogItems(catalog = CatalogStore.load(requireContext()), lang = prefs.language, arrivalUrls = prefs.arrivalPdfUrls())
+        val ctx = requireContext()
+        // v1.8: New section (arrivals) at top, Read section (local read
+        // marks) at bottom, collapsible headers — all recomputed here, so
+        // onResume AND post-refresh reloads pick up catalog updates.
+        // READ marks are never cleared by refresh; CatalogRefresh only
+        // ever replaces the arrivals set.
+        val items = buildCatalogItems(
+            catalog = CatalogStore.load(ctx),
+            lang = prefs.language,
+            arrivalUrls = prefs.arrivalPdfUrls(),
+            readUrls = prefs.readPdfUrls(),
+            collapsedSections = prefs.collapsedSectionKeys(),
+            collapsedGroups = prefs.collapsedGroupKeys(),
+            newSectionTitle = ctx.getString(com.mahesh.hindustorybooks.R.string.section_new_books),
+            readSectionTitle = ctx.getString(com.mahesh.hindustorybooks.R.string.section_read_books)
+        )
         val existing = adapter
         if (existing == null) {
             adapter = BookAdapter(
@@ -100,12 +116,28 @@ class CatalogFragment : Fragment() {
                 isSaved = { url -> prefs.isSaved(url) },
                 isRead = { url -> prefs.isRead(url) },
                 onCard = { book -> openBook(book) },
-                onStar = { book -> toggleStar(book) }
+                onStar = { book -> toggleStar(book) },
+                onHeaderClick = { key -> toggleHeader(key) }
             )
             binding?.catalogList?.adapter = adapter
         } else {
             existing.update(items)
         }
+    }
+
+    /** Collapse/expand one header and rebuild; the choice persists in Prefs
+     *  across launches. Scroll position is kept as far as possible: the
+     *  tapped header stays in the list, so the RecyclerView holds its
+     *  place approximately (the existing listState restore on onResume
+     *  still applies when returning from a reader or another tab). */
+    private fun toggleHeader(key: String) {
+        val prefs = Prefs(requireContext())
+        if (key.startsWith("group:")) {
+            prefs.setGroupCollapsed(key, !prefs.isGroupCollapsed(key))
+        } else {
+            prefs.setSectionCollapsed(key, !prefs.isSectionCollapsed(key))
+        }
+        reload()
     }
 
     override fun onDestroyView() {
