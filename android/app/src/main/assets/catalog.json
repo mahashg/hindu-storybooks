@@ -248,6 +248,24 @@
      "reflowable_en": null,
      "reflowable_en_sha256": null,
      "group": "diwali"
+    },
+    {
+     "title_hi": "छठ पूजा — डूबते सूरज को धन्यवाद",
+     "title_en": "Chhath Puja — Thank You to the Setting Sun",
+     "desc_hi": "डूबते सूरज को अर्घ्य, चार दिन का व्रत, और घाट पर सूप उठाए व्रती।",
+     "desc_en": "Arghya to the setting sun, a four-day fast, and the vrati at the ghat with her soop.",
+     "meta_hi": "19 पृष्ठ · प्रकाशित 31 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "19 pages · Published 31 Oct 2026 · Version 1",
+     "pdf": "books/chhath-puja-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-10-31",
+     "sha256": "ba5549a913ba33488bf1c420d847ec1b918547e06f850f0e7e002c88228f7c93",
+     "reflowable": "reflowable/chhath-puja.html",
+     "reflowable_sha256": "d47c747e1528d86bd46bab2fb7f9a581e4bfaa40e3793506785b5a5396cbb3e4",
+     "reflowable_en": "reflowable-en/chhath-puja.html",
+     "reflowable_en_sha256": "034cfc60d388ee9714abde16d4af71162a7ba61d6ba6778b4e659e5448766acd",
+     "painting": "images/paintings/chhath.jpg"
     }
    ],
    "groups": {
