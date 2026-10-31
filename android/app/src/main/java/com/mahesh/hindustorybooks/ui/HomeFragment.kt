@@ -40,6 +40,9 @@ class HomeFragment : Fragment() {
         // The hero painting opens the same book, exactly like the title.
         b.homePainting.setOnClickListener { openCurrent() }
         b.homeStar.setOnClickListener { toggleSave() }
+        // Explicit Next button (v1.9): the exact same shuffle as the hero
+        // swipe — another story, never the one on screen.
+        b.homeNext.setOnClickListener { shuffleNext() }
         // Swipe left on the hero card shuffles to another story: the gold
         // "Next" FAB is gone (v1.5), and this gesture replaces it exactly —
         // same anotherStory() call, same never-current-story rule.
@@ -91,8 +94,7 @@ class HomeFragment : Fragment() {
                         Math.abs(dx) > swipeDistance &&
                         Math.abs(velocityX) > swipeVelocity
                     ) {
-                        val catalog = CatalogStore.load(requireContext())
-                        catalog.anotherStory(current)?.let { showBook(it) }
+                        shuffleNext()
                         return true
                     }
                     return false
@@ -100,6 +102,16 @@ class HomeFragment : Fragment() {
             }
         )
         b.homeHero.setOnTouchListener { _, event -> swipeDetector.onTouchEvent(event) }
+        // Swipe left on the cover (v1.9): the painting is a tap target, so
+        // touches on it never reach the hero listener above — attach the
+        // same detector here. The listener returns false, so a plain tap
+        // still falls through to the painting's click (opens the book),
+        // while a left fling shuffles and the tap's press state is
+        // cancelled by the movement, so the book does not open.
+        b.homePainting.setOnTouchListener { _, event ->
+            swipeDetector.onTouchEvent(event)
+            false
+        }
         return b.root
     }
 
@@ -144,6 +156,11 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         binding = null
+    }
+
+    private fun shuffleNext() {
+        val catalog = CatalogStore.load(requireContext())
+        catalog.anotherStory(current)?.let { showBook(it) }
     }
 
     private fun openCurrent() {
