@@ -982,7 +982,20 @@
      "reflowable_en": null,
      "reflowable_en_sha256": null,
      "group": "katha"
-    },
+    }
+   ],
+   "groups": {
+    "katha": {
+     "title_hi": "कथा",
+     "title_en": "The Story"
+    }
+   }
+  },
+  {
+   "id": "devta-raja-rishi",
+   "title_hi": "देवता, राजा और ऋषि",
+   "title_en": "Gods, Kings and Sages",
+   "books": [
     {
      "title_hi": "रावण",
      "title_en": "Ravana",
@@ -1182,16 +1195,35 @@
      "reflowable_en": null,
      "reflowable_en_sha256": null,
      "group": "patra"
+    },
+    {
+     "title_hi": "शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता",
+     "title_en": "Shukracharya — Guru of the Asuras, Knower of Sanjivani",
+     "desc_hi": "वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।",
+     "desc_en": "The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.",
+     "meta_hi": "32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
+     "meta_en": "32 pages · Published 22 Oct 2026 · Version 1",
+     "pdf": "books/shukracharya-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-10-22",
+     "sha256": "415f909c5fcbdec6e1ebeaa0cdd82fc94f2a6d8fb15f7d61d0bc3d01409e579f",
+     "reflowable": "reflowable/shukracharya.html",
+     "reflowable_sha256": "5656bcefdc0a987f8f44ac46e33b333b12eeac4bf8cadf6634c65e8e48eb78d4",
+     "reflowable_en": "reflowable-en/shukracharya.html",
+     "reflowable_en_sha256": "5ae27a869dbb8a9e425795c0481ff2158f6bbc3459076d21ae482fcd3d3e36dd",
+     "painting": "images/paintings/shukracharya.jpg",
+     "group": "guru"
     }
    ],
    "groups": {
-    "katha": {
-     "title_hi": "कथा",
-     "title_en": "The Story"
-    },
     "patra": {
-     "title_hi": "पात्र",
-     "title_en": "The Characters"
+     "title_hi": "रामायण के पात्र",
+     "title_en": "Ramayana Characters"
+    },
+    "guru": {
+     "title_hi": "गुरु",
+     "title_en": "Gurus"
     }
    }
   },
@@ -1217,31 +1249,6 @@
      "reflowable_en": "reflowable-en/indra-v2.html",
      "reflowable_en_sha256": "b3770880f52e3beae876bdb24fc4f275c303abb4f8a63a18798e1eeb31c93d0f",
      "painting": "images/paintings/indra.jpg"
-    }
-   ]
-  },
-  {
-   "id": "gurus",
-   "title_hi": "गुरु और मोड़",
-   "title_en": "Gurus &amp; Turning Points",
-   "books": [
-    {
-     "title_hi": "शुक्राचार्य — असुरों के गुरु, संजीवनी के ज्ञाता",
-     "title_en": "Shukracharya — Guru of the Asuras, Knower of Sanjivani",
-     "desc_hi": "वह गुरु जिन्होंने असुरों को चुना, मृतकों को जिलाने की विद्या पाई, और उसकी कीमत अपनी आँख से चुकाई।",
-     "desc_en": "The guru who chose the asuras, won the science of reviving the dead, and paid for it with his own eye.",
-     "meta_hi": "32 पृष्ठ · प्रकाशित 22 अक्तूबर 2026 · संस्करण 1",
-     "meta_en": "32 pages · Published 22 Oct 2026 · Version 1",
-     "pdf": "books/shukracharya-everyday-hindi.pdf",
-     "status": "published",
-     "version": "1",
-     "published": "2026-10-22",
-     "sha256": "415f909c5fcbdec6e1ebeaa0cdd82fc94f2a6d8fb15f7d61d0bc3d01409e579f",
-     "reflowable": "reflowable/shukracharya.html",
-     "reflowable_sha256": "5656bcefdc0a987f8f44ac46e33b333b12eeac4bf8cadf6634c65e8e48eb78d4",
-     "reflowable_en": "reflowable-en/shukracharya.html",
-     "reflowable_en_sha256": "5ae27a869dbb8a9e425795c0481ff2158f6bbc3459076d21ae482fcd3d3e36dd",
-     "painting": "images/paintings/shukracharya.jpg"
     }
    ]
   },
