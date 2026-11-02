@@ -270,6 +270,24 @@
      "reflowable_en": "reflowable-en/chhath-puja.html",
      "reflowable_en_sha256": "034cfc60d388ee9714abde16d4af71162a7ba61d6ba6778b4e659e5448766acd",
      "painting": "images/paintings/chhath.jpg"
+    },
+    {
+     "title_hi": "हैलोवीन की रात — जब डर खेल बन गया",
+     "title_en": "Halloween Night — When Fear Became Play",
+     "desc_hi": "कद्दू की रोशनी, वेशभूषा, और वह रात जब डर खेल बन गया।",
+     "desc_en": "Pumpkin light, costumes, and the night fear became play.",
+     "meta_hi": "14 पृष्ठ · प्रकाशित 2 नवंबर 2026 · संस्करण 1",
+     "meta_en": "14 pages · Published 2 Nov 2026 · Version 1",
+     "pdf": "books/halloween-night-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-02",
+     "sha256": "674a7ed015585b3051493badf432e560e08f5d36c2e4b2903f4ab5199b9bd331",
+     "reflowable": "reflowable/halloween-night-everyday-hindi.html",
+     "reflowable_sha256": "d79bcaeb03c7aa25ac0494afc6d626d053c4118d2f6d06691734843ba11bfe58",
+     "reflowable_en": "reflowable-en/halloween-night-web-en.html",
+     "reflowable_en_sha256": "be2e2feded32013f17bd3d8d1f0cace49ff1087da4066e6322f5bef21d3a4eed",
+     "painting": "images/paintings/halloween.jpg"
     }
    ],
    "groups": {
