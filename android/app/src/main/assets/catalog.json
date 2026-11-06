@@ -682,7 +682,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "bala"
     },
     {
      "title_hi": "विश्वामित्र और ताड़का",
@@ -700,7 +700,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "bala"
     },
     {
      "title_hi": "अहल्या — शाप से मुक्ति",
@@ -718,7 +718,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "bala"
     },
     {
      "title_hi": "शिव का धनुष",
@@ -736,7 +736,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "bala"
     },
     {
      "title_hi": "दो वरदान",
@@ -754,7 +754,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "ayodhya"
     },
     {
      "title_hi": "गुहा की मित्रता",
@@ -772,7 +772,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "ayodhya"
     },
     {
      "title_hi": "भरत की पादुका",
@@ -790,7 +790,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "ayodhya"
     },
     {
      "title_hi": "सोने का हिरण और जटायु",
@@ -808,7 +808,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "aranya"
     },
     {
      "title_hi": "शबरी",
@@ -826,7 +826,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "aranya"
     },
     {
      "title_hi": "ऋष्यमूक पर मित्रता",
@@ -844,7 +844,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "kishkindha"
     },
     {
      "title_hi": "बालि का अंत",
@@ -862,7 +862,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "kishkindha"
     },
     {
      "title_hi": "हनुमान की छलाँग",
@@ -880,7 +880,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "kishkindha"
     },
     {
      "title_hi": "लंका दहन",
@@ -898,7 +898,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "sundara"
     },
     {
      "title_hi": "राम सेतु",
@@ -916,7 +916,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "yuddha"
     },
     {
      "title_hi": "विभीषण की शरण",
@@ -934,7 +934,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "yuddha"
     },
     {
      "title_hi": "कुंभकर्ण",
@@ -952,7 +952,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "yuddha"
     },
     {
      "title_hi": "इंद्रजित और संजीवनी",
@@ -970,7 +970,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "yuddha"
     },
     {
      "title_hi": "रावण का अंत",
@@ -988,7 +988,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "yuddha"
     },
     {
      "title_hi": "अग्निपरीक्षा और राजतिलक",
@@ -1006,7 +1006,7 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "yuddha"
     },
     {
      "title_hi": "सीता का वनवास",
@@ -1024,13 +1024,239 @@
      "reflowable_sha256": null,
      "reflowable_en": null,
      "reflowable_en_sha256": null,
-     "group": "katha"
+     "group": "uttara"
+    },
+    {
+     "title_hi": "वाल्मीकि और नारद — पहला श्लोक",
+     "title_en": "Valmiki and Narada — The First Shloka",
+     "desc_hi": "नारद ऋषि वाल्मीकि को राम की कथा सुनाते हैं — और एक क्रौंच पक्षी की मृत्यु से पहला श्लोक जन्म लेता है।",
+     "desc_en": "The sage Narada tells Valmiki Rama's story — and from a krauncha bird's death, the first shloka is born.",
+     "meta_hi": "14 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "14 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-valmiki-narada-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "2faa1f6675c5ae28b79d5e161d95baaa41600bacada851a3348c92aab7eb363f",
+     "reflowable": "reflowable/ramayana-valmiki-narada.html",
+     "reflowable_sha256": "05b60586abadb1a87b9df31b974bbd4791c7aae27dac6d5b453eb2d70984cfe0",
+     "reflowable_en": "reflowable-en/ramayana-valmiki-narada.html",
+     "reflowable_en_sha256": "ceadb25dd4339fcec7097105647ba2883f9429bb9b49cb6f06b3ccb5dd4ea613",
+     "painting": "images/paintings/ramayana-valmiki-narada.jpg",
+     "group": "bala"
+    },
+    {
+     "title_hi": "कामाश्रम — शिव ने कामदेव को भस्म किया",
+     "title_en": "Kama Ashrama — Shiva Burns Kamadeva",
+     "desc_hi": "देवताओं के आग्रह पर कामदेव शिव की तपस्या भंग करते हैं — और शिव के तीसरे नेत्र से भस्म हो जाते हैं।",
+     "desc_en": "At the gods' urging, Kamadeva breaks Shiva's meditation — and is burned to ash by Shiva's third eye.",
+     "meta_hi": "13 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "13 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-kama-ashrama-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "07c95352a0f922097320ffc5a1d2f09417e848bee957aed6f48434186d766050",
+     "reflowable": "reflowable/ramayana-kama-ashrama.html",
+     "reflowable_sha256": "a97e785252f2ea0285d19dd7f45a306d3d230789f422c66dc83ec74de84c23db",
+     "reflowable_en": "reflowable-en/ramayana-kama-ashrama.html",
+     "reflowable_en_sha256": "dcfd04e90b88f04b97df0c0c07a4c0762fa12b71200e4031dd404a06962129c6",
+     "painting": "images/paintings/ramayana-kama-ashrama.jpg",
+     "group": "bala"
+    },
+    {
+     "title_hi": "कुशनाभ की सौ कन्याएँ — सौ कन्याओं की कथा",
+     "title_en": "Kushanabha's Hundred Daughters — The Story of a Hundred Daughters",
+     "desc_hi": "कुशनाभ की सौ कन्याएँ वायु के अभिमान से कूबड़ वाली हो जाती हैं — और ब्रह्मदत्त से विवाह कर मुक्त होती हैं।",
+     "desc_en": "Kushanabha's hundred daughters are bent double by Vayu's pride — and freed by marriage to Brahmadatta.",
+     "meta_hi": "13 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "13 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-kushanabha-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "1c91ae7023f9a99c0a0e67ef88dc18f1880fa31d1b853a7bea251b7bbb11a68f",
+     "reflowable": "reflowable/ramayana-kushanabha.html",
+     "reflowable_sha256": "22d50b8d031dbad70318a4293fce24fcf2d85d0112854f37da7719be04268810",
+     "reflowable_en": "reflowable-en/ramayana-kushanabha.html",
+     "reflowable_en_sha256": "2c279dc8ffd6922765dbdee2aa784e9b74bc8a5ea42e3c1551b7379ea0686fce",
+     "painting": "images/paintings/ramayana-kushanabha.jpg",
+     "group": "bala"
+    },
+    {
+     "title_hi": "गंगा और कार्तिकेय — छह माताओं के पुत्र की कथा",
+     "title_en": "Ganga and Kartikeya — The Story of the Son of Six Mothers",
+     "desc_hi": "गंगा की गोद में शिव के तेज से कार्तिकेय का जन्म — छह माताओं के पुत्र, देवताओं के सेनापति।",
+     "desc_en": "From Shiva's radiance in Ganga's lap, Kartikeya is born — son of six mothers, commander of the gods.",
+     "meta_hi": "13 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "13 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-kartikeya-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "762e87748bb8e169c6e4a5447b9a13b57a071148708ac71dcec89812276d9f00",
+     "reflowable": "reflowable/ramayana-kartikeya.html",
+     "reflowable_sha256": "773b46a05f528a7d4efea014642d465bfe4befd13c3b00d337034ac296426d85",
+     "reflowable_en": "reflowable-en/ramayana-kartikeya.html",
+     "reflowable_en_sha256": "56b2063727045263ac136d6383b935ad2fd47432af913c28e855fe31028a1533",
+     "painting": "images/paintings/ramayana-kartikeya.jpg",
+     "group": "bala"
+    },
+    {
+     "title_hi": "सगर, भगीरथ और गंगा-अवतरण — साठ हज़ार पुत्रों की मुक्ति की कथा",
+     "title_en": "Sagara, Bhagiratha and the Descent of Ganga — The Story of the Liberation of Sixty Thousand Sons",
+     "desc_hi": "सगर के साठ हज़ार पुत्रों की मुक्ति के लिए भगीरथ की तपस्या — और गंगा का स्वर्ग से धरती पर अवतरण।",
+     "desc_en": "Bhagiratha's penance to free Sagara's sixty thousand sons — and Ganga's descent from heaven to earth.",
+     "meta_hi": "14 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "14 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-bhagiratha-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "a5b33df8fa82019697b30a8b59254cd5198d6d08579dd505356ce0c6e1813dc3",
+     "reflowable": "reflowable/ramayana-bhagiratha.html",
+     "reflowable_sha256": "1e0fe0319bb3b42bdee29db2c8fc612d0be33e368a35ec1fbcc10f42620780be",
+     "reflowable_en": "reflowable-en/ramayana-bhagiratha.html",
+     "reflowable_en_sha256": "57bda851007a61505e078d634882d7df99fbfebc6ef75da977b5821a863fb495",
+     "painting": "images/paintings/ramayana-bhagiratha.jpg",
+     "group": "bala"
+    },
+    {
+     "title_hi": "समुद्र-मंथन — वाल्मीकि की कथा — दिति, मरुत और विशाला नगर की कथा",
+     "title_en": "The Churning of the Ocean — Valmiki’s Telling — The Story of Diti, the Maruts and the City of Vishala",
+     "desc_hi": "विश्वामित्र राम को सुनाते हैं: दिति की तपस्या, मरुतों का जन्म, और समुद्र-मंथन की वाल्मीकि-कथा।",
+     "desc_en": "Vishwamitra tells Rama: Diti's penance, the birth of the Maruts, and Valmiki's telling of the churning of the ocean.",
+     "meta_hi": "13 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "13 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-manthan-bala-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "b092413df55495448b4cf22ae54b050b878bc33e43a5f64b5240b6c4a70cfa01",
+     "reflowable": "reflowable/ramayana-manthan-bala.html",
+     "reflowable_sha256": "c3ebf73fa83d97452722d9c22fa28698d954077834516e2444c5a629449603a3",
+     "reflowable_en": "reflowable-en/ramayana-manthan-bala.html",
+     "reflowable_en_sha256": "c5bec879af2f7343fac3029c3c3ffed3d617506759e8cbbb5eadd247aa8bdaaf",
+     "painting": "images/paintings/ramayana-manthan-bala.jpg",
+     "group": "bala"
+    },
+    {
+     "title_hi": "भरद्वाज आश्रम और यमुना पार — प्रयाग से चित्रकूट की ओर",
+     "title_en": "Bharadwaja’s Ashram and Crossing the Yamuna — From Prayaga toward Chitrakuta",
+     "desc_hi": "वनवास के पहले पड़ाव पर भरद्वाज का आश्रम — और यमुना पार कर चित्रकूट की ओर।",
+     "desc_en": "At the first halt of the exile, Bharadwaja's hermitage — and across the Yamuna toward Chitrakuta.",
+     "meta_hi": "14 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "14 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-bharadwaja-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "2eb457a4600a2266c5ef8a0934120925c9d4d05b1c477f5f793f61d64b036da2",
+     "reflowable": "reflowable/ramayana-bharadwaja.html",
+     "reflowable_sha256": "d051d3dbe928be6b12a0f4068ed9c3302dffab7d85ba0912ce6503316a1fdcd7",
+     "reflowable_en": "reflowable-en/ramayana-bharadwaja.html",
+     "reflowable_en_sha256": "56a0dc0071e16fd2dc755892cdd49efb5f9bb71b14ae4621efcf0b8623c69584",
+     "painting": "images/paintings/ramayana-bharadwaja.jpg",
+     "group": "ayodhya"
+    },
+    {
+     "title_hi": "चित्रकूट में निवास — पर्णशाला और मंदाकिनी",
+     "title_en": "Settling at Chitrakuta — The Leaf-Hut and the Mandakini",
+     "desc_hi": "मंदाकिनी के किनारे पर्णशाला — राम, सीता और लक्ष्मण का वन में पहला घर।",
+     "desc_en": "A leaf-hut on the Mandakini's banks — Rama, Sita and Lakshmana's first home in the forest.",
+     "meta_hi": "13 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "13 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-chitrakuta-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "56c938369120b272802d5700c3047b2d9e58a8fff70ecb36a76071a46d15d0c0",
+     "reflowable": "reflowable/ramayana-chitrakuta.html",
+     "reflowable_sha256": "e391d219a4dc8f62ba1540c486e7d13e28ae29de260b2b77b329e091dc472f77",
+     "reflowable_en": "reflowable-en/ramayana-chitrakuta.html",
+     "reflowable_en_sha256": "6b58cb3b9670df38aeab25e73b50bc2283f10545d14461dbea833a0f5f0d1b07",
+     "painting": "images/paintings/ramayana-chitrakuta.jpg",
+     "group": "ayodhya"
+    },
+    {
+     "title_hi": "अत्रि-अनसूया का आशीर्वाद — वन में एक माँ जैसा आशीर्वाद",
+     "title_en": "Atri and Anasuya's Blessing — A Mother's Blessing in the Forest",
+     "desc_hi": "अत्रि के आश्रम में अनसूया सीता को माँ जैसा आशीर्वाद देती हैं — और धर्म की सीख।",
+     "desc_en": "In Atri's hermitage, Anasuya blesses Sita like a mother — and teaches her dharma.",
+     "meta_hi": "14 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "14 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-atri-anasuya-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "d9e47e6b4603c32d377efe669c1cbfe39499635cd88f342342e0d5b5fef1c7a0",
+     "reflowable": "reflowable/ramayana-atri-anasuya.html",
+     "reflowable_sha256": "81c4e25053575dd9724b4ec88cfe0583dd020be8d1f1e9fb8dd3b77beaeb73d1",
+     "reflowable_en": "reflowable-en/ramayana-atri-anasuya.html",
+     "reflowable_en_sha256": "53b26ac368093b178f792bfc98b71d79cd61c98e311564f74fa83910bf6d14e2",
+     "painting": "images/paintings/ramayana-atri-anasuya.jpg",
+     "group": "ayodhya"
+    },
+    {
+     "title_hi": "विराध और शरभंग — दंडक वन की पहली परीक्षा",
+     "title_en": "Viradha and Sharabhanga — The First Test of the Dandaka Forest",
+     "desc_hi": "दंडक वन की पहली परीक्षा — विराध राक्षस का वध, और शरभंग ऋषि का अग्नि-प्रवेश।",
+     "desc_en": "The first test of the Dandaka forest — the slaying of Viradha, and the sage Sharabhanga's entry into fire.",
+     "meta_hi": "13 पृष्ठ · प्रकाशित 6 नवंबर 2026 · संस्करण 1",
+     "meta_en": "13 pages · Published 6 Nov 2026 · Version 1",
+     "pdf": "books/ramayana-viradha-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-06",
+     "sha256": "03f3054c945ae7beb1e2eea805a2e70881578ddc75299032a1bbe2be4b542510",
+     "reflowable": "reflowable/ramayana-viradha.html",
+     "reflowable_sha256": "9dd004798023a42d4d33de34ab73c1ff69e5d08eee3b175bbf76c3f33531bb19",
+     "reflowable_en": "reflowable-en/ramayana-viradha.html",
+     "reflowable_en_sha256": "dc42befde98e25581dc3b4fa6671ccab56ae28668b2efa0e7f0314d5c0035b7b",
+     "painting": "images/paintings/ramayana-viradha.jpg",
+     "group": "aranya"
     }
    ],
    "groups": {
-    "katha": {
-     "title_hi": "कथा",
-     "title_en": "The Story"
+    "bala": {
+     "title_hi": "बालकांड",
+     "title_en": "Bala Kanda"
+    },
+    "ayodhya": {
+     "title_hi": "अयोध्याकांड",
+     "title_en": "Ayodhya Kanda"
+    },
+    "aranya": {
+     "title_hi": "अरण्यकांड",
+     "title_en": "Aranya Kanda"
+    },
+    "kishkindha": {
+     "title_hi": "किष्किंधाकांड",
+     "title_en": "Kishkindha Kanda"
+    },
+    "sundara": {
+     "title_hi": "सुंदरकांड",
+     "title_en": "Sundara Kanda"
+    },
+    "yuddha": {
+     "title_hi": "युद्धकांड",
+     "title_en": "Yuddha Kanda"
+    },
+    "uttara": {
+     "title_hi": "उत्तरकांड",
+     "title_en": "Uttara Kanda"
+    },
+    "retellings": {
+     "title_hi": "अन्य कथाएँ",
+     "title_en": "Other Retellings"
+    },
+    "folk": {
+     "title_hi": "लोक कथाएँ",
+     "title_en": "Folk & Local Tales"
+    },
+    "southeast": {
+     "title_hi": "दक्षिण-पूर्व एशिया",
+     "title_en": "Southeast Asian Tales"
     }
    }
   },
