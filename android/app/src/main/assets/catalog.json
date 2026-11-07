@@ -184,6 +184,25 @@
      "group": "diwali"
     },
     {
+     "title_hi": "दिवाली पूजा — हर दिन क्या करें",
+     "title_en": "Diwali Puja — What to Do Each Day",
+     "desc_hi": "पंडित जी की तरह समझाता मार्गदर्शक — पाँचों दिन क्या करें और क्या न करें, दीया कौन-सा, कितने, घर में कहाँ, किस दिशा में।",
+     "desc_en": "A pundit-teacher's day-by-day guide to the five Diwali days — what to do and what not to do, which diya, how many, where in the house, and which way it faces.",
+     "meta_hi": "25 पृष्ठ · प्रकाशित 7 नवंबर 2026 · संस्करण 1",
+     "meta_en": "25 pages · Published 7 Nov 2026 · Version 1",
+     "pdf": "books/diwali-puja-vidhi-everyday-hindi.pdf",
+     "status": "published",
+     "version": "1",
+     "published": "2026-11-07",
+     "sha256": "45bb17c2ae14a2fcfa04f3fa1e6687ae4d4f2db6e0761b524e2b0544375d58c3",
+     "reflowable": "reflowable/diwali-puja-vidhi-everyday-hindi.html",
+     "reflowable_sha256": "4c0fdde5a09a25711ac83335d72a043e11903eb5cc01f0fe8cf017906218c08c",
+     "reflowable_en": "reflowable-en/diwali-puja-vidhi-web-en.html",
+     "reflowable_en_sha256": "06076a67666899c3154e874ac75829f9cd36eda4e8942652b28b50b09ebf646a",
+     "painting": "images/paintings/diwali-puja-vidhi.jpg",
+     "group": "diwali"
+    },
+    {
      "title_hi": "गोवर्धन पूजा — जब पहाड़ छाता बन गया",
      "title_en": "Govardhan Puja — When the Mountain Became an Umbrella",
      "desc_hi": "यज्ञ का सवाल, पहाड़ की पूजा, और सात दिन तक एक उँगली पर उठा छाता — फिर इंद्र का झुकना और गोविंदा नाम।",
