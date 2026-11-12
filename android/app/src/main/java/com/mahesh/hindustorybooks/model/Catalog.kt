@@ -5,7 +5,7 @@ import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 import kotlin.random.Random
 
-const val SITE_BASE = "https://mahashg.github.io/hindu-storybooks/"
+const val SITE_BASE = "https://privacy-org.github.io/hindu-storybooks/"
 const val CATALOG_URL = SITE_BASE + "catalog.json"
 const val ARCHIVES_SECTION = "archives"
 
