@@ -8,7 +8,7 @@ Kotlin + Views/XML (not Compose). Single Activity + Fragments + bottom navigatio
 ## Data — same catalog as the website
 
 The app reads the same `catalog.json` that powers
-https://mahashg.github.io/hindu-storybooks/ (bundled copy in
+https://privacy-org.github.io/hindu-storybooks/ (bundled copy in
 `app/src/main/assets/catalog.json`). Refresh (the Settings
 "नई किताबें आईं?" button, plus a daily background refresh) fetches the live
 file, validates its structure and HEAD-checks every published PDF and pool
